@@ -1,0 +1,336 @@
+@import '../../styles/variables';
+
+.header_mobile {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    align-items: center;
+    background-color: $primaryColor;
+    padding: 0px 10px 0px 0px;
+    position: sticky;
+    top: 12px;
+
+    .mobile_menu {
+        display: flex;
+        align-items: center;
+        color: $azonwhite;
+        padding: 14px;
+        width: 80px;
+
+        h1 {
+            font-size: 16px;
+            font-weight: 900;
+            letter-spacing: 1px;
+        }
+
+        div {
+            svg {
+                width: 15px;
+                font-weight: 900;
+                height: auto;
+            }
+        }
+    }
+
+    .mobile_logo {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+
+        img {
+            width: 96px;
+            margin-left: -22px;
+        }
+    }
+
+    .mobile_user_options {
+        text-align: right;
+        justify-content: flex-end;
+        display: flex;
+
+
+        div {
+            display: flex;
+            gap: 10px;
+
+            .search_icon {
+                padding: -1px 12px;
+
+
+
+                svg {
+                    width: 30px;
+                    fill: rgb(155, 153, 153);
+                    height: auto;
+                }
+            }
+
+            .account_icon {
+                padding: -1px 17px;
+
+                svg {
+                    width: 30px;
+                    fill: white;
+                    height: auto;
+                    padding: 2px;
+                }
+            }
+        }
+    }
+}
+
+@media(min-width:880px) {
+    .header_mobile {
+        display: none;
+    }
+}
+
+// for big screens
+header {
+    font-family: amazonEmber;
+    font-weight: 100;
+    background-color: $primaryColor;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 40px 0px 40px;
+    display: none;
+
+    div {
+        display: flex;
+        align-items: center;
+        // gap: 10px;
+
+        .logo {
+            width: max-content;
+            padding: 8px 10px;
+
+
+            img {
+                width: 180px;
+                height: 16px;
+
+            }
+        }
+
+        .nav_list_wrapper {
+            width: 100%;
+
+            nav {
+                width: 100%;
+
+                .nav_container {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    text-wrap: nowrap;
+
+                    .nav_list_item   {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        color: $azonwhite;
+                        padding: 8px 12px;
+                        font-size: 18px;
+                        letter-spacing: 1px;
+
+                        div {
+                            svg {
+                                width: 12px;
+                                fill: white;
+                                color: white;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .user_options {
+            color: white;
+            width: max-content;
+            align-items: center;
+
+            .search_icon {
+                width: max-content;
+
+                div {
+                    padding: 0px 10px;
+
+                    svg {
+
+                        border: 1px solid red;
+                        width: 25px;
+                        fill: rgb(155, 153, 153);
+                    }
+                }
+            }
+
+            .Try_for_free {
+                text-wrap: nowrap;
+                width: max-content;
+                letter-spacing: 1px;
+                padding: 0px 10px 0px 10px;
+            }
+
+            .languages_option {
+                border: 1px solid green;
+                width: max-content;
+
+                div {
+                    margin-left: -0px;
+
+                    svg {
+                        width: 20px;
+                        fill: white;
+                    }
+                }
+            }
+
+            .account_icon {
+                padding: 0px 10px;
+                margin-left: 10px;
+
+                div {
+                    svg {
+                        width: 30px;
+                        background-color: white;
+                        padding: 0px;
+                        border-radius: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width:880px) {
+    header {
+        display: block;
+    }
+}
+
+
+@media(min-width:1024px) {
+    header {
+        font-family: amazonEmber;
+        font-weight: 300;
+        background-color: $primaryColor;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0px;
+
+        div {
+            display: flex;
+            align-items: center;
+            gap: 22px;
+
+            .logo {
+                width: max-content;
+                padding: 8px 10px;
+
+
+                img {
+                    width: 200px;
+                    height: 20px;
+
+                }
+            }
+
+            .nav_list_wrapper {
+                width: 100%;
+                padding-right: 23px;
+
+                nav {
+                    width: 100%;
+
+                    .nav_container {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        text-wrap: nowrap;
+                        gap: 28px;
+
+                        .nav_list_item {
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            color: $azonwhite;
+                            padding: 8px 0px;
+                            font-size: 18px;
+                            letter-spacing: 1px;
+
+                            div {
+                                margin-left: 5px;
+
+                                svg {
+                                    width: 20px;
+                                    fill: white;
+                                    color: white;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .user_options {
+                color: white;
+                width: max-content;
+                align-items: center;
+
+                .search_icon {
+                    width: max-content;
+
+                    div {
+                        padding: 0px 10px;
+
+                        svg {
+
+                            border: 1px solid red;
+                            width: 30px;
+                            fill: rgb(155, 153, 153);
+                        }
+                    }
+                }
+
+                .Try_for_free {
+                    text-wrap: nowrap;
+                    width: max-content;
+                    letter-spacing: 1.8px;
+                    padding: 0px 10px 0px 0px;
+                }
+
+                .languages_option {
+                    border: 1px solid green;
+                    width: max-content;
+
+                    div {
+                        margin-left: -23px;
+
+                        svg {
+                            width: 20px;
+                            fill: white;
+                        }
+                    }
+                }
+
+                .account_icon {
+                    padding: 0px 10px;
+                    margin-left: -10px;
+
+                    div {
+                        svg {
+                            width: 30px;
+                            background-color: white;
+                            padding: 0px;
+                            border-radius: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

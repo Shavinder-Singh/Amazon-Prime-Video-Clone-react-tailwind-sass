@@ -1,0 +1,34 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: amazonEmber;
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: amazonEmber;
+  src: url("./assets/fonts/amazon-ember-cufonfonts/Amazon Ember.ttf");
+  font-weight: 100;
+}
+@font-face {
+  font-family: amazonEmberbold;
+  src: url("./assets/fonts/amazon-ember-cufonfonts/Amazon Ember Bold.ttf");
+  font-weight: 900;
+}
+::-webkit-scrollbar {
+  display: none;
+}/*# sourceMappingURL=app.css.map */

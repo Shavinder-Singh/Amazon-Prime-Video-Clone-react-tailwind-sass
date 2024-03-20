@@ -1,0 +1,28 @@
+@import '../../../styles/variables';
+
+.header_sidebar {
+    position: absolute;
+    width: 100vw;
+    top: 49px;
+    left: 0;
+    height: 100vh;
+    z-index: 12;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    background-color: $secondaryColor;
+}
+
+@media (min-width:660px) {
+    .header_sidebar {
+        ul{
+            font-size: 16px;
+        }
+    }
+}
+
+@media (min-width:880px) {
+    .header_sidebar {
+        display: none;
+    }
+}

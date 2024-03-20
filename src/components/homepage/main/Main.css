@@ -1,0 +1,91 @@
+.home_main_section .home_main_media {
+  width: 100%;
+}
+.home_main_section .home_main_media div {
+  background-size: 100% 100%;
+  width: 100%;
+  height: 50vh;
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0) 0%, transparent 20%), url("../../../assets/image/homemainmobile.jpg");
+  background-repeat: no-repeat;
+  -o-object-fit: fill;
+     object-fit: fill;
+}
+.home_main_section .home_main_content {
+  text-align: center;
+}
+.home_main_section .home_main_content h1 {
+  font-family: amazonEmberbold;
+}
+.home_main_section .home_main_content a {
+  font-family: amazonEmberbold;
+}
+
+@media (min-width: 456px) {
+  .home_main_section {
+    position: relative;
+  }
+  .home_main_section .home_main_media {
+    width: 100%;
+  }
+  .home_main_section .home_main_media div {
+    background-size: 100% 100%;
+    width: 100%;
+    height: 100vh;
+    background-repeat: no-repeat;
+    -o-object-fit: cover;
+       object-fit: cover;
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0) 0%, transparent 20%), url("../../../assets/image/homemainmobile.jpg");
+  }
+  .home_main_section .home_main_content {
+    text-align: center;
+    position: absolute;
+    top: 20px;
+    background-color: transparent;
+    min-width: 200px;
+    max-width: 50%;
+    background-image: linear-gradient(to right, #000 40%, transparent 58%);
+  }
+  .home_main_section .home_main_content h1 {
+    font-family: amazonEmberbold;
+    font-size: 44px;
+    text-align: left;
+  }
+  .home_main_section .home_main_content p {
+    margin-bottom: 10px;
+    text-align: left;
+  }
+  .home_main_section .home_main_content a {
+    max-width: 299px;
+  }
+}
+@media (min-width: 547px) {
+  .home_main_section .home_main_media {
+    width: 100%;
+  }
+  .home_main_section .home_main_media div {
+    background-size: 100% 100%;
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0) 0%, transparent 20%), url("../../../assets/image/homemainimage.jpg");
+    background-repeat: no-repeat;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+}
+@media (min-width: 1280px) {
+  .home_main_section .home_main_content {
+    top: 53px;
+    left: 21px;
+  }
+  .home_main_section h1 {
+    font-family: amazonEmber !important;
+    font-weight: 900;
+    letter-spacing: 4px;
+  }
+  .home_main_section p {
+    font-family: amazonEmber !important;
+  }
+  .home_main_section a {
+    font-weight: 900;
+  }
+}/*# sourceMappingURL=Main.css.map */

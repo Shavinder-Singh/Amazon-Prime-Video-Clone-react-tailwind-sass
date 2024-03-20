@@ -1,0 +1,274 @@
+.header_mobile {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  align-items: center;
+  background-color: #00050D;
+  padding: 0px 10px 0px 0px;
+  position: sticky;
+  top: 12px;
+}
+.header_mobile .mobile_menu {
+  display: flex;
+  align-items: center;
+  color: #FFFFFF;
+  padding: 14px;
+  width: 80px;
+}
+.header_mobile .mobile_menu h1 {
+  font-size: 16px;
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+.header_mobile .mobile_menu div svg {
+  width: 15px;
+  font-weight: 900;
+  height: auto;
+}
+.header_mobile .mobile_logo {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.header_mobile .mobile_logo img {
+  width: 96px;
+  margin-left: -22px;
+}
+.header_mobile .mobile_user_options {
+  text-align: right;
+  justify-content: flex-end;
+  display: flex;
+}
+.header_mobile .mobile_user_options div {
+  display: flex;
+  gap: 10px;
+}
+.header_mobile .mobile_user_options div .search_icon {
+  padding: -1px 12px;
+}
+.header_mobile .mobile_user_options div .search_icon svg {
+  width: 30px;
+  fill: rgb(155, 153, 153);
+  height: auto;
+}
+.header_mobile .mobile_user_options div .account_icon {
+  padding: -1px 17px;
+}
+.header_mobile .mobile_user_options div .account_icon svg {
+  width: 30px;
+  fill: white;
+  height: auto;
+  padding: 2px;
+}
+
+@media (min-width: 880px) {
+  .header_mobile {
+    display: none;
+  }
+}
+header {
+  font-family: amazonEmber;
+  font-weight: 100;
+  background-color: #00050D;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 40px 0px 40px;
+  display: none;
+}
+header div {
+  display: flex;
+  align-items: center;
+}
+header div .logo {
+  width: -moz-max-content;
+  width: max-content;
+  padding: 8px 10px;
+}
+header div .logo img {
+  width: 180px;
+  height: 16px;
+}
+header div .nav_list_wrapper {
+  width: 100%;
+}
+header div .nav_list_wrapper nav {
+  width: 100%;
+}
+header div .nav_list_wrapper nav .nav_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-wrap: nowrap;
+}
+header div .nav_list_wrapper nav .nav_container .nav_list_item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+  padding: 8px 12px;
+  font-size: 18px;
+  letter-spacing: 1px;
+}
+header div .nav_list_wrapper nav .nav_container .nav_list_item div svg {
+  width: 12px;
+  fill: white;
+  color: white;
+}
+header div .user_options {
+  color: white;
+  width: -moz-max-content;
+  width: max-content;
+  align-items: center;
+}
+header div .user_options .search_icon {
+  width: -moz-max-content;
+  width: max-content;
+}
+header div .user_options .search_icon div {
+  padding: 0px 10px;
+}
+header div .user_options .search_icon div svg {
+  border: 1px solid red;
+  width: 25px;
+  fill: rgb(155, 153, 153);
+}
+header div .user_options .Try_for_free {
+  text-wrap: nowrap;
+  width: -moz-max-content;
+  width: max-content;
+  letter-spacing: 1px;
+  padding: 0px 10px 0px 10px;
+}
+header div .user_options .languages_option {
+  border: 1px solid green;
+  width: -moz-max-content;
+  width: max-content;
+}
+header div .user_options .languages_option div {
+  margin-left: 0px;
+}
+header div .user_options .languages_option div svg {
+  width: 20px;
+  fill: white;
+}
+header div .user_options .account_icon {
+  padding: 0px 10px;
+  margin-left: 10px;
+}
+header div .user_options .account_icon div svg {
+  width: 30px;
+  background-color: white;
+  padding: 0px;
+  border-radius: 100%;
+}
+
+@media (min-width: 880px) {
+  header {
+    display: block;
+  }
+}
+@media (min-width: 1024px) {
+  header {
+    font-family: amazonEmber;
+    font-weight: 300;
+    background-color: #00050D;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+  }
+  header div {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+  }
+  header div .logo {
+    width: -moz-max-content;
+    width: max-content;
+    padding: 8px 10px;
+  }
+  header div .logo img {
+    width: 200px;
+    height: 20px;
+  }
+  header div .nav_list_wrapper {
+    width: 100%;
+    padding-right: 23px;
+  }
+  header div .nav_list_wrapper nav {
+    width: 100%;
+  }
+  header div .nav_list_wrapper nav .nav_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-wrap: nowrap;
+    gap: 28px;
+  }
+  header div .nav_list_wrapper nav .nav_container .nav_list_item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFFFFF;
+    padding: 8px 0px;
+    font-size: 18px;
+    letter-spacing: 1px;
+  }
+  header div .nav_list_wrapper nav .nav_container .nav_list_item div {
+    margin-left: 5px;
+  }
+  header div .nav_list_wrapper nav .nav_container .nav_list_item div svg {
+    width: 20px;
+    fill: white;
+    color: white;
+  }
+  header div .user_options {
+    color: white;
+    width: -moz-max-content;
+    width: max-content;
+    align-items: center;
+  }
+  header div .user_options .search_icon {
+    width: -moz-max-content;
+    width: max-content;
+  }
+  header div .user_options .search_icon div {
+    padding: 0px 10px;
+  }
+  header div .user_options .search_icon div svg {
+    border: 1px solid red;
+    width: 30px;
+    fill: rgb(155, 153, 153);
+  }
+  header div .user_options .Try_for_free {
+    text-wrap: nowrap;
+    width: -moz-max-content;
+    width: max-content;
+    letter-spacing: 1.8px;
+    padding: 0px 10px 0px 0px;
+  }
+  header div .user_options .languages_option {
+    border: 1px solid green;
+    width: -moz-max-content;
+    width: max-content;
+  }
+  header div .user_options .languages_option div {
+    margin-left: -23px;
+  }
+  header div .user_options .languages_option div svg {
+    width: 20px;
+    fill: white;
+  }
+  header div .user_options .account_icon {
+    padding: 0px 10px;
+    margin-left: -10px;
+  }
+  header div .user_options .account_icon div svg {
+    width: 30px;
+    background-color: white;
+    padding: 0px;
+    border-radius: 100%;
+  }
+}/*# sourceMappingURL=header.css.map */

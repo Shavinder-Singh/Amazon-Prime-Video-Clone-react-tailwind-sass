@@ -1,0 +1,12 @@
+
+footer {
+    background-color: #222222;
+    .footer_links {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        max-width: 80%;
+        margin: 2px auto 14px auto;
+    }
+}

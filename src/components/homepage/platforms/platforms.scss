@@ -1,0 +1,37 @@
+.platforms_section {
+    .platforms_wrapper {
+        .platforms_content {
+            div {
+                h1 {
+                    font-family: amazonEmberbold;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width:457px) {
+    .platforms_section {
+        padding: 23px !important;
+
+        .platforms_wrapper {
+            display: flex;
+
+            .platforms_content {
+                text-align: left;
+                width: 50%;
+                div {
+                    h1 {
+                        font-family: amazonEmberbold;
+                    }
+                    p{
+                        font-size: 25px;
+                    }
+                }
+            }
+            .platforms_media_wrapper{
+                width: 50%;
+            }
+        }
+    }
+}
