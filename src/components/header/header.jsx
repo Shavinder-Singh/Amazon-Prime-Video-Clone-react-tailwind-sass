@@ -6,7 +6,7 @@ const header = () => {
     return (
         <div>
             <header className='header_mobile z-10 '>
-                <div className='mobile_menu bg-secondary relative'>
+                <div className='mobile_menu hover:bg-secondary relative'>
                     <h1 className='menu'>Menu
                         <Sidebar />
                     </h1>
