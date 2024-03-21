@@ -13,6 +13,7 @@ export default {
         "azonwhite": "#FFFFFF",//white
         "azongray": "#AAAAAA",// textgray
         "azonblue": '#0f79af',//blue
+        "inputbgcolor": '#33373D',//inputray
 
       },
       textColor: {
@@ -21,7 +22,8 @@ export default {
         "azongray": "#AAAAAA",// textgray
         "azonwhite": "#FFFFFF",//white
         "azonblue": '#0f79af',//blue
-        $hovercolor:'#222222',//gray
+        "hovercolor": '#222222',//gray
+        "inputbgcolor": '#33373D',//inputray
 
 
       },

@@ -75,6 +75,28 @@
                 }
             }
 
+            .search_bar {
+                width: 100vw;
+                right: -10px;
+                height: 100vh;
+                display: flex;
+                justify-content: flex-start;
+                align-items: flex-start;
+                padding: 12px;
+                padding-left: 22px;
+
+                .search_bar_wrapper {
+                    width: 100%;
+                    background-color: $inputbgcolor;
+                    input {
+                        outline: none;
+                    }
+                    span {
+                        fill: $azongray;
+                    }
+                }
+            }
+
             .account_icon {
                 padding: -1px 17px;
 
@@ -110,7 +132,6 @@ header {
     div {
         display: flex;
         align-items: center;
-        // gap: 10px;
 
         .logo {
             width: max-content;
@@ -185,6 +206,23 @@ header {
 
             .search_icon {
                 width: max-content;
+
+                .search_bar {
+                    top: 32px;
+                    right: -132px;
+                    width: 70vw;
+                    padding: 15px 20px 20px 20px;
+
+                    .search_bar_wrapper {
+                        width: 100%;
+                        border-radius: 4px;
+                        background-color: $inputbgcolor;
+                        padding: 10px;
+                        input {
+                            outline: none;
+                        }
+                    }
+                }
 
                 div {
                     padding: 0px 10px;
@@ -349,6 +387,15 @@ header {
                 .search_icon {
                     width: max-content;
 
+                    .search_bar {
+                        right: -170px;
+                        top: 36px;
+                        width: 70vw;
+                        padding: 10px 20px;
+                        cursor: auto;
+
+                    }
+
                     div {
                         padding: 0px 10px;
 
@@ -392,6 +439,54 @@ header {
                         }
                     }
                 }
+            }
+        }
+    }
+}
+
+
+
+@media(min-width:1440px) {
+    header {
+        font-family: amazonEmber;
+        font-weight: 300;
+        background-color: $primaryColor;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0px;
+
+        div {
+            display: flex;
+            align-items: center;
+            gap: 22px;
+
+            .logo {
+                width: max-content;
+                padding: 8px 10px;
+
+
+                img {
+                    width: 200px;
+                    height: 20px;
+
+                }
+            }
+
+
+
+            .user_options {
+
+                .search_icon {
+
+                    .search_bar {
+                        right: -250px;
+                    }
+
+
+                }
+
+
             }
         }
     }

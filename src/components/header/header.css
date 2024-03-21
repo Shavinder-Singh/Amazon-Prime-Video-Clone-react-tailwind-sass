@@ -59,6 +59,26 @@
   fill: rgb(155, 153, 153);
   height: auto;
 }
+.header_mobile .mobile_user_options div .search_bar {
+  width: 100vw;
+  right: -10px;
+  height: 100vh;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 12px;
+  padding-left: 22px;
+}
+.header_mobile .mobile_user_options div .search_bar .search_bar_wrapper {
+  width: 100%;
+  background-color: #33373D;
+}
+.header_mobile .mobile_user_options div .search_bar .search_bar_wrapper input {
+  outline: none;
+}
+.header_mobile .mobile_user_options div .search_bar .search_bar_wrapper span {
+  fill: #AAAAAA;
+}
 .header_mobile .mobile_user_options div .account_icon {
   padding: -1px 17px;
 }
@@ -147,6 +167,21 @@ header div .user_options {
 header div .user_options .search_icon {
   width: -moz-max-content;
   width: max-content;
+}
+header div .user_options .search_icon .search_bar {
+  top: 32px;
+  right: -132px;
+  width: 70vw;
+  padding: 15px 20px 20px 20px;
+}
+header div .user_options .search_icon .search_bar .search_bar_wrapper {
+  width: 100%;
+  border-radius: 4px;
+  background-color: #33373D;
+  padding: 10px;
+}
+header div .user_options .search_icon .search_bar .search_bar_wrapper input {
+  outline: none;
 }
 header div .user_options .search_icon div {
   padding: 0px 10px;
@@ -277,6 +312,13 @@ header div .user_options .account_icon div svg {
     width: -moz-max-content;
     width: max-content;
   }
+  header div .user_options .search_icon .search_bar {
+    right: -170px;
+    top: 36px;
+    width: 70vw;
+    padding: 10px 20px;
+    cursor: auto;
+  }
   header div .user_options .search_icon div {
     padding: 0px 10px;
   }
@@ -311,5 +353,33 @@ header div .user_options .account_icon div svg {
     background-color: white;
     padding: 0px;
     border-radius: 100%;
+  }
+}
+@media (min-width: 1440px) {
+  header {
+    font-family: amazonEmber;
+    font-weight: 300;
+    background-color: #00050D;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+  }
+  header div {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+  }
+  header div .logo {
+    width: -moz-max-content;
+    width: max-content;
+    padding: 8px 10px;
+  }
+  header div .logo img {
+    width: 200px;
+    height: 20px;
+  }
+  header div .user_options .search_icon .search_bar {
+    right: -250px;
   }
 }/*# sourceMappingURL=header.css.map */
