@@ -9,6 +9,8 @@
   justify-content: flex-start;
   align-items: flex-start;
   background-color: #191E25;
+  cursor: pointer;
+  display: none;
 }
 
 @media (min-width: 660px) {

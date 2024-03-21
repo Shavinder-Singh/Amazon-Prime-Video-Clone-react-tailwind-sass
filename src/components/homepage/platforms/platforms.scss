@@ -20,18 +20,51 @@
             .platforms_content {
                 text-align: left;
                 width: 50%;
+
                 div {
                     h1 {
                         font-family: amazonEmberbold;
+                        font-size: 40px;
+                        max-width: 500px;
+
                     }
-                    p{
-                        font-size: 25px;
+
+                    p {
+                        font-size: 20px;
+                        font-weight: 500;
+                        line-height: 22px;
                     }
                 }
             }
-            .platforms_media_wrapper{
+
+            .platforms_media_wrapper {
                 width: 50%;
+                 img{
+                    &:hover{
+                        box-shadow: -2px -2px 2px 2px  rgb(136, 135, 135)  ,
+                                    2px 2px 2px 2px rgb(136, 135, 135)
+                        ;
+                    }
+                }
             }
+        }
+    }
+}
+@media (min-width:1440px) {
+    .platforms_section {
+
+        .platforms_wrapper {
+
+            .platforms_content {
+
+                div {
+                    h1 {
+                        font-size: 48px;
+                        max-width: none;
+                    }
+                }
+            }
+
         }
     }
 }

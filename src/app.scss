@@ -26,6 +26,12 @@ html {
     src: url('./assets/fonts/amazon-ember-cufonfonts/Amazon\ Ember.ttf');
     font-weight: 100;
 }
+@font-face {
+    font-family: amazonEmberlight;
+    src: url('./assets/fonts/amazon-ember-cufonfonts/Amazon\ Ember\ Cd\ RC\ Light.ttf');
+    font-weight: 100;
+}
+
 
 @font-face {
     font-family: amazonEmberbold;
@@ -34,5 +40,5 @@ html {
 }
 
 ::-webkit-scrollbar{
-    display: none;
+    // display: none;
 }   

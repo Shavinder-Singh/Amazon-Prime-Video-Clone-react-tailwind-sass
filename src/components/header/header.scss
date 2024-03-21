@@ -10,6 +10,13 @@
     padding: 0px 10px 0px 0px;
     position: sticky;
     top: 12px;
+    cursor: pointer;
+
+    .menu {
+        &:hover .header_sidebar {
+            display: flex;
+        }
+    }
 
     .mobile_menu {
         display: flex;
@@ -57,7 +64,9 @@
             .search_icon {
                 padding: -1px 12px;
 
-
+                &:hover {
+                    background-color: $secondaryColor;
+                }
 
                 svg {
                     width: 30px;
@@ -126,14 +135,21 @@ header {
                     align-items: center;
                     text-wrap: nowrap;
 
-                    .nav_list_item   {
+                    .nav_list_item {
                         display: flex;
                         align-items: center;
                         justify-content: center;
-                        color: $azonwhite;
                         padding: 8px 12px;
                         font-size: 18px;
                         letter-spacing: 1px;
+                        cursor: pointer;
+                        color: $azongray;
+                        transition: all 0.1s ease-in;
+
+                        &:hover {
+                            color: $azonwhite;
+                            background-color: $secondaryColor;
+                        }
 
                         div {
                             svg {
@@ -142,7 +158,21 @@ header {
                                 color: white;
                             }
                         }
+
+                        &:hover .navitemdrop {
+                            display: flex !important;
+                            color: $azongray;
+
+                        }
+
+                        .navitemdrop li {
+                            &:hover {
+                                background-color: $azonwhite;
+                                color: $primaryColor;
+                            }
+                        }
                     }
+
                 }
             }
         }
@@ -159,8 +189,6 @@ header {
                     padding: 0px 10px;
 
                     svg {
-
-                        border: 1px solid red;
                         width: 25px;
                         fill: rgb(155, 153, 153);
                     }
@@ -175,8 +203,19 @@ header {
             }
 
             .languages_option {
-                border: 1px solid green;
                 width: max-content;
+
+                &:hover .navitemdrop {
+                    display: flex;
+                    color: $azongray;
+
+                }
+
+                &:hover {
+                    color: $azonwhite;
+                    background-color: $secondaryColor;
+
+                }
 
                 div {
                     margin-left: -0px;
@@ -186,11 +225,36 @@ header {
                         fill: white;
                     }
                 }
+
+                .navitemdrop li {
+                    &:hover {
+                        background-color: $azonwhite;
+                        color: $primaryColor;
+                    }
+                }
             }
 
             .account_icon {
                 padding: 0px 10px;
                 margin-left: 10px;
+
+                &:hover .navitemdrop {
+                    display: flex;
+                    color: $azongray;
+
+                }
+
+                &:hover {
+                    color: $azonwhite;
+                    background-color: $secondaryColor;
+                }
+
+                .navitemdrop li {
+                    &:hover {
+                        background-color: $azonwhite;
+                        color: $primaryColor;
+                    }
+                }
 
                 div {
                     svg {
@@ -201,6 +265,7 @@ header {
                     }
                 }
             }
+
         }
     }
 }
@@ -251,14 +316,13 @@ header {
                         justify-content: center;
                         align-items: center;
                         text-wrap: nowrap;
-                        gap: 28px;
+                        gap: 8px;
 
                         .nav_list_item {
                             display: flex;
                             align-items: center;
                             justify-content: center;
-                            color: $azonwhite;
-                            padding: 8px 0px;
+                            padding: 8px 8px;
                             font-size: 18px;
                             letter-spacing: 1px;
 
@@ -277,7 +341,7 @@ header {
             }
 
             .user_options {
-                color: white;
+                color: $azongray;
                 width: max-content;
                 align-items: center;
 
@@ -288,8 +352,6 @@ header {
                         padding: 0px 10px;
 
                         svg {
-
-                            border: 1px solid red;
                             width: 30px;
                             fill: rgb(155, 153, 153);
                         }
@@ -304,7 +366,6 @@ header {
                 }
 
                 .languages_option {
-                    border: 1px solid green;
                     width: max-content;
 
                     div {

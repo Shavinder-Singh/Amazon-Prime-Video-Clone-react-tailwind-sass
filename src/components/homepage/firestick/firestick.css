@@ -71,7 +71,8 @@
   }
   .firestick_section .firestick_content p {
     text-align: left;
-    font-size: 18px;
+    font-size: 20px;
+    line-height: 0.6cm;
   }
   .firestick_section .firestick_content .firesticklink {
     display: flex;
@@ -106,9 +107,10 @@
   }
   .firestick_section p {
     font-family: amazonEmber !important;
-    max-width: 87%;
+    max-width: 92%;
   }
   .firestick_section a {
     font-weight: 900;
+    max-width: 255px !important;
   }
 }/*# sourceMappingURL=firestick.css.map */

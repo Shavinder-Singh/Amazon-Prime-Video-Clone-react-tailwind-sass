@@ -8,6 +8,10 @@
   padding: 0px 10px 0px 0px;
   position: sticky;
   top: 12px;
+  cursor: pointer;
+}
+.header_mobile .menu:hover .header_sidebar {
+  display: flex;
 }
 .header_mobile .mobile_menu {
   display: flex;
@@ -46,6 +50,9 @@
 }
 .header_mobile .mobile_user_options div .search_icon {
   padding: -1px 12px;
+}
+.header_mobile .mobile_user_options div .search_icon:hover {
+  background-color: #191E25;
 }
 .header_mobile .mobile_user_options div .search_icon svg {
   width: 30px;
@@ -106,15 +113,29 @@ header div .nav_list_wrapper nav .nav_container .nav_list_item {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #FFFFFF;
   padding: 8px 12px;
   font-size: 18px;
   letter-spacing: 1px;
+  cursor: pointer;
+  color: #AAAAAA;
+  transition: all 0.1s ease-in;
+}
+header div .nav_list_wrapper nav .nav_container .nav_list_item:hover {
+  color: #FFFFFF;
+  background-color: #191E25;
 }
 header div .nav_list_wrapper nav .nav_container .nav_list_item div svg {
   width: 12px;
   fill: white;
   color: white;
+}
+header div .nav_list_wrapper nav .nav_container .nav_list_item:hover .navitemdrop {
+  display: flex !important;
+  color: #AAAAAA;
+}
+header div .nav_list_wrapper nav .nav_container .nav_list_item .navitemdrop li:hover {
+  background-color: #FFFFFF;
+  color: #00050D;
 }
 header div .user_options {
   color: white;
@@ -130,7 +151,6 @@ header div .user_options .search_icon div {
   padding: 0px 10px;
 }
 header div .user_options .search_icon div svg {
-  border: 1px solid red;
   width: 25px;
   fill: rgb(155, 153, 153);
 }
@@ -142,9 +162,16 @@ header div .user_options .Try_for_free {
   padding: 0px 10px 0px 10px;
 }
 header div .user_options .languages_option {
-  border: 1px solid green;
   width: -moz-max-content;
   width: max-content;
+}
+header div .user_options .languages_option:hover .navitemdrop {
+  display: flex;
+  color: #AAAAAA;
+}
+header div .user_options .languages_option:hover {
+  color: #FFFFFF;
+  background-color: #191E25;
 }
 header div .user_options .languages_option div {
   margin-left: 0px;
@@ -153,9 +180,25 @@ header div .user_options .languages_option div svg {
   width: 20px;
   fill: white;
 }
+header div .user_options .languages_option .navitemdrop li:hover {
+  background-color: #FFFFFF;
+  color: #00050D;
+}
 header div .user_options .account_icon {
   padding: 0px 10px;
   margin-left: 10px;
+}
+header div .user_options .account_icon:hover .navitemdrop {
+  display: flex;
+  color: #AAAAAA;
+}
+header div .user_options .account_icon:hover {
+  color: #FFFFFF;
+  background-color: #191E25;
+}
+header div .user_options .account_icon .navitemdrop li:hover {
+  background-color: #FFFFFF;
+  color: #00050D;
 }
 header div .user_options .account_icon div svg {
   width: 30px;
@@ -205,14 +248,13 @@ header div .user_options .account_icon div svg {
     justify-content: center;
     align-items: center;
     text-wrap: nowrap;
-    gap: 28px;
+    gap: 8px;
   }
   header div .nav_list_wrapper nav .nav_container .nav_list_item {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #FFFFFF;
-    padding: 8px 0px;
+    padding: 8px 8px;
     font-size: 18px;
     letter-spacing: 1px;
   }
@@ -225,7 +267,7 @@ header div .user_options .account_icon div svg {
     color: white;
   }
   header div .user_options {
-    color: white;
+    color: #AAAAAA;
     width: -moz-max-content;
     width: max-content;
     align-items: center;
@@ -238,7 +280,6 @@ header div .user_options .account_icon div svg {
     padding: 0px 10px;
   }
   header div .user_options .search_icon div svg {
-    border: 1px solid red;
     width: 30px;
     fill: rgb(155, 153, 153);
   }
@@ -250,7 +291,6 @@ header div .user_options .account_icon div svg {
     padding: 0px 10px 0px 0px;
   }
   header div .user_options .languages_option {
-    border: 1px solid green;
     width: -moz-max-content;
     width: max-content;
   }

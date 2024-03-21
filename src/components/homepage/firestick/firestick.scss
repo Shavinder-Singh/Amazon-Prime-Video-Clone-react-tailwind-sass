@@ -83,7 +83,9 @@
 
             p {
                 text-align: left;
-                font-size: 18px;
+                font-size: 20px;
+                line-height: 0.6cm;
+
             }
 
 
@@ -133,11 +135,12 @@
 
         p {
             font-family: amazonEmber !important;
-            max-width: 87%;
+            max-width: 92%;
         }
 
         a {
             font-weight: 900;
+            max-width: 255px !important;
         }
     }
 }

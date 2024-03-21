@@ -7,7 +7,7 @@ const header = () => {
         <div>
             <header className='header_mobile z-10 '>
                 <div className='mobile_menu bg-secondary relative'>
-                    <h1 className=''>Menu
+                    <h1 className='menu'>Menu
                         <Sidebar />
                     </h1>
                     <div>
@@ -20,7 +20,6 @@ const header = () => {
 0 -40 -33 -80 -72 l-73 -72 -73 72 c-73 73 -87 82 -87 59z"/>
                             </g>
                         </svg>
-
                     </div>
                 </div>
                 <div className='mobile_logo'>
@@ -38,7 +37,7 @@ const header = () => {
                 </div>
             </header>
             {/* For big screen */}
-            <header className=''>
+            <header >
                 <div>
                     <div className='logo'>
                         <img src={Logo} alt="logo" />
@@ -47,7 +46,7 @@ const header = () => {
                         <nav>
                             <ul className='nav_container'>
                                 <li className='nav_list_item relative'>Home
-                                    <ul className='absolute top-[44px] flex flex-col items-s z-10 bg-secondary rounded-b-md hidden'>
+                                    <ul className='navitemdrop absolute top-[44px] flex flex-col items-s z-10 bg-secondary rounded-b-md hidden'>
                                         <li className='p-2'>All</li>
                                         <li className='p-2'>Movies</li>
                                         <li className='p-2'>TV shows</li>
@@ -66,7 +65,7 @@ const header = () => {
                                     </div>
                                 </li>
                                 <li className='nav_list_item relative'>Store
-                                    <ul className='absolute top-[44px] flex flex-col items-s z-10 bg-secondary rounded-b-md hidden'>
+                                    <ul className='navitemdrop absolute top-[44px] flex flex-col items-s z-10 bg-secondary rounded-b-md hidden'>
                                         <li className='p-2'>All</li>
                                         <li className='p-2'>Rent</li>
                                         <li className='p-2'>Channels</li>
@@ -87,7 +86,7 @@ const header = () => {
                                 <li className='nav_list_item'>Live TV
                                 </li>
                                 <li className='nav_list_item relative'>Categories
-                                    <div className='absolute top-[44px] right-[-252px] flex items-start gap-24 z-10 bg-secondary rounded-b-md pt-5 pb-3 px-14  hidden'>
+                                    <div className='navitemdrop absolute top-[44px] right-[-252px] flex items-start gap-24 z-10 bg-secondary rounded-b-md pt-5 pb-3 px-14 hidden'>
                                         <div className='Genres flex flex-col items-start justify-center gap-4'>
                                             <div className=''>Genres</div>
                                             <div className='text-[15px] flex items-start'>
@@ -155,7 +154,7 @@ const header = () => {
                         </div>
                         <div className='languages_option '>
                             <h1 className='relative'>EN
-                                <div className='absolute top-[32px] right-0 flex justify-start items-start bg-secondary rounded-b-md z-10 py-5 px-10 pr-20 text-nowrap hidden'>
+                                <div className='navitemdrop absolute top-[32px] right-0 flex justify-start items-start bg-secondary rounded-b-md z-10 py-5 px-10 pr-20 text-nowrap hidden'>
                                     <ul >
                                         <li className='p-2'><a href="#">Bahasa Indonesia</a></li>
                                         <li className='p-2'><a href="#">Bahasa Melayu</a></li>
@@ -214,7 +213,7 @@ const header = () => {
                         <div className='account_icon'>
                             <div className='relative'>
                                 <svg className='' fill="#191849" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="-3.19 -3.19 51.91 51.91" xml:space="preserve" stroke="#191849" stroke-width="0.00045531999999999994" transform="matrix(1, 0, 0, 1, 0, 0)rotate(0)"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <path d="M22.766,0.001C10.194,0.001,0,10.193,0,22.766s10.193,22.765,22.766,22.765c12.574,0,22.766-10.192,22.766-22.765 S35.34,0.001,22.766,0.001z M22.766,6.808c4.16,0,7.531,3.372,7.531,7.53c0,4.159-3.371,7.53-7.531,7.53 c-4.158,0-7.529-3.371-7.529-7.53C15.237,10.18,18.608,6.808,22.766,6.808z M22.761,39.579c-4.149,0-7.949-1.511-10.88-4.012 c-0.714-0.609-1.126-1.502-1.126-2.439c0-4.217,3.413-7.592,7.631-7.592h8.762c4.219,0,7.619,3.375,7.619,7.592 c0,0.938-0.41,1.829-1.125,2.438C30.712,38.068,26.911,39.579,22.761,39.579z"></path> </g> </g></svg>
-                                <ul className='absolute top-[37px] right-0 flex flex-col z-10 bg-secondary rounded-b-md p-5 pr-9 text-nowrap'>
+                                <ul className='navitemdrop absolute top-[37px] right-0 flex flex-col z-10 bg-secondary rounded-b-md p-5 pr-9 text-nowrap hidden'>
                                     <li className='p-2'>Sign In</li>
                                     <li className='p-2'>Help</li>
                                     <li className='p-2'>Watch Anywhere</li>
