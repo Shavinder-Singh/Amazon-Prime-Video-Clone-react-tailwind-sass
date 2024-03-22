@@ -88,7 +88,7 @@ export default function App() {
                     modules={[Pagination, Navigation]}
                     className="mySwiperpagination "
                 >
-                    {romantic && romantic.map((data, index) => (
+                    {mystery && mystery.map((data, index) => (
                         <SwiperSlide className='swiper_slide relative z-0' key={data.imdbID}><Link to="#" className='w-full h-full'><img src={data.Poster} /></Link>
                             <div className='absolute bottom-[-33px] z-50 right-[-9px] bg-black text-white w-[111%] lg:right-[-13px] xl:right-[-14px] flex flex-col py-1 px-3 rounded-md '>
                                 <div className='flex  items-center gap-3'>
