@@ -2,6 +2,7 @@ import React from 'react'
 import Logo from '../../assets/image/Logo.png'
 import './header.scss'
 import Sidebar from './sidebar/sidebar.jsx'
+import { Link } from 'react-router-dom'
 const header = () => {
     return (
         <div>
@@ -55,8 +56,8 @@ const header = () => {
                             <ul className='nav_container'>
                                 <li className='nav_list_item relative'>Home
                                     <ul className='navitemdrop absolute top-[44px] flex flex-col items-s z-10 bg-secondary rounded-b-md hidden'>
-                                        <li className='p-2'>All</li>
-                                        <li className='p-2'>Movies</li>
+                                        <li className='p-2'><Link to="/">All</Link></li>
+                                        <li className='p-2'><Link to="movies">Movies</Link></li>
                                         <li className='p-2'>TV shows</li>
                                     </ul>
                                     <div>

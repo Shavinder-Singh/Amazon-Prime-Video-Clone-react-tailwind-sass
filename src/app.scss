@@ -12,6 +12,7 @@ html {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    background-color: black;
 }
 
 ::after,
@@ -38,7 +39,3 @@ html {
     src: url('./assets/fonts/amazon-ember-cufonfonts/Amazon Ember Bold.ttf');
     font-weight: 900;
 }
-
-::-webkit-scrollbar{
-    // display: none;
-}   

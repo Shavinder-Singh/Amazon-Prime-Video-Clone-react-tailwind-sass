@@ -24,6 +24,8 @@ export default {
         "azonblue": '#0f79af',//blue
         "hovercolor": '#222222',//gray
         "inputbgcolor": '#33373D',//inputray
+        'azonblue': '#1A98FF', //azonblue
+
 
 
       },
