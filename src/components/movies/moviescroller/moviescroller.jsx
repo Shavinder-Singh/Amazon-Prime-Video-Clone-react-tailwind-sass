@@ -58,7 +58,7 @@ export default function App() {
             })
     }, [])
     useEffect(() => {
-        axios.get("https://www.omdbapi.com/?t=romantic&apikey=eae86d55")
+        axios.get("https://www.omdbapi.com/?s=movies&apikey=eae86d55")
             .then(function (response) {
                 setromantic([response.data])
             })
