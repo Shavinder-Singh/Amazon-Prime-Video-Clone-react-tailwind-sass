@@ -2,7 +2,6 @@
   width: 100%;
   height: 100%;
   padding-bottom: 10px;
-  border: 1px solid red;
   overflow: visible;
 }
 
@@ -18,13 +17,60 @@ body {
   text-align: center;
   font-size: 18px;
   background: #fff;
-  /* Center slide text vertically */
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 10px;
 }
 
+.check {
+  z-index: 999;
+}
+
+.notcheck {
+  z-index: 0;
+}
+
+@media (min-width: 768px) {
+  .swiper_slide:hover .movies_data {
+    height: 140px;
+    bottom: -120px;
+    display: flex;
+    overflow: hidden;
+    right: -8px !important;
+  }
+}
+@media (min-width: 820px) {
+  .swiper_slide:hover .movies_data {
+    right: -10px !important;
+  }
+}
+@media (min-width: 880px) {
+  .swiper_slide:hover .movies_data {
+    height: 226px !important;
+    bottom: -236px !important;
+    right: -10px !important;
+  }
+}
+@media (min-width: 1024px) {
+  .swiper_slide:hover .movies_data {
+    right: -13px !important;
+  }
+}
+@media (min-width: 1280px) {
+  .swiper_slide:hover .movies_data {
+    bottom: -220px;
+    height: 200px;
+    right: -15px !important;
+  }
+}
+@media (min-width: 1440px) {
+  .swiper_slide:hover .movies_data {
+    bottom: -320px !important;
+    height: 300px !important;
+    left: -18px;
+  }
+}
 @media (min-width: 450px) {
   .mySwiperpagination {
     width: 100%;

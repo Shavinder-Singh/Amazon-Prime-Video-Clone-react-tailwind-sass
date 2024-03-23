@@ -25,10 +25,19 @@ export default {
         "hovercolor": '#222222',//gray
         "inputbgcolor": '#33373D',//inputray
         'azonblue': '#1A98FF', //azonblue
-
-
-
       },
+      screens: {
+        'sm': '640px',
+
+        'md': '768px',
+        'cs': '880px',
+
+        'lg': '1024px',
+
+        'xl': '1280px',
+
+        '2xl': '1536px',
+      }
     },
   },
   plugins: [],
