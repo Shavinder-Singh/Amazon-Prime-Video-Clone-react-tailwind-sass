@@ -58,7 +58,7 @@ const header = () => {
                                     <ul className='navitemdrop absolute top-[44px] flex flex-col items-s z-10 bg-secondary rounded-b-md hidden'>
                                         <li className='p-2'><Link to="/">All</Link></li>
                                         <li className='p-2'><Link to="movies">Movies</Link></li>
-                                        <li className='p-2'>TV shows</li>
+                                        <li className='p-2'><Link to="Tvshows">TV shows</Link></li>
                                     </ul>
                                     <div>
                                         <svg version="1.0" xmlns="http://www.w3.org/2000/svg"

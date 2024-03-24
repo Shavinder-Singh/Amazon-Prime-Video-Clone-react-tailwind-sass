@@ -76,12 +76,20 @@
         }
 
         .movies_heading {
-          padding-left: 44px;
-          padding: 15px 0px 16px 44px;
+          padding: 15px 0px 16px 65px;
 
-          h1 {
-            font-size: 32px;
-          }
+        }
+      }
+    }
+    @media (min-width:880px) {
+      .movies_section {
+        .movies_page_nav {
+          display: none;
+        }
+
+        .movies_heading {
+          padding: 5px 0px 16px 45px;
+
         }
       }
     }
@@ -91,7 +99,7 @@
       .movies_section {
         .mySwiper {
           aspect-ratio: unset;
-          height: 70vh;
+          height: 60vh;
 
           .swiper-slide {
 
@@ -104,9 +112,10 @@
           }
         }
       }
+
       .swiper-slide img {
         display: block;
         width: 90%;
         height: 100%;
-      } 
+      }
     }
