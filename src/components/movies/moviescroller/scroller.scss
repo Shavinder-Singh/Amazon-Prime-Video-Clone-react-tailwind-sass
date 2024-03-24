@@ -1,7 +1,8 @@
+@import '../../../styles/variables';
+
 .mySwiperpagination {
     width: 100%;
     height: 100%;
-    padding-bottom: 10px;
     overflow: visible;
 }
 
@@ -23,7 +24,6 @@ body {
     border-radius: 10px;
 }
 
-
 .check {
     z-index: 999;
 }
@@ -32,15 +32,31 @@ body {
     z-index: 0;
 }
 
+.plusicion,
+.movie_icon {
+    transition: 0.4s;
+}
+
 @media (min-width:768px) {
     .swiper_slide {
+
+        .movies_data {
+            transition: 0.9s ease-in;
+            display: none;
+            bottom: 0;
+            transition: 0.9s ease-in;
+        }
+
         &:hover .movies_data {
-            height: 140px;
-            bottom: -120px;
+            display: block;
+            height: 130px !important;
+            bottom: -120px !important;
             display: flex;
             overflow: hidden;
-            right: -8px !important;
+            right: -12px !important;
+            transform: scale(1.1);
         }
+
     }
 }
 
@@ -55,9 +71,9 @@ body {
 @media (min-width:880px) {
     .swiper_slide {
         &:hover .movies_data {
-            height: 226px !important;
-            bottom: -236px !important;
-            right: -10px !important;
+            height: 240px !important;
+            bottom: -264px !important;
+            right: -12px !important;
         }
     }
 }
@@ -65,6 +81,8 @@ body {
 @media (min-width:1024px) {
     .swiper_slide {
         &:hover .movies_data {
+            height: 236px !important;
+            bottom: -270px !important;
             right: -13px !important;
 
         }
@@ -75,9 +93,9 @@ body {
 @media (min-width:1280px) {
     .swiper_slide {
         &:hover .movies_data {
-            bottom: -220px;
-            height: 200px;
-            right: -15px !important;
+            bottom: -251px !important;
+            height: 230px;
+            right: -14px !important;
         }
     }
 }
@@ -85,7 +103,7 @@ body {
 @media (min-width:1440px) {
     .swiper_slide {
         &:hover .movies_data {
-            bottom: -320px !important;
+            bottom: -340px !important;
             height: 300px !important;
             left: -18px;
         }
@@ -105,7 +123,8 @@ body {
     .mySwiperpagination {
         width: 100%;
         height: 200px !important;
-        padding: 18px;
+        padding: 10px 12px 0px 0px;
+        margin-bottom: 38px;
     }
 }
 
@@ -113,7 +132,6 @@ body {
     .mySwiperpagination {
         width: 100%;
         height: 180px !important;
-        padding: 30px;
         padding-top: 10px;
     }
 }
@@ -122,7 +140,6 @@ body {
     .mySwiperpagination {
         width: 100%;
         height: 280px !important;
-        padding: 20px;
     }
 }
 
@@ -132,5 +149,34 @@ body {
     background-attachment: fixed;
     background-position: center center;
     border-radius: 8px;
-    transform: scale(1.1);
+    transition: 0.1s ease-in;
+    transform: scale(1);
+
+    &:hover {
+        transform: scale(1.2);
+    }
+}
+
+@media (min-width:669px) {
+    .movie_page {
+        footer {
+            padding-top: 240px;
+            padding-bottom: 29px;
+            background-color: $primaryColor;
+
+            .append_lines {
+                .footer_links {
+                    margin: 0px 10px 0px 0px;
+                    font-size: 13px;
+                    color: $doublefooter;
+                }
+
+                width: 100%;
+                margin: 0 auto;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+    }
 }
