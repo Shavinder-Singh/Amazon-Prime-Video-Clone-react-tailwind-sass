@@ -4,9 +4,8 @@ import Moviescroller from '../components/movies/moviescroller/moviescroller'
 const Movies = () => {
   return (
     <div>
-      <Main/>
-      <Moviescroller/>
-      
+      <Main />
+      <Moviescroller />
     </div>
   )
 }

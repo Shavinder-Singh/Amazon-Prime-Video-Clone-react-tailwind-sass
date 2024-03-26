@@ -94,7 +94,7 @@ const header = () => {
                                 </li>
                                 <li className='nav_list_item'>Live TV
                                 </li>
-                                <li className='nav_list_item relative'>Categories
+                                <li className='nav_list_item relative'><Link to="categories">Categories</Link>
                                     <div className='navitemdrop absolute top-[44px] right-[-252px] flex items-start gap-24 z-10 bg-secondary rounded-b-md pt-5 pb-3 px-14 hidden'>
                                         <div className='Genres flex flex-col items-start justify-center gap-4'>
                                             <div className=''>Genres</div>

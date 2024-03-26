@@ -2,8 +2,8 @@ import React from 'react'
 
 const TVshows = () => {
   return (
-    <div>
-      ssakd
+    <div className='text-white'>
+      <p>Tv Shows</p>
     </div>
   )
 }

@@ -61,17 +61,21 @@
     display: none;
   }
   .movies_section .movies_heading {
-    padding-left: 44px;
-    padding: 15px 0px 16px 44px;
+    padding: 15px 0px 16px 65px;
   }
-  .movies_section .movies_heading h1 {
-    font-size: 32px;
+}
+@media (min-width: 880px) {
+  .movies_section .movies_page_nav {
+    display: none;
+  }
+  .movies_section .movies_heading {
+    padding: 5px 0px 16px 45px;
   }
 }
 @media (min-width: 1280px) {
   .movies_section .mySwiper {
     aspect-ratio: unset;
-    height: 70vh;
+    height: 60vh;
   }
   .movies_section .mySwiper .swiper-slide .movie_main_content {
     font-size: 14px;

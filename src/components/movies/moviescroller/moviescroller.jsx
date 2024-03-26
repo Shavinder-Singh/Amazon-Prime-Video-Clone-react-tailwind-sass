@@ -212,7 +212,7 @@ export default function App() {
                         className="mySwiperpagination "
                     >
                         {mystery && mystery.map((data, index) => (
-                            <SwiperSlide className='swiper_slide relative mt-5 md:mt-0' key={data.imdbID} onMouseEnter={() => handleclick(data.imdbID)} ><Link to="#" className='w-full h-full'><img src={data.Poster} /></Link>
+                            <SwiperSlide className='swiper_slide relative mt-5 md:mt-0' key={data.imdbID} onMouseEnter={() => handleclick(data.imdbID)} ><Link to="/detailpage" className='w-full h-full'><img src={data.Poster} /></Link>
                                 <div className='movies_data absolute hidden md:block bg-black text-white w-[111%] flex-col py-1 rounded-md '>
                                     <div>
                                         {datas && ((
@@ -251,7 +251,7 @@ export default function App() {
                     <div className='font-bold pr-3 md:pr-0 flex gap-4 md:gap-4 pb-2 md:pb-0 text-[16px] md:text-[18px] tracking-wide'>
                         <div><h1><span className='text-azonblue'>Prime</span> Romance Movies</h1></div>
                         <div className='font-thin md:font-bold flex items-center gap-2 text-nowrap'><span>See more</span><span>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" id="right-arrow"><path fill="white" d="M13.8 24.196a1 1 0 0 0 1.414 0L21.7 17.71a.992.992 0 0 0 .292-.71.997.997 0 0 0-.292-.71l-6.486-6.486a1 1 0 0 0-1.414 1.414L19.582 17 13.8 22.782a1 1 0 0 0 0 1.414z"></path></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" id="right-arrow"><path fill="white" d="M13.8 24.196a1 1 0 0 0 1.414 0L21.7 17.71a.992.992 0 0 0 .292-.71.997.997 0 0 0-.292-.71l-6.486-6.486a1 1 0 0 0-1.414 1.414L19.582 17 13.8 22.782a1 1 0 0 0 0 1.414z"></path></svg>
                         </span></div>
                     </div>
                     <Swiper
@@ -268,7 +268,7 @@ export default function App() {
                         className="mySwiperpagination "
                     >
                         {romantic && romantic.map((data, index) => (
-                            <SwiperSlide className='swiper_slide relative mt-5 md:mt-0' key={data.imdbID} onMouseEnter={() => handleclick(data.imdbID)}><Link to="#" className='w-full h-full'><img src={data.Poster} /></Link>
+                            <SwiperSlide className='swiper_slide relative mt-5 md:mt-0' key={data.imdbID} onMouseEnter={() => handleclick(data.imdbID)}><Link to="/detailpage" className='w-full h-full'><img src={data.Poster} /></Link>
                                 <div className='movies_data absolute bottom-[-235px] bg-black text-white w-[111%] flex-col py-1 rounded-md hidden '>
                                     <div>
                                         {datas && ((
@@ -325,7 +325,7 @@ export default function App() {
                         className="mySwiperpagination "
                     >
                         {horror && horror.map((data, index) => (
-                            <SwiperSlide className='swiper_slide relative mt-5 md:mt-0' key={data.imdbID} onMouseEnter={() => handleclick(data.imdbID)} ><Link to="#" className='w-full h-full'><img src={data.Poster} /></Link>
+                            <SwiperSlide className='swiper_slide relative mt-5 md:mt-0' key={data.imdbID} onMouseEnter={() => handleclick(data.imdbID)} ><Link to="/detailpage" className='w-full h-full'><img src={data.Poster} /></Link>
                                 <div className='movies_data absolute hidden md:block bg-black text-white w-[111%] flex-col py-1 rounded-md '>
                                     <div>
                                         {datas && ((
@@ -381,7 +381,7 @@ export default function App() {
                         className="mySwiperpagination "
                     >
                         {historical && historical.map((data, index) => (
-                            <SwiperSlide className='swiper_slide relative mt-5 md:mt-0' key={data.imdbID} onMouseEnter={() => handleclick(data.imdbID)}><Link to="#" className='w-full h-full'><img src={data.Poster} /></Link>
+                            <SwiperSlide className='swiper_slide relative mt-5 md:mt-0' key={data.imdbID} onMouseEnter={() => handleclick(data.imdbID)}><Link to="/detailpage" className='w-full h-full'><img src={data.Poster} /></Link>
                                 <div className='movies_data absolute bottom-[-235px] bg-black text-white w-[111%] flex-col py-1 rounded-md hidden '>
                                     <div>
                                         {datas && ((
@@ -438,7 +438,7 @@ export default function App() {
                         className="mySwiperpagination "
                     >
                         {action && action.map((data, index) => (
-                            <SwiperSlide className='swiper_slide relative mt-5 md:mt-0' key={data.imdbID} onMouseEnter={() => handleclick(data.imdbID)} ><Link to="#" className='w-full h-full'><img src={data.Poster} /></Link>
+                            <SwiperSlide className='swiper_slide relative mt-5 md:mt-0' key={data.imdbID} onMouseEnter={() => handleclick(data.imdbID)} ><Link to="/detailpage" className='w-full h-full'><img src={data.Poster} /></Link>
                                 <div className='movies_data absolute hidden md:block bg-black text-white w-[111%] flex-col py-1 rounded-md '>
                                     <div>
                                         {datas && ((
@@ -494,7 +494,7 @@ export default function App() {
                         className="mySwiperpagination "
                     >
                         {hindi && hindi.map((data, index) => (
-                            <SwiperSlide className='swiper_slide relative mt-5 md:mt-0' key={data.imdbID} onMouseEnter={() => handleclick(data.imdbID)}><Link to="#" className='w-full h-full'><img src={data.Poster} /></Link>
+                            <SwiperSlide className='swiper_slide relative mt-5 md:mt-0' key={data.imdbID} onMouseEnter={() => handleclick(data.imdbID)}><Link to="/detailpage" className='w-full h-full'><img src={data.Poster} /></Link>
                                 <div className='movies_data absolute bottom-[-235px] bg-black text-white w-[111%] flex-col py-1 rounded-md hidden '>
                                     <div>
                                         {datas && ((
@@ -551,7 +551,7 @@ export default function App() {
                         className="mySwiperpagination "
                     >
                         {punjabi && punjabi.map((data, index) => (
-                            <SwiperSlide className='swiper_slide relative mt-5 md:mt-0' key={data.imdbID} onMouseEnter={() => handleclick(data.imdbID)} ><Link to="#" className='w-full h-full'><img src={data.Poster} /></Link>
+                            <SwiperSlide className='swiper_slide relative mt-5 md:mt-0' key={data.imdbID} onMouseEnter={() => handleclick(data.imdbID)} ><Link to="/detailpage" className='w-full h-full'><img src={data.Poster} /></Link>
                                 <div className='movies_data absolute hidden md:block bg-black text-white w-[111%] flex-col py-1 rounded-md '>
                                     <div>
                                         {datas && ((
@@ -607,7 +607,7 @@ export default function App() {
                         className="mySwiperpagination "
                     >
                         {drama && drama.map((data, index) => (
-                            <SwiperSlide className='swiper_slide relative mt-5 md:mt-0' key={data.imdbID} onMouseEnter={() => handleclick(data.imdbID)}><Link to="#" className='w-full h-full'><img src={data.Poster} /></Link>
+                            <SwiperSlide className='swiper_slide relative mt-5 md:mt-0' key={data.imdbID} onMouseEnter={() => handleclick(data.imdbID)}><Link to="/detailpage" className='w-full h-full'><img src={data.Poster} /></Link>
                                 <div className='movies_data absolute bottom-[-235px] bg-black text-white w-[111%] flex-col py-1 rounded-md hidden '>
                                     <div>
                                         {datas && ((

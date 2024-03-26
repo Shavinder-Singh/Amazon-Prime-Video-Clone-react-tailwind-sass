@@ -1,0 +1,136 @@
+@import '../../styles/variables';
+
+.categories_page {
+    h1 {
+        font-family: amazonEmberbold;
+    }
+
+    .genres_content_categories {
+        font-family: amazonEmber;
+    }
+}
+
+@media (min-width:600px) {
+    .categories_page {
+        padding: 0px 32px;
+
+        .Categories {
+            padding-top: 2px;
+            font-size: 28px;
+        }
+
+        .genres_content_categories {
+            font-size: 17px;
+            padding-bottom: 1px;
+        }
+
+        .genres_categories_media {
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+    }
+}
+
+@media (min-width:901px) {
+    .categories_page {
+        .genres_categories_media {
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 23px;
+            justify-content: center;
+            align-items: center;
+
+            div {
+                max-width: 216px;
+            }
+        }
+    }
+}
+
+
+@media (min-width:1024px) {
+    .categories_page {
+
+        .Categories {
+            padding-top: 5px;
+            padding-bottom: 7px;
+            font-size: 32px;
+        }
+
+        .genres_content_categories {
+            font-size: 17px;
+            padding-bottom: 5px;
+        }
+
+        .genres_categories_media {
+            div {
+                max-width: 266px;
+
+            }
+        }
+    }
+}
+
+@media (min-width:1280px) {
+    .categories_page {
+        padding: 0px 64px !important;
+
+        .Categories {
+            padding-top: 13px;
+            padding-bottom: 12px;
+            font-size: 38px;
+            letter-spacing: 0px;
+        }
+
+        .genres_content_categories {
+            font-size: 17px;
+            padding-bottom: 5px;
+        }
+
+        .genres_categories_media {
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+
+        }
+    }
+}
+
+
+@media (min-width:1399px) {
+    .categories_page {
+        padding: 0px 72px !important;
+
+        .Categories {
+            padding-top: 20px;
+            font-size: 40px;
+        }
+
+        .genres_content_categories {
+            padding-bottom: 14px;
+        }
+
+        .genres_categories_media {}
+    }
+}
+
+
+@media (min-width:669px) {
+    .categories_page {
+        footer {
+            padding-top: 240px;
+            padding-bottom: 29px;
+            background-color: $primaryColor;
+
+            .append_lines {
+                .footer_links {
+                    margin: 0px 10px 0px 0px;
+                    font-size: 13px;
+                    color: $doublefooter;
+                }
+
+                width: 100%;
+                margin: 0 auto;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+    }
+}

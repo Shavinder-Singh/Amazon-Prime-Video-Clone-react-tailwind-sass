@@ -1,0 +1,152 @@
+.detail_main_page .movie_details_media {
+  display: none;
+}
+.detail_main_page .movie_detail_wrapper {
+  position: absolute;
+  top: 196px;
+}
+.detail_main_page .movie_detail_wrapper .movie_heading_detail {
+  padding: 0px 24px 17px 0px;
+}
+.detail_main_page .movie_detail_wrapper .movie_heading_detail h1 {
+  font-family: amazonEmberbold;
+}
+.detail_main_page .movie_detail_wrapper .movie_detail_options {
+  box-shadow: 12px 3px 12px 12px black;
+}
+.detail_main_page .movie_detail_wrapper .movie_details_icons div span {
+  background-color: #33373D;
+}
+.detail_main_page .movie_detail_wrapper .movie_options {
+  font-family: amazonEmber;
+}
+
+@media (min-width: 460px) {
+  .movie_details_media_mobile .shadow_thing {
+    box-shadow: 2px 12px 122px 190px black;
+    position: absolute;
+    height: 100%;
+  }
+  .detail_main_page .movie_detail_wrapper {
+    top: 135px;
+  }
+}
+@media (min-width: 660px) {
+  .detail_main_page .movie_details_media {
+    z-index: -1;
+    display: block;
+    box-shadow: 2px 12px 122px 190px black;
+    position: absolute;
+    right: 0;
+    height: 0vh;
+    width: 70%;
+  }
+  .detail_main_page .movie_details_media .shadow_thing_mobile {
+    border: 21px solid black;
+    z-index: 999;
+    position: absolute;
+    left: -120px;
+    top: 120px;
+    z-index: 1;
+    box-shadow: 2px 12px 120px 190px black;
+  }
+  .detail_main_page .movie_details_media img {
+    border-radius: 10px;
+    height: 100vh;
+  }
+  .detail_main_page .movie_details_media .logo_movie_prime {
+    position: absolute;
+    height: unset;
+    border-radius: 0px;
+  }
+  .detail_main_page .movie_details_media_mobile {
+    display: none;
+  }
+  .detail_main_page .movie_detail_wrapper {
+    position: absolute;
+    padding-left: 44px;
+    top: 130px;
+  }
+  .detail_main_page .movie_detail_wrapper .movie_heading_detail {
+    margin-top: 20px;
+    padding: 0px 24px 0px 0px;
+  }
+  .detail_main_page .movie_detail_wrapper .movie_heading_detail h1 {
+    font-size: 32px;
+    font-weight: 900;
+  }
+  .detail_main_page .movie_detail_wrapper p {
+    margin-top: 23px;
+    font-weight: 900;
+    letter-spacing: 1px;
+    line-height: 0.7cm;
+    max-width: 616px;
+  }
+  .detail_main_page .movie_detail_wrapper .movie_detail_options {
+    margin-top: 14px;
+    width: 93vw;
+    box-shadow: 3px 9px 20px 20px black;
+    background-color: black;
+  }
+  .detail_main_page .movie_detail_wrapper .movie_detail_options .movie_details_btns {
+    display: flex;
+    flex-direction: row;
+  }
+  .detail_main_page .movie_detail_wrapper .movie_detail_options .movie_details_btns .prime_trial {
+    font-size: 15px;
+  }
+  .detail_main_page .movie_detail_wrapper .movie_detail_options .movie_details_btns .movie_options_trial_btn {
+    min-width: 240px;
+    padding: 0px 0px;
+  }
+  .detail_main_page .movie_detail_wrapper .movie_detail_options .movie_details_btns .movie_options_rent_btn {
+    padding: 0px 10px;
+  }
+  .detail_main_page .movie_detail_wrapper .movie_detail_options .movie_details_btns .movie_options_rent_btn button {
+    max-width: 120px;
+    display: flex;
+    flex-direction: column;
+  }
+  .detail_main_page .movie_detail_wrapper .movie_detail_options .movie_details_btns .movie_options_purchase_btn {
+    max-width: 160px;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    padding: 8px 15px;
+  }
+  .detail_main_page .movie_detail_wrapper .movie_details_icons div span {
+    background-color: #33373D;
+  }
+  .detail_main_page .ordering_content .movie_detail_options {
+    order: 2;
+  }
+  .detail_main_page .ordering_content .movie_description_wrapper {
+    order: 1;
+  }
+}
+@media (min-width: 901px) {
+  .movie_detail_wrapper {
+    top: 87px !important;
+  }
+}
+@media (min-width: 879px) {
+  .detail_main_page .movie_detail_wrapper p {
+    max-width: 510px;
+  }
+}
+@media (min-width: 1024px) {
+  .detail_main_page .movie_detail_wrapper {
+    padding-left: 44px;
+  }
+  .detail_main_page .movie_detail_wrapper p {
+    max-width: 780px;
+  }
+}
+@media (min-width: 1280px) {
+  .detail_main_page .movie_detail_wrapper {
+    padding-left: 64px;
+  }
+  .detail_main_page .movie_detail_wrapper p {
+    max-width: 780px;
+  }
+}/*# sourceMappingURL=detailmain.css.map */
