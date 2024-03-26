@@ -1,0 +1,117 @@
+@media(min-width:440px) {
+    .search_page {
+        .search_movies_list_mobile {
+            .search_movies_list_wrapper_mobile {
+                .search_movie_image {
+                    max-width: 140px;
+
+                    img {
+                        width: 100%;
+                    }
+                }
+
+                h1 {
+                    font-size: 17px !important;
+                    margin-bottom: 12px;
+                }
+            }
+        }
+    }
+
+}
+
+.search_page {
+    .search_filter {
+        font-family: amazonEmberbold;
+    }
+
+    .search_movies_list_wrapper {
+        .movie_item {
+            &:hover .detail_movie_detail_search {
+                height: 260px;
+            }
+        }
+
+        .detail_movie_detail_search {
+            height: 0px;
+            background-color: black;
+        }
+    }
+}
+
+
+@media (min-width:660px) {
+    .search_page {
+        .search_filter {
+
+
+            .filter_content {
+                display: flex;
+                justify-content: flex-end;
+
+                button {
+                    max-width: 88px;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width:880px) {
+    .search_page {
+        padding: 0px 44px !important;
+
+        .search_filter {
+            .filters_options {
+                display: block;
+
+                div {
+                    display: flex;
+                    gap: 20px;
+
+                    button {
+                        max-width: max-content;
+                        text-wrap: nowrap;
+                        padding: 15px 40px;
+                    }
+                }
+            }
+
+            .filter_content {
+                display: none;
+            }
+        }
+    }
+}
+
+
+
+
+@media (min-width:1024px) {
+    .search_page {
+        padding: 0px 65px !important;
+
+        .search_filter {
+            .filters_options {
+                display: block;
+
+                div {
+                    display: flex;
+                    gap: 20px;
+
+                    button {
+                        max-width: max-content;
+                        text-wrap: nowrap;
+                        padding: 15px 30px;
+                    }
+                }
+
+                
+            }
+
+            .filter_content {
+                display: none;
+            }
+        }
+    }
+}

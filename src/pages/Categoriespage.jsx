@@ -122,10 +122,7 @@ const Categoriespage = () => {
                     </div>
                 </div>
                 <Footer />
-
             </div>
-
-
         </>
     )
 }
