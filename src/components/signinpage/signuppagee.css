@@ -1,0 +1,25 @@
+.signinpage {
+  font-family: arial, sans-serif;
+}
+.signinpage .new_to_amazon {
+  position: relative;
+  color: rgb(152, 148, 148);
+}
+.signinpage .new_to_amazon::after {
+  content: url("");
+  position: absolute;
+  top: 14px;
+  right: -131px;
+  background-color: rgb(202, 199, 199);
+  width: 124px;
+  height: 0.1px;
+}
+.signinpage .new_to_amazon::before {
+  content: url("");
+  position: absolute;
+  top: 13px;
+  left: -132px;
+  background-color: rgb(202, 199, 199);
+  width: 124px;
+  height: 0.1px;
+}/*# sourceMappingURL=signuppagee.css.map */

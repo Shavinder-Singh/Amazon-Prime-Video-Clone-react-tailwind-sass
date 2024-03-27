@@ -1,0 +1,106 @@
+@media (min-width: 440px) {
+  .search_page .search_movies_list_mobile .search_movies_list_wrapper_mobile .search_movie_image {
+    max-width: 140px;
+  }
+  .search_page .search_movies_list_mobile .search_movies_list_wrapper_mobile .search_movie_image img {
+    width: 100%;
+  }
+  .search_page .search_movies_list_mobile .search_movies_list_wrapper_mobile h1 {
+    font-size: 17px !important;
+    margin-bottom: 12px;
+  }
+}
+.search_page .search_filter {
+  font-family: amazonEmberbold;
+}
+.search_page .search_movies_list_wrapper .movie_item:hover .detail_movie_detail_search {
+  height: 260px;
+}
+.search_page .search_movies_list_wrapper .detail_movie_detail_search {
+  height: 0px;
+  background-color: black;
+}
+
+@media (min-width: 660px) {
+  .search_page {
+    padding: 0px 32px !important;
+  }
+  .search_page .search_filter .filter_content {
+    display: flex;
+    justify-content: flex-end;
+  }
+  .search_page .search_filter .filter_content button {
+    max-width: 85px;
+  }
+  .search_page .results_for {
+    font-size: 18px;
+  }
+}
+@media (min-width: 880px) {
+  .search_page {
+    padding: 0px 44px !important;
+  }
+  .search_page .search_filter .filters_options {
+    display: block;
+    padding-top: 12px;
+  }
+  .search_page .search_filter .filters_options div {
+    display: flex;
+    gap: 20px;
+  }
+  .search_page .search_filter .filters_options div button {
+    max-width: -moz-max-content;
+    max-width: max-content;
+    text-wrap: nowrap;
+    padding: 15px 21px;
+  }
+  .search_page .search_filter .filter_content {
+    display: none;
+  }
+}
+@media (min-width: 1024px) {
+  .search_page {
+    padding: 0px 44px !important;
+  }
+  .search_page .search_filter .filters_options {
+    display: block;
+  }
+  .search_page .search_filter .filters_options div {
+    display: flex;
+    gap: 20px;
+  }
+  .search_page .search_filter .filters_options div button {
+    max-width: -moz-max-content;
+    max-width: max-content;
+    text-wrap: nowrap;
+    padding: 15px 30px;
+  }
+  .search_page .search_filter .filter_content {
+    display: none;
+  }
+}
+@media (min-width: 1280px) {
+  .search_page {
+    padding: 10px 64px !important;
+  }
+  .search_page .search_filter .filters_options {
+    display: block;
+  }
+  .search_page .search_filter .filters_options div {
+    display: flex;
+    gap: 20px;
+  }
+  .search_page .search_filter .filters_options div button {
+    max-width: -moz-max-content;
+    max-width: max-content;
+    text-wrap: nowrap;
+    padding: 15px 17px;
+  }
+  .search_page .search_filter .filter_content {
+    display: none;
+  }
+  .search_page .more_videos {
+    font-size: 17px;
+    letter-spacing: 1px;
+  }
+}/*# sourceMappingURL=searchscroller.css.map */

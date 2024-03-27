@@ -35,7 +35,7 @@
   .detail_main_page .movie_details_media {
     z-index: -1;
     display: block;
-    box-shadow: 2px 12px 122px 190px black;
+    box-shadow: 22px 12px 122px 190px black;
     position: absolute;
     right: 0;
     height: 0vh;
@@ -48,7 +48,7 @@
     left: -120px;
     top: 120px;
     z-index: 1;
-    box-shadow: 2px 12px 120px 190px black;
+    box-shadow: -142px 12px 324px 420px black;
   }
   .detail_main_page .movie_details_media img {
     border-radius: 10px;
@@ -66,6 +66,7 @@
     position: absolute;
     padding-left: 44px;
     top: 130px;
+    background-color: transparent;
   }
   .detail_main_page .movie_detail_wrapper .movie_heading_detail {
     margin-top: 20px;

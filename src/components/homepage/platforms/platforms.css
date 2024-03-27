@@ -1,3 +1,6 @@
+.platforms_section {
+  background-color: white;
+}
 .platforms_section .platforms_wrapper .platforms_content div h1 {
   font-family: amazonEmberbold;
 }

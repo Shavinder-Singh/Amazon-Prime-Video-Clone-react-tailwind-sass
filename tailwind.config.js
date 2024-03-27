@@ -15,6 +15,8 @@ export default {
         "azonblue": '#0f79af',//blue
         "inputbgcolor": '#33373D',//inputray
         'doublefooter': '#79B8F3', //dobulefooter
+        "yellowcolor": '#eeda39',//yellowcolor
+
 
       },
       textColor: {
@@ -27,6 +29,7 @@ export default {
         "inputbgcolor": '#33373D',//inputray
         'azonblue': '#1A98FF', //azonblue
         'doublefooter': '#79B8F3', //dobulefooter
+        "yellowcolor": '#eeda39',//yellowcolor
       },
       screens: {
         'sm': '640px',
@@ -40,7 +43,7 @@ export default {
 
         '2xl': '1536px',
 
-        '3xl':'1440px',
+        '3xl': '1440px',
       }
     },
   },

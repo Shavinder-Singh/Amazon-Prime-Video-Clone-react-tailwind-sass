@@ -190,7 +190,7 @@ export default function App() {
 
     return (
         <>
-            <div className='movie_page pl-[24px] md:pl-[45px] lg:pl-[45px] xl:pl-[65px]'>
+            <div className='movie_page pl-[24px] md:pl-[45px] lg:pl-[45px] xl:pl-[65px] bg-black'>
                 <div className='movies_scroller bg-black text-white  mb-[43px] md:mb-[0px] relative' onMouseEnter={() => onmouseenters()}>
                     <div className='font-bold flex  pr-3 md:pr-0 gap-4 md:gap-4 md:pb-0 text-[15px] md:text-[18px] tracking-wide'>
                         <div className=' flex-wrap flex'><span className='text-azonblue mr-1'>Prime</span> <span>Kids and Family movies </span></div>

@@ -6,6 +6,7 @@ import TVshows from './pages/TVshows';
 import Detailpage from './pages/detailpage';
 import Categoriespage from './pages/Categoriespage';
 import SearchResults from './pages/SearchResults';
+import SignInPage from './pages/Signinpage/SignInPage';
 const RouterComponent = () => {
     return (
         <div>
@@ -17,6 +18,7 @@ const RouterComponent = () => {
                     <Route path="/detailpage" element={<Detailpage />} />
                     <Route path="/categories" element={<Categoriespage />} />
                     <Route path="/searchresults" element={<SearchResults />} />
+                    <Route path="/signinpage" element={<SignInPage />} />
                 </Routes>
             </BrowserRouter>
         </div>
