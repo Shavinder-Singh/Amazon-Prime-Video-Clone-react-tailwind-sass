@@ -1,0 +1,121 @@
+    .swiper {
+      width: 100%;
+      background-color: black;
+      border-radius: 10px;
+      aspect-ratio: 2.9;
+    }
+
+    .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      background: red;
+      gap: 30px;
+      background-color: black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .swiper-slide img {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
+    .swiper-button-prev {
+      transform: scale(0.6);
+    }
+
+    .swiper-button-next {
+      transform: scale(0.6);
+
+    }
+
+    // 
+
+    .movies_section {
+      .mySwiper {
+        aspect-ratio: 1.9;
+        border: 11px solid black;
+
+        .swiper-slide {
+          .movie_main_content {
+            font-size: 14px;
+            padding: 10px;
+            box-shadow: 1px 3px 3px 2px black;
+            text-shadow: 4px 3px 2px black;
+          }
+        }
+      }
+    }
+
+    @media (min-width:768px) {
+      .movies_section {
+        .mySwiper {
+          aspect-ratio: unset;
+          height: 50vh;
+
+          .swiper-slide {
+            width: 400px;
+
+            .movie_main_content {
+              font-size: 14px;
+              padding: 10px;
+              box-shadow: 1px 3px 3px 2px black;
+              text-shadow: 4px 3px 2px black;
+            }
+          }
+        }
+      }
+    }
+
+    @media (min-width:880px) {
+      .movies_section {
+        .movies_page_nav {
+          display: none;
+        }
+
+        .movies_heading {
+          padding: 15px 0px 16px 65px;
+
+        }
+      }
+    }
+    @media (min-width:880px) {
+      .movies_section {
+        .movies_page_nav {
+          display: none;
+        }
+
+        .movies_heading {
+          padding: 5px 0px 16px 45px;
+
+        }
+      }
+    }
+
+
+    @media (min-width:1280px) {
+      .movies_section {
+        .mySwiper {
+          aspect-ratio: unset;
+          height: 60vh;
+
+          .swiper-slide {
+
+            .movie_main_content {
+              font-size: 14px;
+              padding: 10px;
+              box-shadow: 1px 3px 3px 2px black;
+              text-shadow: 4px 3px 2px black;
+            }
+          }
+        }
+      }
+
+      .swiper-slide img {
+        display: block;
+        width: 90%;
+        height: 100%;
+      }
+    }

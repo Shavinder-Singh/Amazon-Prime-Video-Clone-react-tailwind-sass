@@ -7,6 +7,7 @@ import Detailpage from './pages/detailpage';
 import Categoriespage from './pages/Categoriespage';
 import SearchResults from './pages/SearchResults';
 import SignInPage from './pages/Signinpage/SignInPage';
+import RentMovies from './pages/RentMovies';
 const RouterComponent = () => {
     return (
         <div>
@@ -19,6 +20,7 @@ const RouterComponent = () => {
                     <Route path="/categories" element={<Categoriespage />} />
                     <Route path="/searchresults" element={<SearchResults />} />
                     <Route path="/signinpage" element={<SignInPage />} />
+                    <Route path="/Rent" element={<RentMovies/>} />
                 </Routes>
             </BrowserRouter>
         </div>

@@ -9,7 +9,6 @@ const detailpage = () => {
             <Header />
             <Detailmain />
             <Detail_info />
-           
         </div>
     )
 }

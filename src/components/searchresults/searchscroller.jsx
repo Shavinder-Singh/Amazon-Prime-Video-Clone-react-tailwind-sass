@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import Demoimage from '../../assets/image/categoriespageimages/demoimage.webp'
 import Header from '../../components/header/header'
-import axios from 'axios';
 import './searchscroller.scss';
 
-const SearchScroller = () => {
+
+const SearchScroller = ({ selectedMovie }) => {
     return (
         <>
             <Header />
@@ -499,6 +499,20 @@ const SearchScroller = () => {
                     </div>
                 </div>
             </div>
+            {/* <div>
+                n
+                {selectedMovie && (
+                    <div className='text-black'>
+                        <h2>Selected Movie:</h2>
+                        <p>Title: {selectedMovie.Title}</p>
+                        <p>Year: {selectedMovie.Year}</p>
+                        <p>Plot: {selectedMovie.Plot}</p>
+                        <p>Plot: {selectedMovie.Actors}</p>
+                    </div>
+                )}
+            </div>
+            <li>asd</li> */}
+
         </>
     );
 };

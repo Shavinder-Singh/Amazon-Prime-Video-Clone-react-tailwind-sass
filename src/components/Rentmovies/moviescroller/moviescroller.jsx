@@ -212,7 +212,8 @@ export default function App() {
                         className="mySwiperpagination "
                     >
                         {mystery && mystery.map((data, index) => (
-                            <SwiperSlide className='swiper_slide relative mt-5 md:mt-0' key={data.imdbID} onMouseEnter={() => handleclick(data.imdbID)} ><Link to="/detailpage" className='w-full h-full'><img src={data.Poster} /></Link>
+                            <>
+                            <SwiperSlide className='swiper_slide relative flex flex-col mt-5 md:mt-0' key={data.imdbID} onMouseEnter={() => handleclick(data.imdbID)} ><Link to="/detailpage" className='w-full h-full'><img src={data.Poster} /></Link>
                                 <div className='movies_data absolute hidden md:block bg-black text-white w-[111%] flex-col py-1 rounded-md '>
                                     <div>
                                         {datas && ((
@@ -242,7 +243,9 @@ export default function App() {
                                         ))}
                                     </div>
                                 </div>
+                                <p className=' absolute top-[173px] left-0 -z-10 font-bold'>Rent</p>
                             </SwiperSlide>
+                            </>
                         ))}
                     </Swiper>
                 </div>

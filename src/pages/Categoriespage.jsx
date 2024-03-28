@@ -19,7 +19,7 @@ const Categoriespage = () => {
     return (
         <>
             <Header />
-            <div className='categories_page px-6 lg:px-[44px]'>
+            <div className='categories_page px-6 lg:px-[44px] pb-[40px] bg-black  -z-10 relative'>
                 <h1 class="Categories text-[24px] lg:text-2 pt-[3px] pb-[5px] tracking-[0.5px] text-white cursor-default">Categories</h1>
                 <div className='Genres_categories_wrapper pt-0 mb-10 '>
                     <span className='genres_content_categories text-white font-bold tracking-wider block mb-[6px]  cursor-default'>
@@ -121,8 +121,9 @@ const Categoriespage = () => {
                         </div>
                     </div>
                 </div>
-                <Footer />
             </div>
+            <Footer />
+
         </>
     )
 }
