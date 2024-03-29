@@ -8,6 +8,7 @@ import Categoriespage from './pages/Categoriespage';
 import SearchResults from './pages/SearchResults';
 import SignInPage from './pages/Signinpage/SignInPage';
 import RentMovies from './pages/RentMovies';
+import OtpPage from './pages/Signinpage/OtpPage';
 const RouterComponent = () => {
     return (
         <div>
@@ -21,6 +22,7 @@ const RouterComponent = () => {
                     <Route path="/searchresults" element={<SearchResults />} />
                     <Route path="/signinpage" element={<SignInPage />} />
                     <Route path="/Rent" element={<RentMovies/>} />
+                    <Route path="Otppage" element={<OtpPage/>} />
                 </Routes>
             </BrowserRouter>
         </div>
