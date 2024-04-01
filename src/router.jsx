@@ -9,6 +9,7 @@ import SearchResults from './pages/SearchResults';
 import SignInPage from './pages/Signinpage/SignInPage';
 import RentMovies from './pages/RentMovies';
 import OtpPage from './pages/Signinpage/OtpPage';
+import SignupPage from './pages/Signinpage/SignupPage';
 const RouterComponent = () => {
     return (
         <div>
@@ -22,7 +23,8 @@ const RouterComponent = () => {
                     <Route path="/searchresults" element={<SearchResults />} />
                     <Route path="/signinpage" element={<SignInPage />} />
                     <Route path="/Rent" element={<RentMovies/>} />
-                    <Route path="Otppage" element={<OtpPage/>} />
+                    <Route path="/Otppage" element={<OtpPage/>} />
+                    <Route path="/signup" element={<SignupPage/>} />
                 </Routes>
             </BrowserRouter>
         </div>

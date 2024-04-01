@@ -25,7 +25,6 @@
 }
 
 .signup_form_mobile {
-  width: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -33,4 +32,12 @@
 }
 .signup_form_mobile .signup_form_big_screen {
   border: 1px solid rgb(206, 205, 205);
+}
+
+.telephonenum_list_wrapper {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+.telephonenum_list_wrapper .telephonenum_list_wrapper_container {
+  top: calc(50% - 185px);
+  left: 18.1%;
 }/*# sourceMappingURL=signuppagee.css.map */
