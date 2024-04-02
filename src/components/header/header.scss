@@ -31,12 +31,18 @@
             letter-spacing: 1px;
         }
 
+        &:hover .menu_bar_arrow {
+            transition: 0.2s;
+            transform: rotate(180deg);
+        }
+
         div {
             svg {
                 width: 15px;
                 font-weight: 900;
                 height: auto;
             }
+
         }
     }
 
@@ -57,8 +63,8 @@
         display: flex;
 
 
-        div {
-            display: flex;
+        .search_drop_down {
+            // display: flex;
             gap: 10px;
 
             .search_icon {
@@ -84,13 +90,16 @@
                 align-items: flex-start;
                 padding: 12px;
                 padding-left: 22px;
+                top: 54px;
 
                 .search_bar_wrapper {
                     width: 100%;
                     background-color: $inputbgcolor;
+
                     input {
                         outline: none;
                     }
+
                     span {
                         fill: $azongray;
                     }
@@ -105,6 +114,10 @@
                     fill: white;
                     height: auto;
                     padding: 2px;
+                }
+
+                &:hover .header_account_sidebar {
+                    display: flex;
                 }
             }
         }
@@ -173,6 +186,12 @@ header {
                             background-color: $secondaryColor;
                         }
 
+                        &:hover svg {
+                            transition: 0.2s;
+
+                            transform: rotate(180deg);
+                        }
+
                         div {
                             svg {
                                 width: 12px;
@@ -192,6 +211,7 @@ header {
                                 background-color: $azonwhite;
                                 color: $primaryColor;
                             }
+
                         }
                     }
 
@@ -218,6 +238,7 @@ header {
                         border-radius: 4px;
                         background-color: $inputbgcolor;
                         padding: 10px;
+
                         input {
                             outline: none;
                         }
@@ -253,7 +274,11 @@ header {
                 &:hover {
                     color: $azonwhite;
                     background-color: $secondaryColor;
+                }
 
+                &:hover svg {
+                    transition: 0.2s;
+                    transform: rotate(180deg);
                 }
 
                 div {

@@ -139,12 +139,13 @@ const signuppage = () => {
             console.log(loginformdata)
             localStorage.setItem('key', JSON.stringify(loginformdata)); // Store data as a JSON string
         }
-        setloginformdata({
-            email: "",
-        });
+
         setemailerror(false);
         setMobileError(false);
         console.log(formData);
+        setloginformdata({
+            email: "",
+        });
     }
 
     return (

@@ -1,0 +1,35 @@
+.header_account_sidebar {
+  position: absolute;
+  width: 100vw;
+  top: 53px;
+  right: -10px;
+  height: 600vh;
+  z-index: 999;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  background-color: #191E25;
+  cursor: pointer;
+  display: none;
+}
+.header_account_sidebar .EN_sidebar_content:hover .menu_bar_arrow {
+  transition: 0.2s;
+  transform: rotate(180deg);
+}
+.header_account_sidebar .EN_dropdown_sidebar {
+  display: none;
+}
+.header_account_sidebar:hover .EN_dropdown_sidebar {
+  display: flex;
+}
+
+@media (min-width: 660px) {
+  .header_account_sidebar ul {
+    font-size: 16px;
+  }
+}
+@media (min-width: 880px) {
+  .header_account_sidebar {
+    display: none;
+  }
+}/*# sourceMappingURL=accountsidebar.css.map */

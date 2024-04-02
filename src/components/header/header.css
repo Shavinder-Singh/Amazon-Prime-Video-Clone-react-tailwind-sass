@@ -25,6 +25,10 @@
   font-weight: 900;
   letter-spacing: 1px;
 }
+.header_mobile .mobile_menu:hover .menu_bar_arrow {
+  transition: 0.2s;
+  transform: rotate(180deg);
+}
 .header_mobile .mobile_menu div svg {
   width: 15px;
   font-weight: 900;
@@ -44,22 +48,21 @@
   justify-content: flex-end;
   display: flex;
 }
-.header_mobile .mobile_user_options div {
-  display: flex;
+.header_mobile .mobile_user_options .search_drop_down {
   gap: 10px;
 }
-.header_mobile .mobile_user_options div .search_icon {
+.header_mobile .mobile_user_options .search_drop_down .search_icon {
   padding: -1px 12px;
 }
-.header_mobile .mobile_user_options div .search_icon:hover {
+.header_mobile .mobile_user_options .search_drop_down .search_icon:hover {
   background-color: #191E25;
 }
-.header_mobile .mobile_user_options div .search_icon svg {
+.header_mobile .mobile_user_options .search_drop_down .search_icon svg {
   width: 30px;
   fill: rgb(155, 153, 153);
   height: auto;
 }
-.header_mobile .mobile_user_options div .search_bar {
+.header_mobile .mobile_user_options .search_drop_down .search_bar {
   width: 100vw;
   right: -10px;
   height: 100vh;
@@ -68,25 +71,29 @@
   align-items: flex-start;
   padding: 12px;
   padding-left: 22px;
+  top: 54px;
 }
-.header_mobile .mobile_user_options div .search_bar .search_bar_wrapper {
+.header_mobile .mobile_user_options .search_drop_down .search_bar .search_bar_wrapper {
   width: 100%;
   background-color: #33373D;
 }
-.header_mobile .mobile_user_options div .search_bar .search_bar_wrapper input {
+.header_mobile .mobile_user_options .search_drop_down .search_bar .search_bar_wrapper input {
   outline: none;
 }
-.header_mobile .mobile_user_options div .search_bar .search_bar_wrapper span {
+.header_mobile .mobile_user_options .search_drop_down .search_bar .search_bar_wrapper span {
   fill: #AAAAAA;
 }
-.header_mobile .mobile_user_options div .account_icon {
+.header_mobile .mobile_user_options .search_drop_down .account_icon {
   padding: -1px 17px;
 }
-.header_mobile .mobile_user_options div .account_icon svg {
+.header_mobile .mobile_user_options .search_drop_down .account_icon svg {
   width: 30px;
   fill: white;
   height: auto;
   padding: 2px;
+}
+.header_mobile .mobile_user_options .search_drop_down .account_icon:hover .header_account_sidebar {
+  display: flex;
 }
 
 @media (min-width: 880px) {
@@ -144,6 +151,10 @@ header div .nav_list_wrapper nav .nav_container .nav_list_item {
 header div .nav_list_wrapper nav .nav_container .nav_list_item:hover {
   color: #FFFFFF;
   background-color: #191E25;
+}
+header div .nav_list_wrapper nav .nav_container .nav_list_item:hover svg {
+  transition: 0.2s;
+  transform: rotate(180deg);
 }
 header div .nav_list_wrapper nav .nav_container .nav_list_item div svg {
   width: 12px;
@@ -208,6 +219,10 @@ header div .user_options .languages_option:hover .navitemdrop {
 header div .user_options .languages_option:hover {
   color: #FFFFFF;
   background-color: #191E25;
+}
+header div .user_options .languages_option:hover svg {
+  transition: 0.2s;
+  transform: rotate(180deg);
 }
 header div .user_options .languages_option div {
   margin-left: 0px;
