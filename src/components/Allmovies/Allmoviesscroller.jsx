@@ -14,7 +14,7 @@ import Detailpage from '../../../pages/detailpage'
 // import required modules
 import { Pagination, Navigation } from 'swiper/modules';
 
-export default function App() {
+export default function AllMoviesscroller() {
     const [swiperRef, setSwiperRef] = useState(null);
     const navigate = useNavigate();
 

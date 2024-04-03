@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom';
 import Logo from '../../assets/image/Logo.png'
 import './header.scss'
 import Sidebar from './sidebar/sidebar.jsx'
@@ -11,6 +12,8 @@ import Accountsidebar from './accountsidebar/accountsidebar.jsx'
 const header = () => {
     const [inputValue, setInputValue] = useState('');
     const [movies, setMovies] = useState([]);
+    const navigate = useNavigate();
+
     const [selectedMovie, setSelectedMovie] = useState(null);
 
     const handleinput = async (e) => {
@@ -34,9 +37,9 @@ const header = () => {
             const response = await fetch(`https://omdbapi.com/?i=${imdbID}&apikey=eae86d55`);
             const data = await response.json();
             if (data.Response === 'True') {
-                setSelectedMovie(data);
+                navigate(`/searchresults/${imdbID}`);
             } else {
-                setSelectedMovie(null);
+                // setSelectedMovie(null);
             }
         } catch (error) {
             console.log(error);
@@ -63,16 +66,6 @@ const header = () => {
 
     return (
         <div>
-            <div>
-                {/* {selectedMovie && (
-                    <div>
-                        <h2>Selected Movie:</h2>
-                        <p>Title: {selectedMovie.Title}</p>
-                        <p>Year: {selectedMovie.Year}</p>
-                        <p>Plot: {selectedMovie.Plot}</p>
-                    </div>
-                )} */}
-            </div>
             <header className='header_mobile z-10 '>
                 <div className='mobile_menu hover:bg-secondary relative'>
                     <h1 className='menu'>Menu

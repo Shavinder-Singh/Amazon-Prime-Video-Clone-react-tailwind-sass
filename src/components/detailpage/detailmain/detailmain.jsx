@@ -5,42 +5,55 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import primeContent from '../../../assets/image/PrimecontentImage.png'
 import './detailmain.scss';
+import { useParams } from 'react-router-dom';
 
-export default function App() {
-    const [punjabi, setpunjabi] = useState([]);
-    console.log(punjabi);
+
+export default function Detailmain() {
+    const { detailImdbId } = useParams();
+    console.log(detailImdbId)
+    const [data, setdata] = useState([]);
+    console.log(data);
     useEffect(() => {
-        axios.get("https://www.omdbapi.com/?s=dark&apikey=eae86d55")
-            .then(function (response) {
-                setpunjabi(response.data.Search)
-            })
-            .catch(function (error) {
-                console.log(error);
-            })
-    }, [])
+        const fetchdata = async () => {
+            try {
+                const response = await axios.get(`https://www.omdbapi.com/?i=${detailImdbId}&apikey=eae86d55`);
+                const data = response.data;
+                if (data.Response === "True") {
+                    setdata(data);
+                } else {
+                    setdata(null);
+                }
+            } catch (error) {
+                console.log(error)
+            }
+        }
+        fetchdata();
+    }, [detailImdbId]);
     return (
         <>
             <div className='detail_main_page w-full'>
                 <div className=''>
-                    {punjabi.length > 0 && (
+                    {data && (
                         <>
                             <div className='movie_details_media_mobile relative h-56'>
                                 <div className='shadow_thing'></div>
-                                <img src={punjabi[0].Poster} alt="Punjabi Movie Poster" className='w-full h-full' />
+                                <img src={data.Poster} alt="Punjabi Movie Poster" className='w-full h-full' />
                                 <img src={primeContent} alt="" className='w-[100px] absolute top-2 right-6' />
                             </div>
                             {/* same */}
                             <div className='movie_details_media w-full relative'>
                                 <div className='shadow_thing_mobile'></div>
-                                <div className='w-full'> <div className='shadow_thing'></div><div><img src={punjabi[0].Poster} class="movie_image" alt="Punjabi Movie Poster" className='w-full h-full' /></div></div>
+                                <div className='w-full'> <div className='shadow_thing'></div><div><img src={data.Poster} class="movie_image" alt="Punjabi Movie Poster" className='w-full h-full' /></div></div>
                                 <img src={primeContent} alt="" className=' logo_movie_prime w-[100px]  top-2 right-6' />
                             </div>
                             {/*  */}
                             <div className='movie_detail_wrapper text-white bg-black lg:px-[24px]'>
-                                <span className='award_content font-bold text-[16px] px-[24px] lg:px-[0px]'>OSCARS® 2X nominee</span>
+                                {data.Awards && data.Awards !== 'N/A' ? (
+                                    <span className='award_content font-bold text-[16px] px-[24px] lg:px-[0px]'>{data.Awards}</span>) : (<span className='award_content font-bold text-[16px] px-[24px] lg:px-[0px]'>No Awards</span>
+                                )}
                                 <div className='movie_heading_detail mt-[15px] px-[24px] lg:px-[0px]'>
                                     <div className='mb-[6px] px-[24px] lg:px-[0px]'>
-                                        <h1 className='text-3xl font-bold'>Captain Miller (Hindi)</h1>
+                                        <h1 className='text-3xl font-bold'>{data.Title}</h1>
                                     </div>
                                 </div>
                                 <div className='ordering_content flex flex-col px-[24px] lg:px-[0px]'>
@@ -83,10 +96,9 @@ export default function App() {
                                         </div>
                                     </div>
                                     <div className='movie_description_wrapper mb-5'>
-                                        <p className='leading-[0.6cm] pb-2'>During British India, when the anti-colonial freedom struggle is at its peak, Esan Aka Annalesan enlists in the British army to gain dignity. The story unfolds with Esan leading a mutiny against the British tyranny stemming from brazen massacre of Indians. As the most wanted person in the Presidency, he emerges to protect his settlement and clan from the British regiment’s bludgeon attacks..</p>
+                                        <p className='leading-[0.6cm] pb-2'>{data.Plot}</p>
                                         <div className='flex flex-wrap items-center gap-2 pr-9'>
-                                            <div className=' text-azongray font-bold pb-2'><span className='mr-4'>45 min</span> <span>2024</span> </div>
-
+                                            <div className=' text-azongray font-bold pb-2'><span className='mr-4'>{data.Runtime}</span> <span>{data.Year}</span> </div>
                                             <div className='movie_badges flex items-center gap-1 font-bold pb-2'>
                                                 <span className=' bg-inputbgcolor text-[13px] p-1 rounded-md'>X-RAY</span>
                                                 <span className=' bg-inputbgcolor text-[13px] p-1 rounded-md'>HDR</span>
@@ -99,7 +111,7 @@ export default function App() {
                                         </div>
                                         <div className='movie_genre'>
                                             <span className='font-bold'>
-                                                Animation, Action, Adventure
+                                                {data.Genre}
                                             </span>
                                         </div>
                                     </div>
