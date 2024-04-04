@@ -6,7 +6,6 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import './main.scss';
 import { Navigation } from 'swiper/modules';
-import Header from '../../header/header';
 
 export default function App() {
     const [punjabi, setpunjabi] = useState();
@@ -22,7 +21,6 @@ export default function App() {
     }, [])
     return (
         <>
-            <Header />
             <div className='movies_section pb-5 bg-primary'>
                 <div className='movies_page_nav bg-primary text-white'>
                     <div className='flex items-center gap-6 pl-9 pt-2 pb-[20px] md:pb-[17px]'>

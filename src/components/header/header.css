@@ -10,7 +10,7 @@
   top: 12px;
   cursor: pointer;
 }
-.header_mobile .menu:hover .header_sidebar {
+.header_mobile .mobile_menu:hover .header_sidebar {
   display: flex;
 }
 .header_mobile .mobile_menu {
@@ -41,7 +41,7 @@
 }
 .header_mobile .mobile_logo img {
   width: 96px;
-  margin-left: -22px;
+  margin-left: -8px;
 }
 .header_mobile .mobile_user_options {
   text-align: right;

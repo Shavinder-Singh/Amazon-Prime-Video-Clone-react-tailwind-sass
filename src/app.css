@@ -12,6 +12,44 @@ html {
   box-sizing: border-box;
 }
 
+.plusicon {
+  position: relative;
+}
+.plusicon:hover .watchlist_blower {
+  position: absolute;
+  top: -40px;
+  left: -20px;
+  background-color: white;
+  color: black;
+  font-size: 12px;
+  border-radius: 6px;
+  padding: 8px 14px;
+  letter-spacing: 2px;
+  display: block;
+}
+.plusicon .watchlist_blower {
+  display: none;
+}
+
+.movie_icon_wrapper {
+  position: relative;
+}
+.movie_icon_wrapper:hover .trailer_blower {
+  position: absolute;
+  top: -40px;
+  left: -32px;
+  background-color: white;
+  color: black;
+  font-size: 12px;
+  border-radius: 6px;
+  padding: 8px 14px;
+  letter-spacing: 2px;
+  display: block;
+}
+.movie_icon_wrapper .trailer_blower {
+  display: none;
+}
+
 ::after,
 ::before {
   margin: 0;

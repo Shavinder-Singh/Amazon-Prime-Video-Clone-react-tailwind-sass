@@ -1,5 +1,4 @@
 import React from 'react'
-import Header from '../components/header/header'
 import genreimage1 from '../assets/image/categoriespageimages/genre1.webp'
 import genreimage2 from '../assets/image/categoriespageimages/genre2.webp'
 import genreimage3 from '../assets/image/categoriespageimages/genre3.webp'
@@ -15,10 +14,12 @@ import genreimage11 from '../assets/image/categoriespageimages/genre11.webp'
 import categoriesimage from '../assets/image/categoriespageimages/categories1.webp'
 import '../components/categoriespage/categoriespage.scss'
 import Footer from '../components/footer/footer'
+
 const Categoriespage = () => {
+
+
     return (
         <>
-            <Header />
             <div className='categories_page px-6 lg:px-[44px] pb-[40px] bg-black  -z-10 relative'>
                 <h1 class="Categories text-[24px] lg:text-2 pt-[3px] pb-[5px] tracking-[0.5px] text-white cursor-default">Categories</h1>
                 <div className='Genres_categories_wrapper pt-0 mb-10 '>

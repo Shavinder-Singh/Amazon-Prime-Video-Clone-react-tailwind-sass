@@ -14,6 +14,49 @@ html {
     box-sizing: border-box;
 }
 
+.plusicon {
+    position: relative;
+
+    &:hover .watchlist_blower {
+        position: absolute;
+        top: -40px;
+        left: -20px;
+        background-color: white;
+        color: black;
+        font-size: 12px;
+        border-radius: 6px;
+        padding: 8px 14px;
+        letter-spacing: 2px;
+        display: block;
+
+    }
+
+    .watchlist_blower {
+        display: none;
+    }
+}
+
+.movie_icon_wrapper {
+    position: relative;
+
+    &:hover .trailer_blower {
+        position: absolute;
+        top: -40px;
+        left: -32px;
+        background-color: white;
+        color: black;
+        font-size: 12px;
+        border-radius: 6px;
+        padding: 8px 14px;
+        letter-spacing: 2px;
+        display: block;
+    }
+
+    .trailer_blower {
+        display: none;
+    }
+}
+
 ::after,
 ::before {
     margin: 0;
@@ -26,6 +69,7 @@ html {
     src: url('./assets/fonts/amazon-ember-cufonfonts/Amazon\ Ember.ttf');
     font-weight: 100;
 }
+
 @font-face {
     font-family: amazonEmberlight;
     src: url('./assets/fonts/amazon-ember-cufonfonts/Amazon\ Ember\ Cd\ RC\ Light.ttf');

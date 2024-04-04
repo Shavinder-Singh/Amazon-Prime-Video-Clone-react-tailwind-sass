@@ -86,8 +86,8 @@ const header = () => {
     return (
         <div>
             <header className='header_mobile z-10 '>
-                <div className='mobile_menu hover:bg-secondary relative'>
-                    <h1 className='menu'>Menu
+                <div className='mobile_menu hover:bg-secondary relative '>
+                    <h1 className='menu '>Menu
                         <Sidebar />
                     </h1>
                     <div className='menu_bar_arrow'>
@@ -103,7 +103,7 @@ const header = () => {
                     </div>
                 </div>
                 <div className='mobile_logo'>
-                    <img src={Logo} alt="logo" />
+                    <Link to='/' ><img src={Logo} alt="logo" /></Link>
                 </div>
                 <div className='mobile_user_options relative'>
                     <div className='search_drop_down'>
@@ -148,15 +148,15 @@ const header = () => {
             <header  >
                 <div>
                     <div className='logo'>
-                        <img src={Logo} alt="logo" />
+                        <Link to='/'> <img src={Logo} alt="logo" /></Link>
                     </div>
                     <div className='nav_list_wrapper'>
                         <nav>
                             <ul className='nav_container'>
                                 <li className='nav_list_item relative'>Home
                                     <ul className='navitemdrop absolute top-[44px] flex flex-col items-s z-10 bg-secondary rounded-b-md hidden'>
-                                        <li className='p-2'><Link to="/">All</Link></li>
-                                        <li className='p-2'><Link to="movies">Movies</Link></li>
+                                        <Link to="/"> <li className='p-2'>All</li></Link>
+                                        <Link to="movies"> <li className='p-2'>Movies</li></Link>
                                         <li className='p-2' onClick={() => handleRedirect('tv shows')}>TV shows</li>
                                     </ul>
                                     <div>
@@ -174,9 +174,9 @@ const header = () => {
                                 </li>
                                 <li className='nav_list_item relative'>Store
                                     <ul className='navitemdrop absolute top-[44px] flex flex-col items-s z-10 bg-secondary rounded-b-md hidden'>
-                                        <li className='p-2'><Link to="/"> All</Link></li>
-                                        <li className='p-2'><Link to="rent">Rent</Link></li>
-                                        <li className='p-2'  onClick={() => handleRedirect('channels')}>Channels</li>
+                                        <Link to="/"><li className='p-2'> All</li></Link>
+                                        <Link to="rent"><li className='p-2'>Rent</li></Link>
+                                        <li className='p-2' onClick={() => handleRedirect('channels')}>Channels</li>
                                     </ul>
                                     <div>
                                         <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
@@ -193,7 +193,7 @@ const header = () => {
                                 </li>
                                 <li className='nav_list_item'>Live TV
                                 </li>
-                                <li className='nav_list_item relative'><Link to="categories">Categories</Link>
+                                <li className='nav_list_item relative'><Link to="/categories">Categories</Link>
                                     <div className='navitemdrop absolute top-[44px] right-[-252px] flex items-start gap-24 z-10 bg-secondary rounded-b-md pt-5 pb-3 px-14 hidden'>
                                         <div className='Genres flex flex-col items-start justify-center gap-4'>
                                             <div className=''>Genres</div>
@@ -253,7 +253,7 @@ const header = () => {
                     </div>
                     <div className='user_options'>
                         <div className='search_icon search_drop_down relative'>
-                            <div className=''>
+                            <div className=' hover:bg-secondary'>
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" onClick={() => openSearchBar()} className={openSearch ? 'hidden' : 'search_icon_active'} ><path d="M 20.5 6 C 12.515556 6 6 12.515562 6 20.5 C 6 28.484438 12.515556 35 20.5 35 C 23.773158 35 26.788919 33.893018 29.220703 32.050781 L 38.585938 41.414062 A 2.0002 2.0002 0 1 0 41.414062 38.585938 L 32.050781 29.220703 C 33.893017 26.788918 35 23.773156 35 20.5 C 35 12.515562 28.484444 6 20.5 6 z M 20.5 10 C 26.322685 10 31 14.677319 31 20.5 C 31 23.295711 29.914065 25.820601 28.148438 27.697266 A 2.0002 2.0002 0 0 0 27.701172 28.144531 C 25.824103 29.912403 23.29771 31 20.5 31 C 14.677315 31 10 26.322681 10 20.5 C 10 14.677319 14.677315 10 20.5 10 z" /></svg>
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" onClick={() => openSearchBar()} width="30px" height="30px" className={openSearch ? 'search_icon_active' : 'hidden'}>    <path d="M 7 4 C 6.744125 4 6.4879687 4.0974687 6.2929688 4.2929688 L 4.2929688 6.2929688 C 3.9019687 6.6839688 3.9019687 7.3170313 4.2929688 7.7070312 L 11.585938 15 L 4.2929688 22.292969 C 3.9019687 22.683969 3.9019687 23.317031 4.2929688 23.707031 L 6.2929688 25.707031 C 6.6839688 26.098031 7.3170313 26.098031 7.7070312 25.707031 L 15 18.414062 L 22.292969 25.707031 C 22.682969 26.098031 23.317031 26.098031 23.707031 25.707031 L 25.707031 23.707031 C 26.098031 23.316031 26.098031 22.682969 25.707031 22.292969 L 18.414062 15 L 25.707031 7.7070312 C 26.098031 7.3170312 26.098031 6.6829688 25.707031 6.2929688 L 23.707031 4.2929688 C 23.316031 3.9019687 22.682969 3.9019687 22.292969 4.2929688 L 15 11.585938 L 7.7070312 4.2929688 C 7.5115312 4.0974687 7.255875 4 7 4 z" /></svg>
                             </div>
@@ -282,8 +282,8 @@ const header = () => {
                                 </div>
                             )}
                         </div>
-                        <div className='Try_for_free'>
-                            <h1>Try for free</h1>
+                        <div className='Try_for_free '>
+                            <h1 className='p-3 hover:bg-secondary hover:text-white transition duration-500 font-bold'>Try for free</h1>
                         </div>
                         <div className='languages_option '>
                             <h1 className='relative p-1'>EN
@@ -330,7 +330,7 @@ const header = () => {
                                     </ul>
                                 </div>
                             </h1>
-                            <div>
+                            <div className='pl-1'>
                                 <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
                                     viewBox="0 0 64.000000 64.000000"
                                     preserveAspectRatio="xMidYMid meet">

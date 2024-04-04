@@ -77,18 +77,24 @@
 
         .movies_heading {
           padding: 15px 0px 16px 65px;
-
         }
       }
     }
-    @media (min-width:880px) {
+
+    @media (min-width:1024px) {
       .movies_section {
         .movies_page_nav {
           display: none;
         }
 
         .movies_heading {
-          padding: 5px 0px 16px 45px;
+          padding: 10px 0px 8px 50px !important;
+
+          h1 {
+            font-size: 39px !important;
+            letter-spacing: 1px;
+
+          }
 
         }
       }
