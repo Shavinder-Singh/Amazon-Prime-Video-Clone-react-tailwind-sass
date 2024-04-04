@@ -44,6 +44,9 @@ const header = () => {
         } catch (error) {
             console.log(error);
         }
+        setopenSearch(false);
+        setInputValue( )
+
     }
     // Opening SearchBar
     const [openSearch, setopenSearch] = useState(false);
@@ -80,15 +83,22 @@ const header = () => {
         } catch (error) {
             console.log(error);
         }
-
+    }
+    // open sidebar
+    const [sidebar, setsidebar] = useState();
+    const opensidebar = () => {
+        setsidebar(!sidebar);
     }
 
     return (
         <div>
             <header className='header_mobile z-10 '>
                 <div className='mobile_menu hover:bg-secondary relative '>
-                    <h1 className='menu '>Menu
-                        <Sidebar />
+                    <h1 className='menu' onClick={() => opensidebar()}>Menu
+                        {sidebar && (
+                            <Sidebar />
+
+                        )}
                     </h1>
                     <div className='menu_bar_arrow'>
                         <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
@@ -123,10 +133,10 @@ const header = () => {
                                     {movies.length > 0 ? (
                                         movies.map((movie) => (
                                             <div
-                                                className='titles_input w-full p-3 rounded-xl hover:bg-white hover:text-primarycolor' onClick={() => handlechange(movie.imdbID)}
+                                                className='titles_input w-full cursor-pointer p-3 rounded-xl hover:bg-white hover:text-primarycolor' onClick={() => handlechange(movie.imdbID)}
                                                 key={movie.imdbID}
                                             >
-                                                <Link to='searchresults'><p>{movie.Title}</p></Link>
+                                                <p>{movie.Title}</p>
                                             </div>
                                         ))
                                     ) : (
@@ -269,10 +279,10 @@ const header = () => {
                                         {movies.length > 0 ? (
                                             movies.map((movie) => (
                                                 <div
-                                                    className='titles_input w-full rounded-xl hover:bg-white hover:text-primarycolor'
+                                                    className='titles_input w-full rounded-xl hover:bg-white hover:text-primarycolor cursor-pointer'
                                                     key={movie.imdbID} onClick={() => handlechange(movie.imdbID)}
                                                 >
-                                                    <p className='p-3'>{movie.Title}</p>
+                                                    <p className='p-3 '>{movie.Title}</p>
                                                 </div>
                                             ))
                                         ) : (
