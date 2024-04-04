@@ -3,7 +3,6 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Header from './components/header/header';
 import Movies from './pages/Movies';
 import Homepage from './pages/Homepage';
-import TVshows from './pages/TVshows';
 import Detailpage from './pages/detailpage';
 import Categoriespage from './pages/Categoriespage';
 import SearchResults from './pages/SearchResults';
@@ -12,6 +11,9 @@ import RentMovies from './pages/RentMovies';
 import OtpPage from './pages/Signinpage/OtpPage';
 import SignupPage from './pages/Signinpage/SignupPage';
 import Detailmain from './components/detailpage/detailmain/detailmain';
+import AllMoviesscroller from './components/Allmovies/allmoviesscroller/Allmoviesscroller';
+import AllMovies from './pages/AllMovies';
+import Allmoviesmain from './components/Allmovies/allmoviemain/Allmoviesmain';
 const RouterComponent = () => {
     return (
         <div>
@@ -20,7 +22,6 @@ const RouterComponent = () => {
                 <Routes>
                     <Route path="/" element={<Homepage />} />
                     <Route path="/movies" element={<Movies />} />
-                    <Route path="/Tvshows" element={<TVshows />} />
                     <Route path="/categories" element={<Categoriespage />} />
                     <Route path="/searchresults" element={<SearchResults />} />
                     <Route path="/signinpage" element={<SignInPage />} />
@@ -30,6 +31,8 @@ const RouterComponent = () => {
                     <Route path="/detailpage" element={<Detailpage />} />
                     <Route path="/detailmain/:detailImdbId" element={<Detailmain />} />
                     <Route path="/searchresults/:imdbID" element={<SearchResults />} />
+                    <Route path="/allmoviesscroller" element={<AllMoviesscroller />} />
+                    <Route path="/allmovies/:genre" element={<AllMovies />} />
                 </Routes>
             </BrowserRouter>
         </div>

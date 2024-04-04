@@ -1,10 +1,13 @@
 import React from 'react'
-import AllMoviesscroller from '../components/Allmovies/Allmoviesscroller'
+import Allmoviesmain from '../components/Allmovies/allmoviemain/Allmoviesmain'
+import AllMoviesscroller from '../components/Allmovies/allmoviesscroller/Allmoviesscroller'
+
 
 const AllMovies = () => {
     return (
         <div>
-            <AllMoviesscroller />
+           <Allmoviesmain/>
+           <AllMoviesscroller/> 
         </div>
     )
 }

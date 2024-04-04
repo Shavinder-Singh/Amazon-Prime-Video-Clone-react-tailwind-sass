@@ -64,6 +64,25 @@ const header = () => {
         // };
     }, [openSearch]);
 
+    //redirect to allmoviespage
+
+    const handleRedirect = async (genre) => {
+        try {
+            const response = await fetch(`https://omdbapi.com/?s=${genre}&apikey=eae86d55`);
+            const data = await response.json();
+            const imdb = data.imdbID;
+            if (data.Response === 'True') {
+                navigate(`/allmovies/${genre}`);
+
+            } else {
+                // setSelectedMovie(null);
+            }
+        } catch (error) {
+            console.log(error);
+        }
+
+    }
+
     return (
         <div>
             <header className='header_mobile z-10 '>
@@ -138,7 +157,7 @@ const header = () => {
                                     <ul className='navitemdrop absolute top-[44px] flex flex-col items-s z-10 bg-secondary rounded-b-md hidden'>
                                         <li className='p-2'><Link to="/">All</Link></li>
                                         <li className='p-2'><Link to="movies">Movies</Link></li>
-                                        <li className='p-2'><Link to="Tvshows">TV shows</Link></li>
+                                        <li className='p-2' onClick={() => handleRedirect('tv shows')}>TV shows</li>
                                     </ul>
                                     <div>
                                         <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
@@ -155,9 +174,9 @@ const header = () => {
                                 </li>
                                 <li className='nav_list_item relative'>Store
                                     <ul className='navitemdrop absolute top-[44px] flex flex-col items-s z-10 bg-secondary rounded-b-md hidden'>
-                                        <li className='p-2'>All</li>
+                                        <li className='p-2'><Link to="/"> All</Link></li>
                                         <li className='p-2'><Link to="rent">Rent</Link></li>
-                                        <li className='p-2'>Channels</li>
+                                        <li className='p-2'  onClick={() => handleRedirect('channels')}>Channels</li>
                                     </ul>
                                     <div>
                                         <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
@@ -180,19 +199,19 @@ const header = () => {
                                             <div className=''>Genres</div>
                                             <div className='text-[15px] flex items-start'>
                                                 <ul>
-                                                    <li className='p-2'>Action and adventure</li>
-                                                    <li className='p-2'>Anime</li>
-                                                    <li className='p-2'>Comedy</li>
-                                                    <li className='p-2'>Documentary</li>
-                                                    <li className='p-2'>Drama</li>
-                                                    <li className='p-2'>Fantasy</li>
+                                                    <li className='p-2' onClick={() => handleRedirect('action')}>Action and adventure</li>
+                                                    <li className='p-2' onClick={() => handleRedirect('anime')}>Anime</li>
+                                                    <li className='p-2' onClick={() => handleRedirect('comedy')}>Comedy</li>
+                                                    <li className='p-2' onClick={() => handleRedirect('documentary')}>Documentary</li>
+                                                    <li className='p-2' onClick={() => handleRedirect('drama')}>Drama</li>
+                                                    <li className='p-2' onClick={() => handleRedirect('fantasy')}>Fantasy</li>
                                                 </ul>
                                                 <ul>
-                                                    <li className='p-2'>Horror</li>
-                                                    <li className='p-2'>Kids</li>
-                                                    <li className='p-2'>Mystery and thrillers</li>
-                                                    <li className='p-2'>Romance</li>
-                                                    <li className='p-2'>Science fiction</li>
+                                                    <li className='p-2' onClick={() => handleRedirect('horror')}>Horror</li>
+                                                    <li className='p-2' onClick={() => handleRedirect('kids')}>Kids</li>
+                                                    <li className='p-2' onClick={() => handleRedirect('mystery')}>Mystery and thrillers</li>
+                                                    <li className='p-2' onClick={() => handleRedirect('romance')}>Romance</li>
+                                                    <li className='p-2' onClick={() => handleRedirect('science')}>Science fiction</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -200,18 +219,18 @@ const header = () => {
                                             <div className=''>Fetaured Collections</div>
                                             <div className='text-[15px]'>
                                                 <ul>
-                                                    <li className='p-2'>Hindi</li>
-                                                    <li className='p-2'>English</li>
-                                                    <li className='p-2'>Telugu</li>
-                                                    <li className='p-2'>Tamil</li>
-                                                    <li className='p-2'>Malayalam</li>
+                                                    <li className='p-2' onClick={() => handleRedirect('Hindi')}>Hindi</li>
+                                                    <li className='p-2' onClick={() => handleRedirect('English')}>English</li>
+                                                    <li className='p-2' onClick={() => handleRedirect('Telugu')}>Telugu</li>
+                                                    <li className='p-2' onClick={() => handleRedirect('Tamil')}>Tamil</li>
+                                                    <li className='p-2' onClick={() => handleRedirect('Malayalam')}>Malayalam</li>
                                                 </ul>
                                                 <ul>
-                                                    <li className='p-2'>Kannada</li>
-                                                    <li className='p-2'>Marathi</li>
-                                                    <li className='p-2'>Punjabi</li>
-                                                    <li className='p-2'>Gujarati</li>
-                                                    <li className='p-2'>Bengali</li>
+                                                    <li className='p-2' onClick={() => handleRedirect('Kannada')}>Kannada</li>
+                                                    <li className='p-2' onClick={() => handleRedirect('Marathi')}>Marathi</li>
+                                                    <li className='p-2' onClick={() => handleRedirect('Punjabi')}>Punjabi</li>
+                                                    <li className='p-2' onClick={() => handleRedirect('Gujarati')}>Gujarati</li>
+                                                    <li className='p-2' onClick={() => handleRedirect('Bengali')}>Bengali</li>
                                                 </ul>
                                             </div>
                                         </div>

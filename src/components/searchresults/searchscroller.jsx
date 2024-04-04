@@ -133,7 +133,7 @@ const SearchScroller = () => {
                     </div>
                 </div>
                 <div>
-                    <h1 className='results_for font-bold tracking-wider mb-7 lg:mb-[52px]'>Results for "captain miller".</h1>
+                    {data && (<h1 className='results_for font-bold tracking-wider mb-7 lg:mb-[52px]'>Results for "{data.Title}".</h1>)}
                 </div>
                 <div className='search_movies_list_mobile  lg:hidden'>
                     <h1 className='mb-2 font-bold tracking-wider'>More videos</h1>

@@ -56,7 +56,7 @@ export default function App() {
     const [datas, setdata] = useState(null);
 
     useEffect(() => {
-        axios.get("https://www.omdbapi.com/?s=movies&apikey=eae86d55")
+        axios.get("https://www.omdbapi.com/?s=rent&apikey=eae86d55")
             .then(function (response) {
                 setmystries(response.data.Search)
             })
@@ -65,7 +65,7 @@ export default function App() {
             })
     }, [])
     useEffect(() => {
-        axios.get("https://www.omdbapi.com/?s=romantic&apikey=eae86d55")
+        axios.get("https://www.omdbapi.com/?s=rental&apikey=eae86d55")
             .then(function (response) {
                 setromantic(response.data.Search)
             })
@@ -74,7 +74,7 @@ export default function App() {
             })
     }, [])
     useEffect(() => {
-        axios.get("https://www.omdbapi.com/?s=Historical&apikey=eae86d55")
+        axios.get("https://www.omdbapi.com/?s=historical&apikey=eae86d55")
             .then(function (response) {
                 sethistorical(response.data.Search)
             })
