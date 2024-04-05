@@ -105,15 +105,23 @@ const signuppage = () => {
             hasError = true;
 
         }
-        setformData({
-            name: "",
-            email: "",
-            password: "",
-            mobilenumber: "",
-        });
-        setemailerror(false);
-        setMobileError(false);
-        console.log(formData);
+        else {
+            setformData({
+                name: "",
+                email: "",
+                password: "",
+                mobilenumber: "",
+            });
+            setemailerror(false);
+            setMobileError(false);
+            console.log(formData);
+            alert("form submit successfully")
+            setloginformdata({
+                email: "",
+            });
+        }
+        setsubmitOTP(hasError)
+
     }
     // Login form
     const [loginformdata, setloginformdata] = useState({
@@ -138,16 +146,21 @@ const signuppage = () => {
         else {
             console.log(loginformdata)
             localStorage.setItem('key', JSON.stringify(loginformdata)); // Store data as a JSON string
+            alert("form submit successfully")
+            setloginformdata({
+                email: "",
+            });
         }
 
         setemailerror(false);
         setMobileError(false);
         console.log(formData);
-        setloginformdata({
-            email: "",
-        });
-    }
+        setsubmitOTP(hasError)
 
+    }
+    const [submitotp, setsubmitOTP] = useState(true);
+    console.log(submitotp)
+    //submit and redirect to otp page
     return (
         <>
             <div className='signinpage '>
@@ -246,7 +259,10 @@ const signuppage = () => {
                                                         <p className='leading-5 max-w-[300px]'>To verify your number, we will send you a text message with a temporary code. Message and data rates may apply.</p>
                                                     </div>
                                                     <div className='signin_continue_btn w-full flex mt-[-2px]'>
-                                                        <input type='submit' className='border p-3 pb-[11px] mb-4 w-full bg-yellowcolor text-center rounded-lg text-[13px]' value='Verify your mobile number' />
+                                                        {submitotp ? (
+                                                            <input type='submit' className='border p-3 pb-[11px] mb-4 w-full bg-yellowcolor text-center rounded-lg text-[13px]' value='Verify your mobile number' />)
+                                                            : (<Link to="/otppage" className='block w-full'>  <input type='submit' className='border p-3 pb-[11px] mb-4 w-full bg-yellowcolor text-center rounded-lg text-[13px]' value='Get Yout OTP' /></Link>
+                                                            )}
                                                     </div>
                                                     <div className='signin_terms_conditions mt-[-12px]'>
                                                         <p className='text-[11px] leading-4 block mb-4 max-w-[365px]'>By creating an account, you agree to the Amazon <span className=' text-blue-400'>Conditions of Use and Privacy Notice</span>.</p>
@@ -270,7 +286,12 @@ const signuppage = () => {
                                                 <input type='email' placeholder='Email or phone number' className='text-black outline-none' name='loginemail' onChange={handleChangelogin} value={loginformdata.email} />
                                             </div>
                                             <div className='signin_continue_btn w-full flex'>
-                                                <input type="submit" className='border p-3 pb-[11px] mb-4 w-full bg-yellowcolor text-center rounded-lg text-[13px]' />
+                                                {submitotp ? (
+                                                    <input type="submit" className='border p-3 pb-[11px] mb-4 w-full bg-yellowcolor text-center rounded-lg text-[13px]' />)
+                                                    : (
+                                                        <Link to="/otppage" className='block w-full'> <input type="submit" value="Click to Verify " className='border p-3 pb-[11px] mb-4 w-full bg-yellowcolor text-center rounded-lg text-[13px]' enabled /></Link>
+                                                    )
+                                                }
                                             </div>
                                         </form>
                                         <div className='signin_terms_conditions'>
@@ -288,8 +309,6 @@ const signuppage = () => {
                         </div>
                     </div>
                 </div>
-
-
                 {/* bigscreen */}
                 <div className='signin_bigscreen justify-center flex-col items-center hidden lg:flex'>
                     <div className='pt-[14px]'>
@@ -312,7 +331,9 @@ const signuppage = () => {
                                                     </div>
                                                 </div>
                                                 <div className='signin_continue_btn w-full flex'>
-                                                    <input type="submit" className='border p-[6px] pb-[5px] mb-[16.5px] w-full bg-yellowcolor text-center rounded-lg text-[13px]' value="Continue"></input>
+                                                    {submitotp ? (<input type="submit" className='border p-[6px] pb-[5px] mb-[16.5px] w-full bg-yellowcolor text-center rounded-lg text-[13px]' value="Continue"></input>) : (
+                                                        <Link to="/otppage" className='block w-full'> <input type="submit" className='border p-[6px] pb-[5px] mb-[16.5px] w-full bg-yellowcolor text-center rounded-lg text-[13px]' value="Get OTP"></input></Link>
+                                                    )}
                                                 </div>
                                                 <div className='signin_terms_conditions'>
                                                     <p className='text-[12px] leading-[18px] block mb-[23px] '> By continuing, you agree to the Amazon <span className=' text-blue-400'>Conditions of <br /> Use and Privacy Notice</span>.</p>
