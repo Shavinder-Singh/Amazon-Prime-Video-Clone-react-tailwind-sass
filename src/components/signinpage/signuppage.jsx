@@ -158,7 +158,7 @@ const signuppage = () => {
                     <div className='flex justify-center items-center border-none'>
                         <div className='signinmain pt-[10px] px-[0.9rem]'>
                             <h6 className='text-[21px] font-thin tracking-wide pb-2'>Welcome</h6>
-                            <div className='signin_form_container border rounded-t-md w-[354px]'>
+                            <div className='signin_form_container border rounded-t-md w-[280px]'>
                                 <div className='createaccount_mobile flex flex-col items-start pt-[10px] pb-[6px] px-[18px]  ' >
                                     <div className='flex items-center gap-4'>
                                         <input type='radio' className={`w-[22px] h-6  ${activeindex === 0 ? "active" : ''}`} onClick={() => handleClick(0)} checked={activeindex === 0} />
@@ -291,7 +291,7 @@ const signuppage = () => {
 
 
                 {/* bigscreen */}
-                <div className='signin_bigscreen justify-center flex flex-col items-center '>
+                <div className='signin_bigscreen justify-center flex-col items-center hidden lg:flex'>
                     <div className='pt-[14px]'>
                         <div className='signinpage_logo flex justify-center'>
                             <img src={logo} />
