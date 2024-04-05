@@ -99,6 +99,7 @@
 @media (min-width: 1280px) {
   .firestick_section .firestick_content {
     top: 53px;
+    right: 17px;
     padding: 10px;
   }
   .firestick_section h1 {
@@ -107,10 +108,13 @@
   }
   .firestick_section p {
     font-family: amazonEmber !important;
-    max-width: 92%;
+    max-width: 98%;
+    line-height: 25px !important;
+    letter-spacing: 0.6px;
+    margin-bottom: 27px;
   }
   .firestick_section a {
     font-weight: 900;
-    max-width: 255px !important;
+    max-width: 280px !important;
   }
 }/*# sourceMappingURL=firestick.css.map */

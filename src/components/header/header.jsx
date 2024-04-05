@@ -45,7 +45,7 @@ const header = () => {
             console.log(error);
         }
         setopenSearch(false);
-        setInputValue( )
+        setInputValue()
 
     }
     // Opening SearchBar
@@ -89,6 +89,14 @@ const header = () => {
     const opensidebar = () => {
         setsidebar(!sidebar);
     }
+    //open account sidebar
+    const [accountSidebar, setaccountsidebar] = useState(false);
+    const openaccountSidebar = () => {
+        setaccountsidebar(!accountSidebar);
+    }
+    const closeaccountsidebar = () => {
+        setaccountsidebar(false);
+    }
 
     return (
         <div>
@@ -97,7 +105,6 @@ const header = () => {
                     <h1 className='menu' onClick={() => opensidebar()}>Menu
                         {sidebar && (
                             <Sidebar />
-
                         )}
                     </h1>
                     <div className='menu_bar_arrow'>
@@ -148,8 +155,8 @@ const header = () => {
 
                         )}
                         <div className='account_icon p-3'>
-                            <svg fill="#191849" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="-3.19 -3.19 51.91 51.91" xml:space="preserve" stroke="#191849" stroke-width="0.00045531999999999994" transform="matrix(1, 0, 0, 1, 0, 0)rotate(0)"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <path d="M22.766,0.001C10.194,0.001,0,10.193,0,22.766s10.193,22.765,22.766,22.765c12.574,0,22.766-10.192,22.766-22.765 S35.34,0.001,22.766,0.001z M22.766,6.808c4.16,0,7.531,3.372,7.531,7.53c0,4.159-3.371,7.53-7.531,7.53 c-4.158,0-7.529-3.371-7.529-7.53C15.237,10.18,18.608,6.808,22.766,6.808z M22.761,39.579c-4.149,0-7.949-1.511-10.88-4.012 c-0.714-0.609-1.126-1.502-1.126-2.439c0-4.217,3.413-7.592,7.631-7.592h8.762c4.219,0,7.619,3.375,7.619,7.592 c0,0.938-0.41,1.829-1.125,2.438C30.712,38.068,26.911,39.579,22.761,39.579z"></path> </g> </g></svg>
-                            <Accountsidebar />
+                            <svg fill="#191849" version="1.1" onClick={() => openaccountSidebar()} id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="-3.19 -3.19 51.91 51.91" xml:space="preserve" stroke="#191849" stroke-width="0.00045531999999999994" transform="matrix(1, 0, 0, 1, 0, 0)rotate(0)"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <path d="M22.766,0.001C10.194,0.001,0,10.193,0,22.766s10.193,22.765,22.766,22.765c12.574,0,22.766-10.192,22.766-22.765 S35.34,0.001,22.766,0.001z M22.766,6.808c4.16,0,7.531,3.372,7.531,7.53c0,4.159-3.371,7.53-7.531,7.53 c-4.158,0-7.529-3.371-7.529-7.53C15.237,10.18,18.608,6.808,22.766,6.808z M22.761,39.579c-4.149,0-7.949-1.511-10.88-4.012 c-0.714-0.609-1.126-1.502-1.126-2.439c0-4.217,3.413-7.592,7.631-7.592h8.762c4.219,0,7.619,3.375,7.619,7.592 c0,0.938-0.41,1.829-1.125,2.438C30.712,38.068,26.911,39.579,22.761,39.579z"></path> </g> </g></svg>
+                            {accountSidebar && (<Accountsidebar closeSidebar={closeaccountsidebar} />)}
                         </div>
                     </div>
                 </div>
@@ -167,7 +174,7 @@ const header = () => {
                                     <ul className='navitemdrop absolute top-[44px] flex flex-col items-s z-10 bg-secondary rounded-b-md hidden'>
                                         <Link to="/"> <li className='p-2'>All</li></Link>
                                         <Link to="movies"> <li className='p-2'>Movies</li></Link>
-                                        <li className='p-2' onClick={() => handleRedirect('tv shows')}>TV shows</li>
+                                        <li className='p-2 arc' onClick={() => handleRedirect('tv shows')}>TV shows</li>
                                     </ul>
                                     <div>
                                         <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
@@ -186,7 +193,7 @@ const header = () => {
                                     <ul className='navitemdrop absolute top-[44px] flex flex-col items-s z-10 bg-secondary rounded-b-md hidden'>
                                         <Link to="/"><li className='p-2'> All</li></Link>
                                         <Link to="rent"><li className='p-2'>Rent</li></Link>
-                                        <li className='p-2' onClick={() => handleRedirect('channels')}>Channels</li>
+                                        <li className='p-2 arc' onClick={() => handleRedirect('channels')}>Channels</li>
                                     </ul>
                                     <div>
                                         <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
@@ -357,9 +364,9 @@ const header = () => {
                             <div className='relative p-1'>
                                 <svg className='' fill="#191849" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="-3.19 -3.19 51.91 51.91" xml:space="preserve" stroke="#191849" stroke-width="0.00045531999999999994" transform="matrix(1, 0, 0, 1, 0, 0)rotate(0)"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <path d="M22.766,0.001C10.194,0.001,0,10.193,0,22.766s10.193,22.765,22.766,22.765c12.574,0,22.766-10.192,22.766-22.765 S35.34,0.001,22.766,0.001z M22.766,6.808c4.16,0,7.531,3.372,7.531,7.53c0,4.159-3.371,7.53-7.531,7.53 c-4.158,0-7.529-3.371-7.529-7.53C15.237,10.18,18.608,6.808,22.766,6.808z M22.761,39.579c-4.149,0-7.949-1.511-10.88-4.012 c-0.714-0.609-1.126-1.502-1.126-2.439c0-4.217,3.413-7.592,7.631-7.592h8.762c4.219,0,7.619,3.375,7.619,7.592 c0,0.938-0.41,1.829-1.125,2.438C30.712,38.068,26.911,39.579,22.761,39.579z"></path> </g> </g></svg>
                                 <ul className='navitemdrop absolute top-[37px] right-0 flex flex-col z-10 bg-secondary rounded-b-md p-5 pr-9 text-nowrap hidden'>
-                                    <li className='p-2'><Link to="/signinpage">Sign In</Link></li>
-                                    <li className='p-2'>Help</li>
-                                    <li className='p-2'>Watch Anywhere</li>
+                                    <Link to="/signinpage"> <li className='p-2'>Sign In</li></Link>
+                                    <Link to="/signinpage"> <li className='p-2'>Help</li></Link>
+                                    <Link to="/signinpage"> <li className='p-2'>Watch Anywhere</li></Link>
                                 </ul>
                             </div>
                         </div>

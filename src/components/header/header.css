@@ -168,6 +168,11 @@ header div .nav_list_wrapper nav .nav_container .nav_list_item:hover .navitemdro
 header div .nav_list_wrapper nav .nav_container .nav_list_item .navitemdrop li:hover {
   background-color: #FFFFFF;
   color: #00050D;
+  border-radius: 8px;
+}
+header div .nav_list_wrapper nav .nav_container .nav_list_item .navitemdrop .arc:hover {
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 header div .user_options {
   color: white;
@@ -234,6 +239,7 @@ header div .user_options .languages_option div svg {
 header div .user_options .languages_option .navitemdrop li:hover {
   background-color: #FFFFFF;
   color: #00050D;
+  border-radius: 6px;
 }
 header div .user_options .account_icon {
   padding: 0px 10px;
@@ -250,6 +256,7 @@ header div .user_options .account_icon:hover {
 header div .user_options .account_icon .navitemdrop li:hover {
   background-color: #FFFFFF;
   color: #00050D;
+  border-radius: 7px;
 }
 header div .user_options .account_icon div svg {
   width: 30px;
@@ -276,7 +283,7 @@ header div .user_options .account_icon div svg {
   header div {
     display: flex;
     align-items: center;
-    gap: 22px;
+    gap: 14px;
   }
   header div .logo {
     width: -moz-max-content;

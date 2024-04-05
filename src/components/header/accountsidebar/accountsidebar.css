@@ -10,7 +10,6 @@
   align-items: flex-start;
   background-color: #191E25;
   cursor: pointer;
-  display: none;
 }
 .header_account_sidebar .EN_sidebar_content:hover .menu_bar_arrow {
   transition: 0.2s;
@@ -19,7 +18,7 @@
 .header_account_sidebar .EN_dropdown_sidebar {
   display: none;
 }
-.header_account_sidebar:hover .EN_dropdown_sidebar {
+.header_account_sidebar .EN_item:hover .EN_dropdown_sidebar {
   display: flex;
 }
 

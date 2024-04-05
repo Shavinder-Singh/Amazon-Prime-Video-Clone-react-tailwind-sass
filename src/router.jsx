@@ -13,7 +13,7 @@ import SignupPage from './pages/Signinpage/SignupPage';
 import Detailmain from './components/detailpage/detailmain/detailmain';
 import AllMoviesscroller from './components/Allmovies/allmoviesscroller/Allmoviesscroller';
 import AllMovies from './pages/AllMovies';
-import Allmoviesmain from './components/Allmovies/allmoviemain/Allmoviesmain';
+import Footer from './components/footer/footer';
 const RouterComponent = () => {
     return (
         <div>

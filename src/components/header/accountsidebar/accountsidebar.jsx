@@ -1,19 +1,21 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import './accountsidebar.scss'
+import { useState } from 'react'
 
-const accountsidebar = () => {
+const accountsidebar = ({ closeSidebar }) => {
+
     return (
         <div>
             <div className='header_account_sidebar z-50 '>
                 <div className='sidebar_wrapper text-white'>
                     <ul className='pt-3 pl-6 flex flex-col gap-[27px]  font-extralight  text-[14px] tracking-wide'>
                         <li className='text-azongray flex items-center justify-start'>
-                            <Link to="/">Try For Free</Link>
+                            <Link to="/signinpage" onClick={closeSidebar}>Try For Free</Link>
                         </li>
-                        <li className='text-azongray flex flex-col items-start EN_sidebar_content'>
+                        <li className='text-azongray flex flex-col items-start EN_sidebar_content EN_item'>
                             <div className='flex items-center justify-start gap-[6px]'>
-                                <Link to="/movies" className='mr-[-8px]'>EN</Link>
+                                <Link to="/movies" className='mr-[-8px]' >EN</Link>
                                 <div className='menu_bar_arrow w-5 h-6'>
                                     <svg version="1.0" xmlns="http://www.w3.org/2000/svg" className='w-full'
                                         viewBox="0 0 64.000000 64.000000"
@@ -27,48 +29,48 @@ const accountsidebar = () => {
                                 </div>
                             </div>
                             <ul className='EN_dropdown_sidebar flex flex-col items-start bg-inputbgcolor mt-[13px] gap-[3px]  text-azongray  w-[100vw] ml-[-24px] z-10 '>
-                                <li className='p-3 pt-[13px] pl-[26px]'><a href="#">Bahasa Indonesia</a></li>
-                                <li className='p-3 pl-[26px]'><a href="#">Bahasa Melayu</a></li>
-                                <li className='p-3 pl-[26px]'><a href="#">Dansk</a></li>
-                                <li className='p-3 pl-[26px]'><a href="#">Deutsch</a></li>
-                                <li className='p-3 pl-[26px]'><a href="#">English</a></li>
-                                <li className='p-3 pl-[26px]'><a href="#">Espanol</a></li>
-                                <li className='p-3 pl-[26px]'><a href="#">Francais</a></li>
-                                <li className='p-3 pl-[26px]'><a href="#">Italiano</a></li>
-                                <li className='p-3 pl-[26px]'><a href="#">Magyar</a></li>
-                                <li className='p-3 pl-[26px]'><a href="#">Nederlands</a></li>
-                                <li className='p-3 pl-[26px]'><a href="#">Norsk</a></li>
-                                <li className='p-3 pl-[26px]'><a href="#">Polaski</a></li>
-                                <li className='p-3 pl-[26px]'><a href="#">Portugues (Brasil) </a></li>
-                                <li className='p-3 pl-[26px]'><a href="#">Portugues (Portugal)</a></li>
-                                <li className='p-3 pl-[26px]'><a href="#">Romana</a></li>
-                                <li className='p-3 pl-[26px]'><a href="#">Suomi</a></li>
-                                <li className='p-3 pl-[26px]'><a href="#">Svenska</a></li>
-                                <li className='p-3 pl-[26px]'><a href="#">Turkce</a></li>
-                                <li className='p-3 pl-[26px]'><a href="#">Wikang Filipino</a></li>
-                                <li className='p-3 pl-[26px]'><a href="#">Cestina</a></li>
-                                <li className='p-3 pl-[26px]'><a href="#">Ελληνικά</a></li>
-                                <li className='p-3 pl-[26px]'><a href="#">Русский</a></li>
-                                <li className='p-3 pl-[26px]'><a href="#">עברית</a></li>
-                                <li className='p-3 pl-[26px]'><a href="#">العربية</a></li>
-                                <li className='p-3 pl-[26px]'><a href="#">हिन्दी</a></li>
-                                <li className='p-3 pl-[26px]'><a href="#">தமிழ்</a></li>
-                                <li className='p-3 pl-[26px]'><a href="#">తెలుగు</a></li>
-                                <li className='p-3 pl-[26px]'><a href="#">ไทย</a></li>
-                                <li className='p-3 pl-[26px]'><a href="#">日本語</a></li>
-                                <li className='p-3 pl-[26px]'><a href="#">简体中文</a></li>
-                                <li className='p-3 pl-[26px]'><a href="#">繁體中文</a></li>
-                                <li className='p-3 pl-[26px]'><a href="#">한국어</a></li>
+                                <li className='p-3 pt-[13px] pl-[26px]'><a href="#" onClick={closeSidebar}>Bahasa Indonesia</a></li>
+                                <li className='p-3 pl-[26px]'><a href="#" onClick={closeSidebar}>Bahasa Melayu</a></li>
+                                <li className='p-3 pl-[26px]'><a href="#" onClick={closeSidebar}>Dansk</a></li>
+                                <li className='p-3 pl-[26px]'><a href="#" onClick={closeSidebar}>Deutsch</a></li>
+                                <li className='p-3 pl-[26px]'><a href="#" onClick={closeSidebar}>English</a></li>
+                                <li className='p-3 pl-[26px]'><a href="#" onClick={closeSidebar}>Espanol</a></li>
+                                <li className='p-3 pl-[26px]'><a href="#" onClick={closeSidebar}>Francais</a></li>
+                                <li className='p-3 pl-[26px]'><a href="#" onClick={closeSidebar}>Italiano</a></li>
+                                <li className='p-3 pl-[26px]'><a href="#" onClick={closeSidebar}>Magyar</a></li>
+                                <li className='p-3 pl-[26px]'><a href="#" onClick={closeSidebar}>Nederlands</a></li>
+                                <li className='p-3 pl-[26px]'><a href="#" onClick={closeSidebar}>Norsk</a></li>
+                                <li className='p-3 pl-[26px]'><a href="#" onClick={closeSidebar}>Polaski</a></li>
+                                <li className='p-3 pl-[26px]'><a href="#" onClick={closeSidebar}>Portugues (Brasil) </a></li>
+                                <li className='p-3 pl-[26px]'><a href="#" onClick={closeSidebar}>Portugues (Portugal)</a></li>
+                                <li className='p-3 pl-[26px]'><a href="#" onClick={closeSidebar}>Romana</a></li>
+                                <li className='p-3 pl-[26px]'><a href="#" onClick={closeSidebar}>Suomi</a></li>
+                                <li className='p-3 pl-[26px]'><a href="#" onClick={closeSidebar}>Svenska</a></li>
+                                <li className='p-3 pl-[26px]'><a href="#" onClick={closeSidebar}>Turkce</a></li>
+                                <li className='p-3 pl-[26px]'><a href="#" onClick={closeSidebar}>Wikang Filipino</a></li>
+                                <li className='p-3 pl-[26px]'><a href="#" onClick={closeSidebar}>Cestina</a></li>
+                                <li className='p-3 pl-[26px]'><a href="#" onClick={closeSidebar}>Ελληνικά</a></li>
+                                <li className='p-3 pl-[26px]'><a href="#" onClick={closeSidebar}>Русский</a></li>
+                                <li className='p-3 pl-[26px]'><a href="#" onClick={closeSidebar}>עברית</a></li>
+                                <li className='p-3 pl-[26px]'><a href="#" onClick={closeSidebar}>العربية</a></li>
+                                <li className='p-3 pl-[26px]'><a href="#" onClick={closeSidebar}>हिन्दी</a></li>
+                                <li className='p-3 pl-[26px]'><a href="#" onClick={closeSidebar}>தமிழ்</a></li>
+                                <li className='p-3 pl-[26px]'><a href="#" onClick={closeSidebar}>తెలుగు</a></li>
+                                <li className='p-3 pl-[26px]'><a href="#" onClick={closeSidebar}>ไทย</a></li>
+                                <li className='p-3 pl-[26px]'><a href="#" onClick={closeSidebar}>日本語</a></li>
+                                <li className='p-3 pl-[26px]'><a href="#" onClick={closeSidebar}>简体中文</a></li>
+                                <li className='p-3 pl-[26px]'><a href="#" onClick={closeSidebar}>繁體中文</a></li>
+                                <li className='p-3 pl-[26px]'><a href="#" onClick={closeSidebar}>한국어</a></li>
                             </ul>
                         </li>
                         <li className='text-azongray flex items-center justify-start'>
-                            <Link to="Tvshows">Sign In</Link>
+                            <Link to="/signinpage" onClick={closeSidebar}>Sign In</Link>
                         </li>
                         <li className='text-azongray flex items-center justify-start'>
-                            <Link to="Tvshows">Help</Link>
+                            <Link to="/signinpage" onClick={closeSidebar}>Help</Link>
                         </li>
                         <li className='text-azongray flex items-center justify-start'>
-                            <Link to="Tvshows">Watch Anywhere</Link>
+                            <Link to="/signinpage" onClick={closeSidebar}>Watch Anywhere</Link>
                         </li>
                     </ul>
                 </div>

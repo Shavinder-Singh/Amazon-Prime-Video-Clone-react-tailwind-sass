@@ -14,7 +14,7 @@
 
     .mobile_menu {
         &:hover .header_sidebar {
-            // display: flex;
+            display: flex;
         }
     }
 
@@ -64,7 +64,6 @@
 
 
         .search_drop_down {
-            // display: flex;
             gap: 10px;
 
             .search_icon {
@@ -188,7 +187,6 @@ header {
 
                         &:hover svg {
                             transition: 0.2s;
-
                             transform: rotate(180deg);
                         }
 
@@ -203,13 +201,22 @@ header {
                         &:hover .navitemdrop {
                             display: flex !important;
                             color: $azongray;
-
                         }
 
                         .navitemdrop li {
                             &:hover {
                                 background-color: $azonwhite;
                                 color: $primaryColor;
+                                border-radius: 8px;
+                            }
+
+                        }
+
+                        .navitemdrop .arc {
+                            &:hover {
+                                border-bottom-left-radius: 10px;
+                                border-bottom-right-radius: 10px;
+
                             }
 
                         }
@@ -294,6 +301,7 @@ header {
                     &:hover {
                         background-color: $azonwhite;
                         color: $primaryColor;
+                        border-radius: 6px;
                     }
                 }
             }
@@ -306,6 +314,7 @@ header {
                     display: flex;
                     color: $azongray;
 
+
                 }
 
                 &:hover {
@@ -317,6 +326,7 @@ header {
                     &:hover {
                         background-color: $azonwhite;
                         color: $primaryColor;
+                        border-radius: 7px;
                     }
                 }
 

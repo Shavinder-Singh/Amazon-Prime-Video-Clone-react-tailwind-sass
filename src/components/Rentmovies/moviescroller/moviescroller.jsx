@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from 'react';
-import Footer from '../../footer/footer';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
@@ -647,7 +646,6 @@ export default function App() {
                 </div>
                 {/* second */}
             </div>
-            <Footer />
 
         </>
     );

@@ -10,7 +10,7 @@ const sidebar = () => {
         try {
             const response = await fetch(`https://omdbapi.com/?s=${genre}&apikey=eae86d55`);
             const data = await response.json();
-           
+
             if (data.Response === 'True') {
                 navigate(`/allmovies/${genre}`);
 

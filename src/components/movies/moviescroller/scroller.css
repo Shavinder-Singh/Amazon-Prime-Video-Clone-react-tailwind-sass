@@ -125,20 +125,19 @@ body {
 }
 
 @media (min-width: 669px) {
-  .movie_page footer {
-    padding-top: 240px;
-    padding-bottom: 29px;
+  .movies_page_wrapper footer {
     background-color: #00050D;
+    height: 103px;
   }
-  .movie_page footer .append_lines {
+  .movies_page_wrapper footer .append_lines {
     width: 100%;
     margin: 0 auto;
     display: flex;
     justify-content: center;
     align-items: center;
   }
-  .movie_page footer .append_lines .footer_links {
-    margin: 0px 10px 0px 0px;
+  .movies_page_wrapper footer .append_lines .footer_links {
+    margin: 0px 13px 0px 0px;
     font-size: 13px;
     color: #79B8F3;
   }

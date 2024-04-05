@@ -3,43 +3,43 @@ import { useState } from 'react';
 import './firestick.scss'
 
 const firestick = () => {
-    const [feedbackup, setFeedbackUp] = useState(false);
-    const [showsdeco, setshowdeco] = useState(false);
-    useEffect(() => {
-        const timer = setTimeout(() => {
-            setFeedbackUp(true);
-        }, 4000);
+    // const [feedbackup, setFeedbackUp] = useState(false);
+    // const [showsdeco, setshowdeco] = useState(false);
+    // useEffect(() => {
+    //     const timer = setTimeout(() => {
+    //         setFeedbackUp(true);
+    //     }, 40000);
 
-        return () => clearTimeout(timer);
-    }, []);
+    //     return () => clearTimeout(timer);
+    // }, []);
 
-    const closeFeedback = () => {
-        setFeedbackUp(false);
-    };
-
-
-    const submitfeedback = (e) => {
-        e.preventDefault();
-        if (formdata.movie_name.trim() === '') {
-            alert('Please enter a movie name.');
-            return;
-        }
+    // const closeFeedback = () => {
+    //     setFeedbackUp(false);
+    // };
 
 
-        localStorage.setItem('UserData', JSON.stringify(formdata));
-        setformdata({ movie_name: '' });
-        setTimeout(() => {
-            setshowdeco(true)
-            setTimeout(() => {
-                setshowdeco(false)
-            }, 2000);
-        }, 1000);
-        setTimeout(() => {
-            setFeedbackUp(false);
-            
-        }, 600);
+    // const submitfeedback = (e) => {
+    //     e.preventDefault();
+    //     if (formdata.movie_name.trim() === '') {
+    //         alert('Please enter a movie name.');
+    //         return;
+    //     }
 
-    }
+
+    //     localStorage.setItem('UserData', JSON.stringify(formdata));
+    //     setformdata({ movie_name: '' });
+    //     setTimeout(() => {
+    //         setshowdeco(true)
+    //         setTimeout(() => {
+    //             setshowdeco(false)
+    //         }, 2000);
+    //     }, 1000);
+    //     setTimeout(() => {
+    //         setFeedbackUp(false);
+
+    //     }, 600);
+
+    // }
     const [formdata, setformdata] = useState({
         movie_name: " "
     })
@@ -61,11 +61,12 @@ const firestick = () => {
                     <div>
                         <h1 className='text-[40px] leading-[3.1rem]'>Even better with Fire TV Stick</h1>
                         <p className='text-[20px] mb-[48px] mt-5 leading-7 md:text-[25px] lg:-tracking-tighter lg:text-[23px] xl:pb-5'>The biggest movies and TV shows are always better on a big screen. Simply plug in your Amazon Fire TV Stick and stream on any HDTV. Press the voice button on the remote and say the name of the title you want to watch to find it in seconds.</p>
-                        <div className='firesticklink w-full'><a href="#" className='text-[18px] py-[9px] px-[20px] rounded-[4px] bg-azonblue w-full block xl:text-[16px] tracking-tighter max-w-72'>Get started</a></div>
+                        <div className='firesticklink w-full'><a href="#" className='text-[18px] py-[12px] px-[20px] rounded-[4px] bg-azonblue w-full block xl:text-[16px] tracking-tighter max-w-72'>Get started</a></div>
                     </div>
                 </div>
             </section>
-            {feedbackup && (
+
+            {/* {feedbackup && (
                 <div className='feedback_wrapper fixed bottom-0 h-[100px] w-full text-white z-10  transition-all duration-1000 transform translate-y-0'>
                     <div className='absolute w-full bg-inputbgcolor rounded-t-lg h-full p-3 flex flex-col gap-5 lg:w-[40%]'>
                         <div className='flex items-center justify-between'>
@@ -92,7 +93,7 @@ const firestick = () => {
                 </div>
                 <h1>Thanks For feedback</h1>
             </div>
-            )}
+            )} */}
         </div>
     )
 }
