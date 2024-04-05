@@ -6,7 +6,6 @@ const Movies = () => {
     <div>
       <Main />
       <Moviescroller />
-        
     </div>
   )
 }

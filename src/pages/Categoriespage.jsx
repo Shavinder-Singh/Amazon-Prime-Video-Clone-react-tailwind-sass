@@ -16,8 +16,6 @@ import '../components/categoriespage/categoriespage.scss'
 import Footer from '../components/footer/footer'
 
 const Categoriespage = () => {
-
-
     return (
         <>
             <div className='categories_page px-6 lg:px-[44px] pb-[40px] bg-black  -z-10 relative'>

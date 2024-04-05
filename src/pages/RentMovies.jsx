@@ -8,7 +8,6 @@ const RentMovies = () => {
             <Main />
             <Moviescroller />
             <Footer />
-
         </div>
     )
 }

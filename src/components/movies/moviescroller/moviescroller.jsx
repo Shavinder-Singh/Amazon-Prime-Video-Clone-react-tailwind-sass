@@ -164,6 +164,10 @@ export default function App() {
         });
     };
     const breakpoints = {
+        320: {
+            slidesPerView: 1.6,
+            spaceBetween: 12,
+        },
         375: {
             slidesPerView: 1.5,
             spaceBetween: 12,
