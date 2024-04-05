@@ -270,6 +270,11 @@ header div .user_options .account_icon div svg {
     display: block;
   }
 }
+@media (min-width: 768px) {
+  header div {
+    z-index: 999;
+  }
+}
 @media (min-width: 1024px) {
   header {
     font-family: amazonEmber;
@@ -281,6 +286,7 @@ header div .user_options .account_icon div svg {
     padding: 0px;
   }
   header div {
+    z-index: 999;
     display: flex;
     align-items: center;
     gap: 14px;
