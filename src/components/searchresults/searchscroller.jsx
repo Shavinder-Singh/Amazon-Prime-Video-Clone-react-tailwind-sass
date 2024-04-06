@@ -194,7 +194,7 @@ const SearchScroller = () => {
                                 </div>)}
                             </button>
                             <button onClick={() => opencontenttype()} className='content_type relative text-[18px] hover:fill-black flex items-center justify-between gap-3 lg:gap-9 font-semibold w-full rounded-lg  bg-inputbgcolor tracking-wider'>
-                                <div className='flex items-center  hover:bg-white hover:text-black gap-2 p-3 rounded-lg'> Content Type
+                                <div className='flex items-center  hover:bg-white hover:text-black gap-2 p-3 rounded-lg' onClick={()=>handlegenre('tv')}> Content Type
                                     {contenttype ? (
                                         <span className='w-3 h-3'><svg className='w-3 h-3' viewBox="0 0 12 7" fill="white" data-chevron-svg="true"><path d="M11.7071 1.70711C12.0976 1.31658 12.0976 0.683417 11.7071 0.292893C11.3166 -0.0976311 10.6834 -0.0976311 10.2929 0.292893L11.7071 1.70711ZM6 6L5.29289 6.70711C5.68342 7.09763 6.31658 7.09763 6.70711 6.70711L6 6ZM1.70711 0.292893C1.31658 -0.0976311 0.683417 -0.0976311 0.292893 0.292893C-0.0976315 0.683417 -0.0976315 1.31658 0.292893 1.70711L1.70711 0.292893ZM10.2929 0.292893L5.29289 5.29289L6.70711 6.70711L11.7071 1.70711L10.2929 0.292893ZM6.70711 5.29289L1.70711 0.292893L0.292893 1.70711L5.29289 6.70711L6.70711 5.29289Z"></path></svg></span>
                                     ) : (
