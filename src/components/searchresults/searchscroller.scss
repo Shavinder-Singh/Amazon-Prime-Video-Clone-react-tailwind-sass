@@ -14,10 +14,12 @@
                     font-size: 17px !important;
                     margin-bottom: 12px;
                 }
-            }
-        }
-    }
 
+            }
+
+        }
+
+    }
 }
 
 .search_page {
@@ -36,6 +38,10 @@
             height: 0px;
             background-color: black;
         }
+    }
+
+    .popupbox_search_result_page {
+        background-color: rgba(12, 12, 12, 0.5);
     }
 }
 
@@ -164,6 +170,43 @@
         .more_videos {
             font-size: 17px;
             letter-spacing: 1px;
+        }
+    }
+}
+
+
+
+
+// popupb box
+
+@media (min-width:447px) {
+    .search_page {
+        .search_filter {
+            font-family: amazonEmberbold;
+        }
+
+        .search_movies_list_wrapper {
+            .movie_item {
+                &:hover .detail_movie_detail_search {
+                    height: 260px;
+                }
+            }
+
+            .detail_movie_detail_search {
+                height: 0px;
+                background-color: black;
+            }
+        }
+
+        .popupbox_search_result_page {
+            background-color: rgba(12, 12, 12, 0.5);
+
+            .popupbox_search_result_page_container {
+                top: 100px;
+                left: calc(50% - 140px - 16px);
+                width: initial;
+                max-height: max-content;
+            }
         }
     }
 }

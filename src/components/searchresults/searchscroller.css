@@ -20,6 +20,9 @@
   height: 0px;
   background-color: black;
 }
+.search_page .popupbox_search_result_page {
+  background-color: rgba(12, 12, 12, 0.5);
+}
 
 @media (min-width: 660px) {
   .search_page {
@@ -52,7 +55,9 @@
     max-width: -moz-max-content;
     max-width: max-content;
     text-wrap: nowrap;
-    padding: 15px 21px;
+  }
+  .search_page .search_filter .filters_options div button:hover svg {
+    fill: black;
   }
   .search_page .search_filter .filter_content {
     display: none;
@@ -73,7 +78,6 @@
     max-width: -moz-max-content;
     max-width: max-content;
     text-wrap: nowrap;
-    padding: 15px 30px;
   }
   .search_page .search_filter .filter_content {
     display: none;
@@ -94,7 +98,6 @@
     max-width: -moz-max-content;
     max-width: max-content;
     text-wrap: nowrap;
-    padding: 15px 17px;
   }
   .search_page .search_filter .filter_content {
     display: none;
@@ -102,5 +105,27 @@
   .search_page .more_videos {
     font-size: 17px;
     letter-spacing: 1px;
+  }
+}
+@media (min-width: 447px) {
+  .search_page .search_filter {
+    font-family: amazonEmberbold;
+  }
+  .search_page .search_movies_list_wrapper .movie_item:hover .detail_movie_detail_search {
+    height: 260px;
+  }
+  .search_page .search_movies_list_wrapper .detail_movie_detail_search {
+    height: 0px;
+    background-color: black;
+  }
+  .search_page .popupbox_search_result_page {
+    background-color: rgba(12, 12, 12, 0.5);
+  }
+  .search_page .popupbox_search_result_page .popupbox_search_result_page_container {
+    top: 100px;
+    left: calc(50% - 140px - 16px);
+    width: initial;
+    max-height: -moz-max-content;
+    max-height: max-content;
   }
 }/*# sourceMappingURL=searchscroller.css.map */

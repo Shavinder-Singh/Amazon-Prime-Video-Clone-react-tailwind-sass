@@ -111,11 +111,11 @@ const SearchScroller = () => {
     const freePageRedirect = (imdbID) => {
         navigate(`/freemovies/${imdbID}`)
     }
-    
+
     const handlegenre = (genre) => {
         fetchGenre(genre);
     }
-    
+
     const qualityFilter = (imdbID) => {
         if (imdbID === "N/A") {
             alert("No Videos In 4k UHD")
@@ -159,9 +159,7 @@ const SearchScroller = () => {
                                         <span>Special Interest</span>
                                         <span>Suspense</span>
                                     </div>
-
                                 ) : (
-
                                     <div className='w-[210px] flex flex-col items-start absolute left-0 top-12 z-10 rounded-b-md bg-secondary'>
                                         <span className='w-full text-left px-4 py-2 hover:bg-white hover:text-black' onClick={() => handlegenre('action')}>Action</span>
                                         <span className='w-full text-left px-4 py-2 hover:bg-white hover:text-black' onClick={() => handlegenre('adventure')}>Adventure</span>
@@ -194,7 +192,7 @@ const SearchScroller = () => {
                                 </div>)}
                             </button>
                             <button onClick={() => opencontenttype()} className='content_type relative text-[18px] hover:fill-black flex items-center justify-between gap-3 lg:gap-9 font-semibold w-full rounded-lg  bg-inputbgcolor tracking-wider'>
-                                <div className='flex items-center  hover:bg-white hover:text-black gap-2 p-3 rounded-lg' onClick={()=>handlegenre('tv')}> Content Type
+                                <div className='flex items-center  hover:bg-white hover:text-black gap-2 p-3 rounded-lg' onClick={() => handlegenre('tv')}> Content Type
                                     {contenttype ? (
                                         <span className='w-3 h-3'><svg className='w-3 h-3' viewBox="0 0 12 7" fill="white" data-chevron-svg="true"><path d="M11.7071 1.70711C12.0976 1.31658 12.0976 0.683417 11.7071 0.292893C11.3166 -0.0976311 10.6834 -0.0976311 10.2929 0.292893L11.7071 1.70711ZM6 6L5.29289 6.70711C5.68342 7.09763 6.31658 7.09763 6.70711 6.70711L6 6ZM1.70711 0.292893C1.31658 -0.0976311 0.683417 -0.0976311 0.292893 0.292893C-0.0976315 0.683417 -0.0976315 1.31658 0.292893 1.70711L1.70711 0.292893ZM10.2929 0.292893L5.29289 5.29289L6.70711 6.70711L11.7071 1.70711L10.2929 0.292893ZM6.70711 5.29289L1.70711 0.292893L0.292893 1.70711L5.29289 6.70711L6.70711 5.29289Z"></path></svg></span>
                                     ) : (
@@ -213,11 +211,11 @@ const SearchScroller = () => {
                                     </div>) : (<div className='absolute items-start flex-col left-0 top-[51px]  rounded-b-md bg-secondary w-full'>
                                         <div className=' flex items-center gap-3  hover:bg-white hover:text-black px-5 py-4'>
                                             <span><svg class="fbl-icon _30dE3d _1a_Ljt" viewBox="0 0 24 24" height="24" width="24" role="img" aria-hidden="true"><title>Checkbox Unselected</title><svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5.433 2.043 C 4.858 2.128,4.224 2.377,3.731 2.712 C 2.956 3.239,2.396 4.034,2.129 4.989 L 2.020 5.380 2.020 12.000 L 2.020 18.620 2.131 19.017 C 2.552 20.526,3.707 21.608,5.226 21.917 C 5.627 21.999,5.720 22.000,12.000 22.000 C 18.280 22.000,18.373 21.999,18.774 21.917 C 20.291 21.608,21.457 20.515,21.872 19.012 L 21.980 18.620 21.980 12.000 L 21.980 5.380 21.874 4.995 C 21.611 4.045,21.044 3.239,20.269 2.712 C 19.929 2.481,19.353 2.218,18.958 2.112 L 18.620 2.022 12.140 2.015 C 8.576 2.012,5.558 2.024,5.433 2.043 M18.383 4.043 C 19.151 4.184,19.816 4.849,19.957 5.617 C 20.017 5.950,20.017 18.050,19.957 18.383 C 19.819 19.138,19.170 19.797,18.408 19.956 C 18.109 20.018,5.891 20.018,5.592 19.956 C 4.830 19.797,4.181 19.138,4.043 18.383 C 3.983 18.050,3.983 5.950,4.043 5.617 C 4.180 4.868,4.847 4.187,5.580 4.047 C 5.875 3.991,18.077 3.987,18.383 4.043 " fill="currentColor" stroke="none" fill-rule="evenodd"></path></svg></svg></span>
-                                            <h1 className='text-[18px]'  onClick={() => handlegenre('Movies')}>Movies</h1>
+                                            <h1 className='text-[18px]' onClick={() => handlegenre('Movies')}>Movies</h1>
                                         </div>
                                         <div className='flex items-center gap-3  hover:bg-white hover:rounded-b-md hover:text-black px-5 py-4'>
                                             <span><svg class="fbl-icon _30dE3d _1a_Ljt" viewBox="0 0 24 24" height="24" width="24" role="img" aria-hidden="true"><title>Checkbox Unselected</title><svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5.433 2.043 C 4.858 2.128,4.224 2.377,3.731 2.712 C 2.956 3.239,2.396 4.034,2.129 4.989 L 2.020 5.380 2.020 12.000 L 2.020 18.620 2.131 19.017 C 2.552 20.526,3.707 21.608,5.226 21.917 C 5.627 21.999,5.720 22.000,12.000 22.000 C 18.280 22.000,18.373 21.999,18.774 21.917 C 20.291 21.608,21.457 20.515,21.872 19.012 L 21.980 18.620 21.980 12.000 L 21.980 5.380 21.874 4.995 C 21.611 4.045,21.044 3.239,20.269 2.712 C 19.929 2.481,19.353 2.218,18.958 2.112 L 18.620 2.022 12.140 2.015 C 8.576 2.012,5.558 2.024,5.433 2.043 M18.383 4.043 C 19.151 4.184,19.816 4.849,19.957 5.617 C 20.017 5.950,20.017 18.050,19.957 18.383 C 19.819 19.138,19.170 19.797,18.408 19.956 C 18.109 20.018,5.891 20.018,5.592 19.956 C 4.830 19.797,4.181 19.138,4.043 18.383 C 3.983 18.050,3.983 5.950,4.043 5.617 C 4.180 4.868,4.847 4.187,5.580 4.047 C 5.875 3.991,18.077 3.987,18.383 4.043 " fill="currentColor" stroke="none" fill-rule="evenodd"></path></svg></svg></span>
-                                            <h1 className='text-[18px]'  onClick={() => handlegenre('action')}>TV Shows</h1>
+                                            <h1 className='text-[18px]' onClick={() => handlegenre('action')}>TV Shows</h1>
                                         </div>
                                     </div>
                                 )}
@@ -228,6 +226,68 @@ const SearchScroller = () => {
                         <button className='p-4 font-semibold w-full rounded-md bg-inputbgcolor tracking-wider'>
                             Filters
                         </button>
+                        {/* <div className=' fixed w-full bg-secondary h-full top-[0px] z-10  left-0 '>
+                            <div className='pt-3 pb-3 px-6 flex justify-between items-center border-b-[0.1px] border-gray-500'>
+                                <h2 className='text-[16px] font-bold tracking-wider'>Filters</h2>
+                                <span><svg xmlns="http://www.w3.org/2000/svg" className='fill-white' viewBox="0 0 50 50" width="15px" height="15px"><path d="M 9.15625 6.3125 L 6.3125 9.15625 L 22.15625 25 L 6.21875 40.96875 L 9.03125 43.78125 L 25 27.84375 L 40.9375 43.78125 L 43.78125 40.9375 L 27.84375 25 L 43.6875 9.15625 L 40.84375 6.3125 L 25 22.15625 Z" /></svg></span>
+                            </div>
+                            <ul className='flex flex-col md:text-[19px] lg:font-bold relative max-h-full overflow-scroll'>
+                                <div>
+                                    <li>
+                                        <div className='flex px-3 py-3 items-center gap-[5px] tracking-wide text-azongray '>Free to me
+                                            <span className='w-3 h-3'><svg className='w-3 h-3' viewBox="0 0 12 7" fill=" gray" data-chevron-svg="true"><path d="M11.7071 1.70711C12.0976 1.31658 12.0976 0.683417 11.7071 0.292893C11.3166 -0.0976311 10.6834 -0.0976311 10.2929 0.292893L11.7071 1.70711ZM6 6L5.29289 6.70711C5.68342 7.09763 6.31658 7.09763 6.70711 6.70711L6 6ZM1.70711 0.292893C1.31658 -0.0976311 0.683417 -0.0976311 0.292893 0.292893C-0.0976315 0.683417 -0.0976315 1.31658 0.292893 1.70711L1.70711 0.292893ZM10.2929 0.292893L5.29289 5.29289L6.70711 6.70711L11.7071 1.70711L10.2929 0.292893ZM6.70711 5.29289L1.70711 0.292893L0.292893 1.70711L5.29289 6.70711L6.70711 5.29289Z"></path></svg></span>
+                                        </div>
+                                        <div className=' bg-inputbgcolor p-[11px] w-full flex items-center pl-9 gap-1'>
+                                            <svg class="fbl-icon _30dE3d _1a_Ljt" viewBox="0 0 24 24" height="17" width="17" role="img" aria-hidden="true"><title>Check</title><svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20.671 5.064 C 20.545 5.102,20.409 5.192,20.264 5.331 C 20.144 5.446,17.739 7.952,14.918 10.900 C 12.097 13.848,9.728 16.323,9.653 16.400 L 9.517 16.540 9.348 16.360 C 8.619 15.580,4.800 11.475,4.278 10.909 C 3.814 10.407,3.569 10.173,3.444 10.112 C 2.962 9.879,2.402 10.051,2.128 10.516 C 2.036 10.672,2.020 10.745,2.021 11.000 C 2.021 11.213,2.043 11.339,2.094 11.435 C 2.184 11.601,2.919 12.399,8.163 18.023 C 8.642 18.537,8.967 18.854,9.066 18.901 C 9.151 18.942,9.322 18.983,9.446 18.992 C 9.932 19.029,9.479 19.466,15.944 12.724 C 19.643 8.866,21.815 6.571,21.876 6.458 C 22.162 5.922,21.885 5.232,21.316 5.063 C 21.061 4.987,20.920 4.987,20.671 5.064 " fill="currentColor" stroke="none" fill-rule="evenodd"></path></svg></svg>
+                                            <h2 className='text-[16px] mt-[-2px]'>Free to me</h2>
+                                        </div>
+                                    </li>
+                                    <li >
+                                        <div className='tracking-wide text-azongray flex items-center gap-[5px] px-3 py-3'>Genre
+                                            <span className='w-3 h-3'><svg className='w-3 h-3' viewBox="0 0 12 7" fill=" gray" data-chevron-svg="true"><path d="M11.7071 1.70711C12.0976 1.31658 12.0976 0.683417 11.7071 0.292893C11.3166 -0.0976311 10.6834 -0.0976311 10.2929 0.292893L11.7071 1.70711ZM6 6L5.29289 6.70711C5.68342 7.09763 6.31658 7.09763 6.70711 6.70711L6 6ZM1.70711 0.292893C1.31658 -0.0976311 0.683417 -0.0976311 0.292893 0.292893C-0.0976315 0.683417 -0.0976315 1.31658 0.292893 1.70711L1.70711 0.292893ZM10.2929 0.292893L5.29289 5.29289L6.70711 6.70711L11.7071 1.70711L10.2929 0.292893ZM6.70711 5.29289L1.70711 0.292893L0.292893 1.70711L5.29289 6.70711L6.70711 5.29289Z"></path></svg></span>
+                                        </div>
+                                        <div className=' bg-inputbgcolor flex-col p-[11px]  w-full flex items-start pl-9 gap-1'>
+                                            <h2 className='text-[16px] mt-[-2px] px-3 py-2 text-azongray'>Action</h2>
+                                            <h2 className='text-[16px] mt-[-2px] px-3 py-2 text-azongray'>Adventure</h2>
+                                            <h2 className='text-[16px] mt-[-2px] px-3 py-2 text-azongray'>Comedy</h2>
+                                            <h2 className='text-[16px] mt-[-2px] px-3 py-2 text-azongray'>Drama</h2>
+                                            <h2 className='text-[16px] mt-[-2px] px-3 py-2 text-azongray'>Kids & Family</h2>
+                                            <h2 className='text-[16px] mt-[-2px] px-3 py-2 text-azongray'>Special Interest</h2>
+                                            <h2 className='text-[16px] mt-[-2px] px-3 py-2 text-azongray'>Suspense</h2>
+                                        </div>
+                                    </li>
+                                </div>
+                                <li>
+                                    <div className='tracking-wide text-azongray flex items-center gap-[5px] px-3 py-3'>
+                                        Video Quality
+                                        <span className='w-3 h-3'><svg className='w-3 h-3' viewBox="0 0 12 7" fill=" gray" data-chevron-svg="true"><path d="M11.7071 1.70711C12.0976 1.31658 12.0976 0.683417 11.7071 0.292893C11.3166 -0.0976311 10.6834 -0.0976311 10.2929 0.292893L11.7071 1.70711ZM6 6L5.29289 6.70711C5.68342 7.09763 6.31658 7.09763 6.70711 6.70711L6 6ZM1.70711 0.292893C1.31658 -0.0976311 0.683417 -0.0976311 0.292893 0.292893C-0.0976315 0.683417 -0.0976315 1.31658 0.292893 1.70711L1.70711 0.292893ZM10.2929 0.292893L5.29289 5.29289L6.70711 6.70711L11.7071 1.70711L10.2929 0.292893ZM6.70711 5.29289L1.70711 0.292893L0.292893 1.70711L5.29289 6.70711L6.70711 5.29289Z"></path></svg></span>
+
+                                    </div>
+                                    <div className=' bg-inputbgcolor p-[11px] w-full flex items-center pl-9 gap-1'>
+                                        <span><svg class="fbl-icon _30dE3d _1a_Ljt" viewBox="0 0 24 24" height="24" width="24" role="img" aria-hidden="true"><title>Checkbox Unselected</title><svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5.433 2.043 C 4.858 2.128,4.224 2.377,3.731 2.712 C 2.956 3.239,2.396 4.034,2.129 4.989 L 2.020 5.380 2.020 12.000 L 2.020 18.620 2.131 19.017 C 2.552 20.526,3.707 21.608,5.226 21.917 C 5.627 21.999,5.720 22.000,12.000 22.000 C 18.280 22.000,18.373 21.999,18.774 21.917 C 20.291 21.608,21.457 20.515,21.872 19.012 L 21.980 18.620 21.980 12.000 L 21.980 5.380 21.874 4.995 C 21.611 4.045,21.044 3.239,20.269 2.712 C 19.929 2.481,19.353 2.218,18.958 2.112 L 18.620 2.022 12.140 2.015 C 8.576 2.012,5.558 2.024,5.433 2.043 M18.383 4.043 C 19.151 4.184,19.816 4.849,19.957 5.617 C 20.017 5.950,20.017 18.050,19.957 18.383 C 19.819 19.138,19.170 19.797,18.408 19.956 C 18.109 20.018,5.891 20.018,5.592 19.956 C 4.830 19.797,4.181 19.138,4.043 18.383 C 3.983 18.050,3.983 5.950,4.043 5.617 C 4.180 4.868,4.847 4.187,5.580 4.047 C 5.875 3.991,18.077 3.987,18.383 4.043 " fill="currentColor" stroke="none" fill-rule="evenodd"></path></svg></svg></span>
+                                        <h2 className='text-[16px] mt-[-2px]'>Free to me</h2>
+                                    </div>
+                                </li>
+                                <li >
+                                    <div className='tracking-wide text-azongray flex items-center gap-[5px] px-3 py-3'>Content Type
+                                        <span className='w-3 h-3'><svg className='w-3 h-3' viewBox="0 0 12 7" fill=" gray" data-chevron-svg="true"><path d="M11.7071 1.70711C12.0976 1.31658 12.0976 0.683417 11.7071 0.292893C11.3166 -0.0976311 10.6834 -0.0976311 10.2929 0.292893L11.7071 1.70711ZM6 6L5.29289 6.70711C5.68342 7.09763 6.31658 7.09763 6.70711 6.70711L6 6ZM1.70711 0.292893C1.31658 -0.0976311 0.683417 -0.0976311 0.292893 0.292893C-0.0976315 0.683417 -0.0976315 1.31658 0.292893 1.70711L1.70711 0.292893ZM10.2929 0.292893L5.29289 5.29289L6.70711 6.70711L11.7071 1.70711L10.2929 0.292893ZM6.70711 5.29289L1.70711 0.292893L0.292893 1.70711L5.29289 6.70711L6.70711 5.29289Z"></path></svg></span>
+                                    </div>
+                                    <div className=' bg-inputbgcolor p-[11px] w-full flex flex-col items-start pl-9 gap-2'>
+                                        <div className='flex items-center gap-2'>
+                                            <span><svg class="fbl-icon _30dE3d _1a_Ljt" viewBox="0 0 24 24" height="15" width="15" role="img" aria-hidden="true"><title>Checkbox Unselected</title><svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5.433 2.043 C 4.858 2.128,4.224 2.377,3.731 2.712 C 2.956 3.239,2.396 4.034,2.129 4.989 L 2.020 5.380 2.020 12.000 L 2.020 18.620 2.131 19.017 C 2.552 20.526,3.707 21.608,5.226 21.917 C 5.627 21.999,5.720 22.000,12.000 22.000 C 18.280 22.000,18.373 21.999,18.774 21.917 C 20.291 21.608,21.457 20.515,21.872 19.012 L 21.980 18.620 21.980 12.000 L 21.980 5.380 21.874 4.995 C 21.611 4.045,21.044 3.239,20.269 2.712 C 19.929 2.481,19.353 2.218,18.958 2.112 L 18.620 2.022 12.140 2.015 C 8.576 2.012,5.558 2.024,5.433 2.043 M18.383 4.043 C 19.151 4.184,19.816 4.849,19.957 5.617 C 20.017 5.950,20.017 18.050,19.957 18.383 C 19.819 19.138,19.170 19.797,18.408 19.956 C 18.109 20.018,5.891 20.018,5.592 19.956 C 4.830 19.797,4.181 19.138,4.043 18.383 C 3.983 18.050,3.983 5.950,4.043 5.617 C 4.180 4.868,4.847 4.187,5.580 4.047 C 5.875 3.991,18.077 3.987,18.383 4.043 " fill="currentColor" stroke="none" fill-rule="evenodd"></path></svg></svg></span>
+                                            <h2 className='text-[16px] mt-[-2px]'>Movies</h2>
+                                        </div>
+                                        <div className='flex items-center gap-2'>
+                                            <span><svg class="fbl-icon _30dE3d _1a_Ljt" viewBox="0 0 24 24" height="15" width="15" role="img" aria-hidden="true"><title>Checkbox Unselected</title><svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5.433 2.043 C 4.858 2.128,4.224 2.377,3.731 2.712 C 2.956 3.239,2.396 4.034,2.129 4.989 L 2.020 5.380 2.020 12.000 L 2.020 18.620 2.131 19.017 C 2.552 20.526,3.707 21.608,5.226 21.917 C 5.627 21.999,5.720 22.000,12.000 22.000 C 18.280 22.000,18.373 21.999,18.774 21.917 C 20.291 21.608,21.457 20.515,21.872 19.012 L 21.980 18.620 21.980 12.000 L 21.980 5.380 21.874 4.995 C 21.611 4.045,21.044 3.239,20.269 2.712 C 19.929 2.481,19.353 2.218,18.958 2.112 L 18.620 2.022 12.140 2.015 C 8.576 2.012,5.558 2.024,5.433 2.043 M18.383 4.043 C 19.151 4.184,19.816 4.849,19.957 5.617 C 20.017 5.950,20.017 18.050,19.957 18.383 C 19.819 19.138,19.170 19.797,18.408 19.956 C 18.109 20.018,5.891 20.018,5.592 19.956 C 4.830 19.797,4.181 19.138,4.043 18.383 C 3.983 18.050,3.983 5.950,4.043 5.617 C 4.180 4.868,4.847 4.187,5.580 4.047 C 5.875 3.991,18.077 3.987,18.383 4.043 " fill="currentColor" stroke="none" fill-rule="evenodd"></path></svg></svg></span>
+                                            <h2 className='text-[16px] mt-[-2px]'>TV Shows</h2>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div className='border-t-[0.2px] border-gray-500  absolute bottom-0 p-6 w-full bg-secondary'>
+                                <div className='p-3 text-center bg-inputbgcolor rounded-lg w-full tracking-wide'>Close</div>
+                            </div>
+                        </div> */}
                     </div>
                 </div >
                 <div>
@@ -264,6 +324,32 @@ const SearchScroller = () => {
                                 </div>
                             </div>
                         ))}
+                    </div>
+                    {/* mobile popup */}
+                    <div className=' popupbox_search_result_page fixed w-full top-0 h-full left-0 z-10 '>
+                        <div className='popupbox_search_result_page_container absolute z-20 bottom-0 rounded-lg p-4 pl-4 pb-6 bg-secondary left-0 w-full flex flex-col gap-[7px]'>
+                            <div className='flex justify-between items-center p-[2px] mb-2    gap-[210px]'>
+                                <h2 className='font-bold tracking-wider text-[18px] mt-[1px]'>Durga</h2>
+                                <svg class="fbl-icon _30dE3d _1a_Ljt" viewBox="0 0 24 24" className='mt-1' height="24" width="24" role="img" aria-hidden="true"><title>Close</title><svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.758 4.054 C 4.416 4.147,4.160 4.395,4.061 4.729 C 3.985 4.987,3.985 5.053,4.063 5.323 C 4.125 5.534,4.219 5.632,7.353 8.770 L 10.579 12.000 7.371 15.210 C 4.893 17.690,4.145 18.461,4.083 18.600 C 3.984 18.819,3.975 19.182,4.062 19.391 C 4.144 19.587,4.381 19.831,4.580 19.924 C 4.798 20.025,5.166 20.022,5.400 19.917 C 5.539 19.855,6.310 19.107,8.790 16.629 L 12.000 13.421 15.230 16.647 C 18.368 19.781,18.466 19.875,18.677 19.937 C 18.949 20.016,19.013 20.016,19.283 19.936 C 19.581 19.847,19.847 19.581,19.936 19.283 C 20.016 19.013,20.016 18.949,19.937 18.677 C 19.875 18.466,19.781 18.368,16.647 15.230 L 13.421 12.000 16.647 8.770 C 19.781 5.632,19.875 5.534,19.937 5.323 C 20.015 5.053,20.016 4.987,19.938 4.725 C 19.768 4.154,19.088 3.855,18.558 4.119 C 18.431 4.182,17.462 5.124,15.190 7.393 L 12.000 10.580 8.810 7.394 C 6.729 5.315,5.564 4.180,5.460 4.129 C 5.243 4.023,4.977 3.994,4.758 4.054 " fill="currentColor" stroke="none" fill-rule="evenodd"></path></svg></svg>
+                            </div>
+                            <div className='rating pb-1 px-1 ml-0 bg-inputbgcolor rounded-sm max-w-12 text-[12px] font-bold h-6 w-max '>
+                                U
+                            </div>
+                            <ul>
+                                <li className='flex items-center gap-2 py-3'>
+                                    <svg class="fbl-icon _30dE3d _1a_Ljt" viewBox="0 0 24 24" height="24" width="24" role="img" aria-hidden="true"><title>Play</title><svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.643 3.069 C 6.546 3.103,6.392 3.206,6.300 3.298 C 5.973 3.624,6.000 2.855,6.000 12.000 C 6.000 21.144,5.974 20.376,6.299 20.701 C 6.568 20.970,6.964 21.065,7.308 20.944 C 7.580 20.848,20.606 12.815,20.748 12.656 C 21.074 12.289,21.074 11.710,20.748 11.345 C 20.607 11.188,7.572 3.150,7.305 3.055 C 7.107 2.985,6.867 2.990,6.643 3.069 " fill="currentColor" stroke="none" fill-rule="evenodd"></path></svg></svg>
+                                    Play
+                                </li>
+                                <li className='flex items-center gap-2 py-3'>
+                                    <svg class="fbl-icon _30dE3d _1a_Ljt" viewBox="0 0 24 24" height="24" width="24" role="img" aria-hidden="true"><title>Watchlist</title><svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11.664 2.063 C 11.436 2.146,11.257 2.297,11.131 2.511 L 11.020 2.700 11.009 6.850 L 10.999 11.000 6.924 11.000 C 2.491 11.000,2.677 10.991,2.374 11.222 C 2.301 11.277,2.192 11.408,2.131 11.511 C 2.036 11.672,2.020 11.744,2.020 12.000 C 2.020 12.256,2.036 12.328,2.131 12.489 C 2.192 12.592,2.301 12.723,2.374 12.778 C 2.677 13.009,2.491 13.000,6.925 13.000 L 11.000 13.000 11.000 17.070 C 11.000 19.750,11.015 21.191,11.042 21.289 C 11.103 21.509,11.315 21.762,11.531 21.874 C 11.932 22.080,12.390 22.012,12.700 21.702 C 13.018 21.385,13.000 21.656,13.000 17.073 L 13.000 13.000 17.073 13.000 C 21.654 13.000,21.385 13.017,21.701 12.701 C 22.092 12.310,22.092 11.690,21.701 11.299 C 21.385 10.983,21.654 11.000,17.073 11.000 L 13.000 11.000 13.000 6.927 C 13.000 2.346,13.017 2.615,12.701 2.299 C 12.429 2.027,12.018 1.933,11.664 2.063 " fill="currentColor" stroke="none" fill-rule="evenodd"></path></svg></svg>
+                                    Watchlist
+                                </li>
+                                <li className='flex items-center gap-2 py-3'>
+                                    <svg class="fbl-icon _30dE3d _1a_Ljt" viewBox="0 0 24 24" height="24" width="24" role="img" aria-hidden="true"><title>Info</title><svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11.120 2.039 C 8.641 2.287,6.414 3.362,4.761 5.107 C 1.806 8.228,1.158 12.819,3.137 16.623 C 3.620 17.552,4.164 18.288,4.938 19.061 C 5.930 20.051,7.038 20.789,8.272 21.278 C 11.634 22.610,15.313 22.080,18.200 19.845 C 18.637 19.507,19.507 18.637,19.845 18.200 C 21.256 16.378,22.000 14.236,22.000 12.000 C 22.000 7.432,18.842 3.387,14.430 2.303 C 13.446 2.062,12.028 1.948,11.120 2.039 M12.740 4.041 C 15.525 4.302,17.953 5.983,19.182 8.500 C 20.655 11.514,20.091 15.104,17.765 17.530 C 16.248 19.111,14.175 19.999,12.000 19.999 C 8.235 19.999,4.948 17.331,4.177 13.648 C 3.426 10.057,5.201 6.431,8.501 4.817 C 9.822 4.170,11.277 3.904,12.740 4.041 M11.000 8.000 L 11.000 9.000 12.000 9.000 L 13.000 9.000 13.000 8.000 L 13.000 7.000 12.000 7.000 L 11.000 7.000 11.000 8.000 M11.000 13.570 C 11.000 15.217,11.015 16.194,11.042 16.289 C 11.103 16.509,11.315 16.762,11.531 16.874 C 11.932 17.080,12.390 17.012,12.700 16.702 C 13.008 16.394,13.000 16.478,13.000 13.573 L 13.000 11.000 12.000 11.000 L 11.000 11.000 11.000 13.570 " fill="currentColor" stroke="none" fill-rule="evenodd"></path></svg></svg>
+                                    More details
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
 
