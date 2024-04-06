@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Demoimage from '../../assets/image/categoriespageimages/demoimage.webp'
 import axios from 'axios';
 import './searchscroller.scss';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 
 
@@ -74,53 +74,153 @@ const SearchScroller = () => {
             console.log(error);
         }
     }
+    //filters bigscreen
+    const [freetome, setfreetome] = useState(true);
+    const [genre, setgenre] = useState(true);
+    const [videoQuality, setVidequality] = useState(true);
+    const [contenttype, setcontenttype] = useState(true);
+    const openfreetome = () => {
+        setfreetome(!freetome)
+        setgenre(true)
+        setVidequality(true)
+        setcontenttype(true)
+
+    }
+    const opengenre = () => {
+        setgenre(!genre)
+        setfreetome(true)
+        setVidequality(true)
+        setcontenttype(true)
+
+    }
+    const openvideoquality = () => {
+        setVidequality(!videoQuality)
+        setfreetome(true)
+        setgenre(true)
+        setcontenttype(true)
+    }
+    const opencontenttype = () => {
+        setcontenttype(!contenttype)
+        setgenre(true)
+        setVidequality(true)
+        setfreetome(true)
+
+    }
+
+    //filters
+    const freePageRedirect = (imdbID) => {
+        navigate(`/freemovies/${imdbID}`)
+    }
+    
+    const handlegenre = (genre) => {
+        fetchGenre(genre);
+    }
+    
+    const qualityFilter = (imdbID) => {
+        if (imdbID === "N/A") {
+            alert("No Videos In 4k UHD")
+        } else {
+            fetchGenre(genre)
+        }
+    }
     return (
         <>
             <div className='search_page text-white px-6 bg-primary min-h-[120vh]'>
                 <div className='search_filter'>
                     <div className='filters_options hidden'>
                         <div className='buttons mb-16 xl:mb-[61px]'>
-                            <button className='relative text-[18px] p-3 flex items-center justify-between gap-3 font-semibold w-full rounded-t-md bg-inputbgcolor tracking-wider'>
-                                Free to me
-                                <span className='w-3 h-3'><svg className='w-3 h-3' viewBox="0 0 12 7" fill="white" data-chevron-svg="true"><path d="M11.7071 1.70711C12.0976 1.31658 12.0976 0.683417 11.7071 0.292893C11.3166 -0.0976311 10.6834 -0.0976311 10.2929 0.292893L11.7071 1.70711ZM6 6L5.29289 6.70711C5.68342 7.09763 6.31658 7.09763 6.70711 6.70711L6 6ZM1.70711 0.292893C1.31658 -0.0976311 0.683417 -0.0976311 0.292893 0.292893C-0.0976315 0.683417 -0.0976315 1.31658 0.292893 1.70711L1.70711 0.292893ZM10.2929 0.292893L5.29289 5.29289L6.70711 6.70711L11.7071 1.70711L10.2929 0.292893ZM6.70711 5.29289L1.70711 0.292893L0.292893 1.70711L5.29289 6.70711L6.70711 5.29289Z"></path></svg></span>
-                                <div className='hidden text-[18px] absolute left-0 bottom-[-48px] py-3  px-[25px] rounded-b-md bg-secondary w-full'>
+                            <button onClick={() => openfreetome()} className='free_to_me relative text-[18px] flex items-center justify-between gap-3 font-semibold w-full rounded-lg bg-inputbgcolor tracking-wider'>
+                                <div className='flex items-center  hover:bg-white hover:text-black gap-2 p-3 rounded-lg'> Free to me
+                                    {freetome ? (
+                                        <span className='w-3 h-3'><svg className='w-3 h-3' viewBox="0 0 12 7" fill="white" data-chevron-svg="true"><path d="M11.7071 1.70711C12.0976 1.31658 12.0976 0.683417 11.7071 0.292893C11.3166 -0.0976311 10.6834 -0.0976311 10.2929 0.292893L11.7071 1.70711ZM6 6L5.29289 6.70711C5.68342 7.09763 6.31658 7.09763 6.70711 6.70711L6 6ZM1.70711 0.292893C1.31658 -0.0976311 0.683417 -0.0976311 0.292893 0.292893C-0.0976315 0.683417 -0.0976315 1.31658 0.292893 1.70711L1.70711 0.292893ZM10.2929 0.292893L5.29289 5.29289L6.70711 6.70711L11.7071 1.70711L10.2929 0.292893ZM6.70711 5.29289L1.70711 0.292893L0.292893 1.70711L5.29289 6.70711L6.70711 5.29289Z"></path></svg></span>
+                                    ) : (
+                                        <span className='w-3 h-3'><svg className='w-3 h-3 rotate-180 transition-all duration-300' viewBox="0 0 12 7" fill="white" data-chevron-svg="true"><path d="M11.7071 1.70711C12.0976 1.31658 12.0976 0.683417 11.7071 0.292893C11.3166 -0.0976311 10.6834 -0.0976311 10.2929 0.292893L11.7071 1.70711ZM6 6L5.29289 6.70711C5.68342 7.09763 6.31658 7.09763 6.70711 6.70711L6 6ZM1.70711 0.292893C1.31658 -0.0976311 0.683417 -0.0976311 0.292893 0.292893C-0.0976315 0.683417 -0.0976315 1.31658 0.292893 1.70711L1.70711 0.292893ZM10.2929 0.292893L5.29289 5.29289L6.70711 6.70711L11.7071 1.70711L10.2929 0.292893ZM6.70711 5.29289L1.70711 0.292893L0.292893 1.70711L5.29289 6.70711L6.70711 5.29289Z"></path></svg></span>
+                                    )}</div>
+                                {freetome ? (<div className='free_to_me_drop_down hidden text-[18px] absolute left-0 bottom-[-48px] py-3  px-[25px] bg-secondary w-full'>
                                     Free to me
-                                </div>
+                                </div>) : (<div className='free_to_me_drop_down hover:bg-white hover:text-black text-[18px] absolute left-0 bottom-[-48px] py-3  px-[25px] rounded-b-md bg-secondary w-full'>
+                                    {data && (<p onClick={() => freePageRedirect(data.imdbID)}>  Free to me <span className='text-[0px]'>{data.imdbID}</span></p>)}
+                                </div>)}
                             </button>
-                            <button className=' relative text-[18px]  p-3 flex items-center justify-between gap-3 font-semibold w-full rounded-t-md bg-inputbgcolor tracking-wider'>
-                                Genre
-                                <span className='w-3 h-3'><svg className='w-3 h-3' viewBox="0 0 12 7" fill="white" data-chevron-svg="true"><path d="M11.7071 1.70711C12.0976 1.31658 12.0976 0.683417 11.7071 0.292893C11.3166 -0.0976311 10.6834 -0.0976311 10.2929 0.292893L11.7071 1.70711ZM6 6L5.29289 6.70711C5.68342 7.09763 6.31658 7.09763 6.70711 6.70711L6 6ZM1.70711 0.292893C1.31658 -0.0976311 0.683417 -0.0976311 0.292893 0.292893C-0.0976315 0.683417 -0.0976315 1.31658 0.292893 1.70711L1.70711 0.292893ZM10.2929 0.292893L5.29289 5.29289L6.70711 6.70711L11.7071 1.70711L10.2929 0.292893ZM6.70711 5.29289L1.70711 0.292893L0.292893 1.70711L5.29289 6.70711L6.70711 5.29289Z"></path></svg></span>
-                                <div className='w-[180px] hidden flex flex-col items-start absolute left-0 bottom-[-330px] z-10  py-3  px-[25px] rounded-b-md bg-secondary'>
-                                    <span>Action</span>
-                                    <span>Adventure</span>
-                                    <span>Comedy</span>
-                                    <span>Drama</span>
-                                    <span>Kids & Family</span>
-                                    <span>Special Interest</span>
-                                    <span>Suspense</span>
-                                </div>
+                            <button onClick={() => opengenre()} className='genre  relative text-[18px] flex items-center justify-between font-semibold w-full rounded-lg  bg-inputbgcolor tracking-wider'>
+                                <div className='flex items-center  hover:bg-white hover:text-black gap-2 p-3 rounded-lg '>Genre
+                                    {genre ? (
+                                        <span className='w-3 h-3'><svg className='w-3 h-3' viewBox="0 0 12 7" fill="white" data-chevron-svg="true"><path d="M11.7071 1.70711C12.0976 1.31658 12.0976 0.683417 11.7071 0.292893C11.3166 -0.0976311 10.6834 -0.0976311 10.2929 0.292893L11.7071 1.70711ZM6 6L5.29289 6.70711C5.68342 7.09763 6.31658 7.09763 6.70711 6.70711L6 6ZM1.70711 0.292893C1.31658 -0.0976311 0.683417 -0.0976311 0.292893 0.292893C-0.0976315 0.683417 -0.0976315 1.31658 0.292893 1.70711L1.70711 0.292893ZM10.2929 0.292893L5.29289 5.29289L6.70711 6.70711L11.7071 1.70711L10.2929 0.292893ZM6.70711 5.29289L1.70711 0.292893L0.292893 1.70711L5.29289 6.70711L6.70711 5.29289Z"></path></svg></span>
+                                    ) : (
+                                        <span className='w-3 h-3'><svg className='w-3 h-3 rotate-180 transition-all duration-300' viewBox="0 0 12 7" fill="white" data-chevron-svg="true"><path d="M11.7071 1.70711C12.0976 1.31658 12.0976 0.683417 11.7071 0.292893C11.3166 -0.0976311 10.6834 -0.0976311 10.2929 0.292893L11.7071 1.70711ZM6 6L5.29289 6.70711C5.68342 7.09763 6.31658 7.09763 6.70711 6.70711L6 6ZM1.70711 0.292893C1.31658 -0.0976311 0.683417 -0.0976311 0.292893 0.292893C-0.0976315 0.683417 -0.0976315 1.31658 0.292893 1.70711L1.70711 0.292893ZM10.2929 0.292893L5.29289 5.29289L6.70711 6.70711L11.7071 1.70711L10.2929 0.292893ZM6.70711 5.29289L1.70711 0.292893L0.292893 1.70711L5.29289 6.70711L6.70711 5.29289Z"></path></svg></span>
+                                    )}</div>
+                                {genre ? (
+                                    <div className='w-[180px] hidden  flex-col items-start absolute left-0 bottom-[-330px] z-10  py-3  px-[25px] rounded-b-md bg-secondary'>
+                                        <span>Action</span>
+                                        <span>Adventure</span>
+                                        <span>Comedy</span>
+                                        <span>Drama</span>
+                                        <span>Kids & Family</span>
+                                        <span>Special Interest</span>
+                                        <span>Suspense</span>
+                                    </div>
+
+                                ) : (
+
+                                    <div className='w-[210px] flex flex-col items-start absolute left-0 top-12 z-10 rounded-b-md bg-secondary'>
+                                        <span className='w-full text-left px-4 py-2 hover:bg-white hover:text-black' onClick={() => handlegenre('action')}>Action</span>
+                                        <span className='w-full text-left px-4 py-2 hover:bg-white hover:text-black' onClick={() => handlegenre('adventure')}>Adventure</span>
+                                        <span className='w-full text-left px-4 py-2 hover:bg-white hover:text-black' onClick={() => handlegenre('comedy')}>Comedy</span>
+                                        <span className='w-full text-left px-4 py-2 hover:bg-white hover:text-black' onClick={() => handlegenre('drama')}>Drama</span>
+                                        <span className='w-full text-left px-4 py-2 hover:bg-white hover:text-black' onClick={() => handlegenre('documentray')}>Documentray</span>
+                                        <span className='w-full text-left px-4 py-2 hover:bg-white hover:text-black' onClick={() => handlegenre('fantasy')}>Fantasy</span>
+                                        <span className='w-full text-left px-4 py-2 hover:bg-white hover:text-black' onClick={() => handlegenre('horror')}>Horror</span>
+                                        <span className='w-full text-left px-4 py-2 hover:bg-white hover:text-black' onClick={() => handlegenre('international')}>International</span>
+                                        <span className='w-full text-left px-4 py-2 hover:bg-white hover:text-black' onClick={() => handlegenre('kids')}>Kids & Family</span>
+                                        <span className='w-full text-left px-4 py-2 hover:bg-white hover:text-black' onClick={() => handlegenre('military')}>Military & War</span>
+                                        <span className='w-full text-left px-4 py-2 hover:bg-white hover:text-black' onClick={() => handlegenre('romance')}>Romance</span>
+                                        <span className='w-full text-left px-4 py-2 hover:bg-white hover:text-black hover:rounded-b-md' onClick={() => handlegenre('science')}>Science Fiction</span>
+                                    </div>
+                                )}
                             </button>
-                            <button className=' relative text-[18px] p-3 flex items-center justify-between gap-3 lg:gap-9 font-semibold w-full rounded-t-md bg-inputbgcolor tracking-wider'>
-                                Video Quality
-                                <span className='w-3 h-3'><svg className='w-3 h-3' viewBox="0 0 12 7" fill="white" data-chevron-svg="true"><path d="M11.7071 1.70711C12.0976 1.31658 12.0976 0.683417 11.7071 0.292893C11.3166 -0.0976311 10.6834 -0.0976311 10.2929 0.292893L11.7071 1.70711ZM6 6L5.29289 6.70711C5.68342 7.09763 6.31658 7.09763 6.70711 6.70711L6 6ZM1.70711 0.292893C1.31658 -0.0976311 0.683417 -0.0976311 0.292893 0.292893C-0.0976315 0.683417 -0.0976315 1.31658 0.292893 1.70711L1.70711 0.292893ZM10.2929 0.292893L5.29289 5.29289L6.70711 6.70711L11.7071 1.70711L10.2929 0.292893ZM6.70711 5.29289L1.70711 0.292893L0.292893 1.70711L5.29289 6.70711L6.70711 5.29289Z"></path></svg></span>
-                                <div className='flex hidden items-center absolute left-0 bottom-[-48px] py-3  px-[25px] rounded-b-md bg-secondary w-full'>
+                            <button onClick={() => openvideoquality()} className='videoQuality relative text-[18px] hover:fill-black flex items-center justify-between gap-3 lg:gap-9 font-semibold w-full rounded-lg  bg-inputbgcolor tracking-wider'>
+                                <div className='flex items-center  hover:bg-white hover:text-black gap-2 p-3 rounded-lg'> Video Quality
+                                    {videoQuality ? (
+                                        <span className='w-3 h-3'><svg className='w-3 h-3 hover:fill-black' viewBox="0 0 12 7" fill="white" data-chevron-svg="true"><path d="M11.7071 1.70711C12.0976 1.31658 12.0976 0.683417 11.7071 0.292893C11.3166 -0.0976311 10.6834 -0.0976311 10.2929 0.292893L11.7071 1.70711ZM6 6L5.29289 6.70711C5.68342 7.09763 6.31658 7.09763 6.70711 6.70711L6 6ZM1.70711 0.292893C1.31658 -0.0976311 0.683417 -0.0976311 0.292893 0.292893C-0.0976315 0.683417 -0.0976315 1.31658 0.292893 1.70711L1.70711 0.292893ZM10.2929 0.292893L5.29289 5.29289L6.70711 6.70711L11.7071 1.70711L10.2929 0.292893ZM6.70711 5.29289L1.70711 0.292893L0.292893 1.70711L5.29289 6.70711L6.70711 5.29289Z"></path></svg></span>
+                                    ) : (
+                                        <span className='w-3 h-3'><svg className='w-3 h-3 hover:fill-black rotate-180 transition-all duration-300' viewBox="0 0 12 7" fill="white" data-chevron-svg="true"><path d="M11.7071 1.70711C12.0976 1.31658 12.0976 0.683417 11.7071 0.292893C11.3166 -0.0976311 10.6834 -0.0976311 10.2929 0.292893L11.7071 1.70711ZM6 6L5.29289 6.70711C5.68342 7.09763 6.31658 7.09763 6.70711 6.70711L6 6ZM1.70711 0.292893C1.31658 -0.0976311 0.683417 -0.0976311 0.292893 0.292893C-0.0976315 0.683417 -0.0976315 1.31658 0.292893 1.70711L1.70711 0.292893ZM10.2929 0.292893L5.29289 5.29289L6.70711 6.70711L11.7071 1.70711L10.2929 0.292893ZM6.70711 5.29289L1.70711 0.292893L0.292893 1.70711L5.29289 6.70711L6.70711 5.29289Z"></path></svg></span>
+                                    )}</div>
+                                {videoQuality ? (<div className='flex hidden items-center absolute left-0 bottom-[-48px] py-3  px-[25px] rounded-b-md bg-secondary w-full'>
                                     <span><svg class="fbl-icon _30dE3d _1a_Ljt" viewBox="0 0 24 24" height="24" width="24" role="img" aria-hidden="true"><title>Checkbox Unselected</title><svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5.433 2.043 C 4.858 2.128,4.224 2.377,3.731 2.712 C 2.956 3.239,2.396 4.034,2.129 4.989 L 2.020 5.380 2.020 12.000 L 2.020 18.620 2.131 19.017 C 2.552 20.526,3.707 21.608,5.226 21.917 C 5.627 21.999,5.720 22.000,12.000 22.000 C 18.280 22.000,18.373 21.999,18.774 21.917 C 20.291 21.608,21.457 20.515,21.872 19.012 L 21.980 18.620 21.980 12.000 L 21.980 5.380 21.874 4.995 C 21.611 4.045,21.044 3.239,20.269 2.712 C 19.929 2.481,19.353 2.218,18.958 2.112 L 18.620 2.022 12.140 2.015 C 8.576 2.012,5.558 2.024,5.433 2.043 M18.383 4.043 C 19.151 4.184,19.816 4.849,19.957 5.617 C 20.017 5.950,20.017 18.050,19.957 18.383 C 19.819 19.138,19.170 19.797,18.408 19.956 C 18.109 20.018,5.891 20.018,5.592 19.956 C 4.830 19.797,4.181 19.138,4.043 18.383 C 3.983 18.050,3.983 5.950,4.043 5.617 C 4.180 4.868,4.847 4.187,5.580 4.047 C 5.875 3.991,18.077 3.987,18.383 4.043 " fill="currentColor" stroke="none" fill-rule="evenodd"></path></svg></svg></span>
                                     <h1 className='text-[18px] '>4K UHD</h1>
-                                </div>
+                                </div>) : (<div className='flex hover:bg-white hover:text-black items-center absolute left-0 bottom-[-48px] py-3  px-[25px] rounded-b-md bg-secondary w-full'>
+                                    <span><svg class="fbl-icon _30dE3d _1a_Ljt" viewBox="0 0 24 24" height="24" width="24" role="img" aria-hidden="true"><title>Checkbox Unselected</title><svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5.433 2.043 C 4.858 2.128,4.224 2.377,3.731 2.712 C 2.956 3.239,2.396 4.034,2.129 4.989 L 2.020 5.380 2.020 12.000 L 2.020 18.620 2.131 19.017 C 2.552 20.526,3.707 21.608,5.226 21.917 C 5.627 21.999,5.720 22.000,12.000 22.000 C 18.280 22.000,18.373 21.999,18.774 21.917 C 20.291 21.608,21.457 20.515,21.872 19.012 L 21.980 18.620 21.980 12.000 L 21.980 5.380 21.874 4.995 C 21.611 4.045,21.044 3.239,20.269 2.712 C 19.929 2.481,19.353 2.218,18.958 2.112 L 18.620 2.022 12.140 2.015 C 8.576 2.012,5.558 2.024,5.433 2.043 M18.383 4.043 C 19.151 4.184,19.816 4.849,19.957 5.617 C 20.017 5.950,20.017 18.050,19.957 18.383 C 19.819 19.138,19.170 19.797,18.408 19.956 C 18.109 20.018,5.891 20.018,5.592 19.956 C 4.830 19.797,4.181 19.138,4.043 18.383 C 3.983 18.050,3.983 5.950,4.043 5.617 C 4.180 4.868,4.847 4.187,5.580 4.047 C 5.875 3.991,18.077 3.987,18.383 4.043 " fill="currentColor" stroke="none" fill-rule="evenodd"></path></svg></svg></span>
+                                    <h1 className='text-[18px] ' onClick={() => qualityFilter(data.Metascore)}>4K UHD</h1>
+                                </div>)}
                             </button>
-                            <button className=' relative text-[18px] p-3 flex items-center justify-between gap-3 lg:gap-9 font-semibold w-full rounded-t-md bg-inputbgcolor tracking-wider'>
-                                Content Type
-                                <span className='w-3 h-3'><svg className='w-3 h-3' viewBox="0 0 12 7" fill="white" data-chevron-svg="true"><path d="M11.7071 1.70711C12.0976 1.31658 12.0976 0.683417 11.7071 0.292893C11.3166 -0.0976311 10.6834 -0.0976311 10.2929 0.292893L11.7071 1.70711ZM6 6L5.29289 6.70711C5.68342 7.09763 6.31658 7.09763 6.70711 6.70711L6 6ZM1.70711 0.292893C1.31658 -0.0976311 0.683417 -0.0976311 0.292893 0.292893C-0.0976315 0.683417 -0.0976315 1.31658 0.292893 1.70711L1.70711 0.292893ZM10.2929 0.292893L5.29289 5.29289L6.70711 6.70711L11.7071 1.70711L10.2929 0.292893ZM6.70711 5.29289L1.70711 0.292893L0.292893 1.70711L5.29289 6.70711L6.70711 5.29289Z"></path></svg></span>
-                                <div className='absolute  hidden flex items-start  flex-col left-0 bottom-[-92px] py-3  px-[25px] rounded-b-md bg-secondary w-full'>
-                                    <div className=' flex items-center'>
-                                        <span><svg class="fbl-icon _30dE3d _1a_Ljt" viewBox="0 0 24 24" height="24" width="24" role="img" aria-hidden="true"><title>Checkbox Unselected</title><svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5.433 2.043 C 4.858 2.128,4.224 2.377,3.731 2.712 C 2.956 3.239,2.396 4.034,2.129 4.989 L 2.020 5.380 2.020 12.000 L 2.020 18.620 2.131 19.017 C 2.552 20.526,3.707 21.608,5.226 21.917 C 5.627 21.999,5.720 22.000,12.000 22.000 C 18.280 22.000,18.373 21.999,18.774 21.917 C 20.291 21.608,21.457 20.515,21.872 19.012 L 21.980 18.620 21.980 12.000 L 21.980 5.380 21.874 4.995 C 21.611 4.045,21.044 3.239,20.269 2.712 C 19.929 2.481,19.353 2.218,18.958 2.112 L 18.620 2.022 12.140 2.015 C 8.576 2.012,5.558 2.024,5.433 2.043 M18.383 4.043 C 19.151 4.184,19.816 4.849,19.957 5.617 C 20.017 5.950,20.017 18.050,19.957 18.383 C 19.819 19.138,19.170 19.797,18.408 19.956 C 18.109 20.018,5.891 20.018,5.592 19.956 C 4.830 19.797,4.181 19.138,4.043 18.383 C 3.983 18.050,3.983 5.950,4.043 5.617 C 4.180 4.868,4.847 4.187,5.580 4.047 C 5.875 3.991,18.077 3.987,18.383 4.043 " fill="currentColor" stroke="none" fill-rule="evenodd"></path></svg></svg></span>
-                                        <h1 className='text-[18px]'>Movies</h1>
+                            <button onClick={() => opencontenttype()} className='content_type relative text-[18px] hover:fill-black flex items-center justify-between gap-3 lg:gap-9 font-semibold w-full rounded-lg  bg-inputbgcolor tracking-wider'>
+                                <div className='flex items-center  hover:bg-white hover:text-black gap-2 p-3 rounded-lg'> Content Type
+                                    {contenttype ? (
+                                        <span className='w-3 h-3'><svg className='w-3 h-3' viewBox="0 0 12 7" fill="white" data-chevron-svg="true"><path d="M11.7071 1.70711C12.0976 1.31658 12.0976 0.683417 11.7071 0.292893C11.3166 -0.0976311 10.6834 -0.0976311 10.2929 0.292893L11.7071 1.70711ZM6 6L5.29289 6.70711C5.68342 7.09763 6.31658 7.09763 6.70711 6.70711L6 6ZM1.70711 0.292893C1.31658 -0.0976311 0.683417 -0.0976311 0.292893 0.292893C-0.0976315 0.683417 -0.0976315 1.31658 0.292893 1.70711L1.70711 0.292893ZM10.2929 0.292893L5.29289 5.29289L6.70711 6.70711L11.7071 1.70711L10.2929 0.292893ZM6.70711 5.29289L1.70711 0.292893L0.292893 1.70711L5.29289 6.70711L6.70711 5.29289Z"></path></svg></span>
+                                    ) : (
+                                        <span className='w-3 h-3'><svg className='w-3 h-3  rotate-180 transition-all duration-300' viewBox="0 0 12 7" fill="white" data-chevron-svg="true"><path d="M11.7071 1.70711C12.0976 1.31658 12.0976 0.683417 11.7071 0.292893C11.3166 -0.0976311 10.6834 -0.0976311 10.2929 0.292893L11.7071 1.70711ZM6 6L5.29289 6.70711C5.68342 7.09763 6.31658 7.09763 6.70711 6.70711L6 6ZM1.70711 0.292893C1.31658 -0.0976311 0.683417 -0.0976311 0.292893 0.292893C-0.0976315 0.683417 -0.0976315 1.31658 0.292893 1.70711L1.70711 0.292893ZM10.2929 0.292893L5.29289 5.29289L6.70711 6.70711L11.7071 1.70711L10.2929 0.292893ZM6.70711 5.29289L1.70711 0.292893L0.292893 1.70711L5.29289 6.70711L6.70711 5.29289Z"></path></svg></span>
+                                    )}</div>
+                                {contenttype ? (
+                                    <div className='absolute  hidden  items-start  flex-col left-0 bottom-[-92px] py-3  px-[25px] rounded-b-md bg-secondary w-full'>
+                                        <div className=' flex items-center'>
+                                            <span><svg class="fbl-icon _30dE3d _1a_Ljt" viewBox="0 0 24 24" height="24" width="24" role="img" aria-hidden="true"><title>Checkbox Unselected</title><svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5.433 2.043 C 4.858 2.128,4.224 2.377,3.731 2.712 C 2.956 3.239,2.396 4.034,2.129 4.989 L 2.020 5.380 2.020 12.000 L 2.020 18.620 2.131 19.017 C 2.552 20.526,3.707 21.608,5.226 21.917 C 5.627 21.999,5.720 22.000,12.000 22.000 C 18.280 22.000,18.373 21.999,18.774 21.917 C 20.291 21.608,21.457 20.515,21.872 19.012 L 21.980 18.620 21.980 12.000 L 21.980 5.380 21.874 4.995 C 21.611 4.045,21.044 3.239,20.269 2.712 C 19.929 2.481,19.353 2.218,18.958 2.112 L 18.620 2.022 12.140 2.015 C 8.576 2.012,5.558 2.024,5.433 2.043 M18.383 4.043 C 19.151 4.184,19.816 4.849,19.957 5.617 C 20.017 5.950,20.017 18.050,19.957 18.383 C 19.819 19.138,19.170 19.797,18.408 19.956 C 18.109 20.018,5.891 20.018,5.592 19.956 C 4.830 19.797,4.181 19.138,4.043 18.383 C 3.983 18.050,3.983 5.950,4.043 5.617 C 4.180 4.868,4.847 4.187,5.580 4.047 C 5.875 3.991,18.077 3.987,18.383 4.043 " fill="currentColor" stroke="none" fill-rule="evenodd"></path></svg></svg></span>
+                                            <h1 className='text-[18px]'>Movies</h1>
+                                        </div>
+                                        <div className='flex items-center'>
+                                            <span><svg class="fbl-icon _30dE3d _1a_Ljt" viewBox="0 0 24 24" height="24" width="24" role="img" aria-hidden="true"><title>Checkbox Unselected</title><svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5.433 2.043 C 4.858 2.128,4.224 2.377,3.731 2.712 C 2.956 3.239,2.396 4.034,2.129 4.989 L 2.020 5.380 2.020 12.000 L 2.020 18.620 2.131 19.017 C 2.552 20.526,3.707 21.608,5.226 21.917 C 5.627 21.999,5.720 22.000,12.000 22.000 C 18.280 22.000,18.373 21.999,18.774 21.917 C 20.291 21.608,21.457 20.515,21.872 19.012 L 21.980 18.620 21.980 12.000 L 21.980 5.380 21.874 4.995 C 21.611 4.045,21.044 3.239,20.269 2.712 C 19.929 2.481,19.353 2.218,18.958 2.112 L 18.620 2.022 12.140 2.015 C 8.576 2.012,5.558 2.024,5.433 2.043 M18.383 4.043 C 19.151 4.184,19.816 4.849,19.957 5.617 C 20.017 5.950,20.017 18.050,19.957 18.383 C 19.819 19.138,19.170 19.797,18.408 19.956 C 18.109 20.018,5.891 20.018,5.592 19.956 C 4.830 19.797,4.181 19.138,4.043 18.383 C 3.983 18.050,3.983 5.950,4.043 5.617 C 4.180 4.868,4.847 4.187,5.580 4.047 C 5.875 3.991,18.077 3.987,18.383 4.043 " fill="currentColor" stroke="none" fill-rule="evenodd"></path></svg></svg></span>
+                                            <h1 className='text-[18px]'>TV Shows</h1>
+                                        </div>
+                                    </div>) : (<div className='absolute items-start flex-col left-0 top-[51px]  rounded-b-md bg-secondary w-full'>
+                                        <div className=' flex items-center gap-3  hover:bg-white hover:text-black px-5 py-4'>
+                                            <span><svg class="fbl-icon _30dE3d _1a_Ljt" viewBox="0 0 24 24" height="24" width="24" role="img" aria-hidden="true"><title>Checkbox Unselected</title><svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5.433 2.043 C 4.858 2.128,4.224 2.377,3.731 2.712 C 2.956 3.239,2.396 4.034,2.129 4.989 L 2.020 5.380 2.020 12.000 L 2.020 18.620 2.131 19.017 C 2.552 20.526,3.707 21.608,5.226 21.917 C 5.627 21.999,5.720 22.000,12.000 22.000 C 18.280 22.000,18.373 21.999,18.774 21.917 C 20.291 21.608,21.457 20.515,21.872 19.012 L 21.980 18.620 21.980 12.000 L 21.980 5.380 21.874 4.995 C 21.611 4.045,21.044 3.239,20.269 2.712 C 19.929 2.481,19.353 2.218,18.958 2.112 L 18.620 2.022 12.140 2.015 C 8.576 2.012,5.558 2.024,5.433 2.043 M18.383 4.043 C 19.151 4.184,19.816 4.849,19.957 5.617 C 20.017 5.950,20.017 18.050,19.957 18.383 C 19.819 19.138,19.170 19.797,18.408 19.956 C 18.109 20.018,5.891 20.018,5.592 19.956 C 4.830 19.797,4.181 19.138,4.043 18.383 C 3.983 18.050,3.983 5.950,4.043 5.617 C 4.180 4.868,4.847 4.187,5.580 4.047 C 5.875 3.991,18.077 3.987,18.383 4.043 " fill="currentColor" stroke="none" fill-rule="evenodd"></path></svg></svg></span>
+                                            <h1 className='text-[18px]'  onClick={() => handlegenre('Movies')}>Movies</h1>
+                                        </div>
+                                        <div className='flex items-center gap-3  hover:bg-white hover:rounded-b-md hover:text-black px-5 py-4'>
+                                            <span><svg class="fbl-icon _30dE3d _1a_Ljt" viewBox="0 0 24 24" height="24" width="24" role="img" aria-hidden="true"><title>Checkbox Unselected</title><svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5.433 2.043 C 4.858 2.128,4.224 2.377,3.731 2.712 C 2.956 3.239,2.396 4.034,2.129 4.989 L 2.020 5.380 2.020 12.000 L 2.020 18.620 2.131 19.017 C 2.552 20.526,3.707 21.608,5.226 21.917 C 5.627 21.999,5.720 22.000,12.000 22.000 C 18.280 22.000,18.373 21.999,18.774 21.917 C 20.291 21.608,21.457 20.515,21.872 19.012 L 21.980 18.620 21.980 12.000 L 21.980 5.380 21.874 4.995 C 21.611 4.045,21.044 3.239,20.269 2.712 C 19.929 2.481,19.353 2.218,18.958 2.112 L 18.620 2.022 12.140 2.015 C 8.576 2.012,5.558 2.024,5.433 2.043 M18.383 4.043 C 19.151 4.184,19.816 4.849,19.957 5.617 C 20.017 5.950,20.017 18.050,19.957 18.383 C 19.819 19.138,19.170 19.797,18.408 19.956 C 18.109 20.018,5.891 20.018,5.592 19.956 C 4.830 19.797,4.181 19.138,4.043 18.383 C 3.983 18.050,3.983 5.950,4.043 5.617 C 4.180 4.868,4.847 4.187,5.580 4.047 C 5.875 3.991,18.077 3.987,18.383 4.043 " fill="currentColor" stroke="none" fill-rule="evenodd"></path></svg></svg></span>
+                                            <h1 className='text-[18px]'  onClick={() => handlegenre('action')}>TV Shows</h1>
+                                        </div>
                                     </div>
-                                    <div className='flex items-center'>
-                                        <span><svg class="fbl-icon _30dE3d _1a_Ljt" viewBox="0 0 24 24" height="24" width="24" role="img" aria-hidden="true"><title>Checkbox Unselected</title><svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5.433 2.043 C 4.858 2.128,4.224 2.377,3.731 2.712 C 2.956 3.239,2.396 4.034,2.129 4.989 L 2.020 5.380 2.020 12.000 L 2.020 18.620 2.131 19.017 C 2.552 20.526,3.707 21.608,5.226 21.917 C 5.627 21.999,5.720 22.000,12.000 22.000 C 18.280 22.000,18.373 21.999,18.774 21.917 C 20.291 21.608,21.457 20.515,21.872 19.012 L 21.980 18.620 21.980 12.000 L 21.980 5.380 21.874 4.995 C 21.611 4.045,21.044 3.239,20.269 2.712 C 19.929 2.481,19.353 2.218,18.958 2.112 L 18.620 2.022 12.140 2.015 C 8.576 2.012,5.558 2.024,5.433 2.043 M18.383 4.043 C 19.151 4.184,19.816 4.849,19.957 5.617 C 20.017 5.950,20.017 18.050,19.957 18.383 C 19.819 19.138,19.170 19.797,18.408 19.956 C 18.109 20.018,5.891 20.018,5.592 19.956 C 4.830 19.797,4.181 19.138,4.043 18.383 C 3.983 18.050,3.983 5.950,4.043 5.617 C 4.180 4.868,4.847 4.187,5.580 4.047 C 5.875 3.991,18.077 3.987,18.383 4.043 " fill="currentColor" stroke="none" fill-rule="evenodd"></path></svg></svg></span>
-                                        <h1 className='text-[18px]'>TV Shows</h1>
-                                    </div>
-                                </div>
+                                )}
                             </button>
                         </div>
                     </div>
@@ -129,12 +229,12 @@ const SearchScroller = () => {
                             Filters
                         </button>
                     </div>
-                </div>
+                </div >
                 <div>
                     {data && (<h1 className='results_for font-bold tracking-wider mb-7 lg:mb-[52px]'>Results for "{data.Title}".</h1>)}
                 </div>
                 <div className='search_movies_list_mobile  lg:hidden'>
-                    <h1 className='mb-2 font-bold tracking-wider'>More videos</h1>
+                    <h1 className='mb-2 font-bold tracking-wider moreVideos'>More videos</h1>
                     <div className='search_movies_list_wrapper_mobile  md:grid md:grid-cols-2 md:gap-[2px]'>
                         {data && (
                             <div className='flex items-center justify-between mb-3' key={data.imdbID} onClick={() => handleclick(data.imdbID)}>
@@ -229,7 +329,7 @@ const SearchScroller = () => {
                         ))}
                     </div>
                 </div>
-            </div>
+            </div >
         </>
     );
 };

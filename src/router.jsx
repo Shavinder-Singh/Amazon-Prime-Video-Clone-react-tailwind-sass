@@ -14,6 +14,7 @@ import Detailmain from './components/detailpage/detailmain/detailmain';
 import AllMoviesscroller from './components/Allmovies/allmoviesscroller/Allmoviesscroller';
 import AllMovies from './pages/AllMovies';
 import Footer from './components/footer/footer';
+import FreeMovies from './pages/FreeMovies';
 const RouterComponent = () => {
     return (
         <div>
@@ -33,6 +34,7 @@ const RouterComponent = () => {
                     <Route path="/searchresults/:imdbID" element={<SearchResults />} />
                     <Route path="/allmoviesscroller" element={<AllMoviesscroller />} />
                     <Route path="/allmovies/:genre" element={<AllMovies />} />
+                    <Route path="/freemovies/:imdbID" element={<FreeMovies />} />
                 </Routes>
             </BrowserRouter>
         </div>

@@ -77,9 +77,20 @@
                     button {
                         max-width: max-content;
                         text-wrap: nowrap;
-                        padding: 15px 21px;
+                        // padding: 15px 21px;
                     }
                 }
+
+                div {
+                    button {
+                        &:hover {
+                            svg {
+                                fill: black;
+                            }
+                        }
+                    }
+                }
+
             }
 
             .filter_content {
@@ -107,7 +118,7 @@
                     button {
                         max-width: max-content;
                         text-wrap: nowrap;
-                        padding: 15px 30px;
+                        // padding: 15px 30px;
                     }
                 }
 
@@ -138,7 +149,7 @@
                     button {
                         max-width: max-content;
                         text-wrap: nowrap;
-                        padding: 15px 17px;
+                        // padding: 15px 17px;
                     }
                 }
 
