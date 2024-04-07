@@ -15,6 +15,7 @@ import AllMoviesscroller from './components/Allmovies/allmoviesscroller/Allmovie
 import AllMovies from './pages/AllMovies';
 import Footer from './components/footer/footer';
 import FreeMovies from './pages/FreeMovies';
+import SpecificCategory from './pages/SpecificCategory';
 const RouterComponent = () => {
     return (
         <div>
@@ -35,6 +36,7 @@ const RouterComponent = () => {
                     <Route path="/allmoviesscroller" element={<AllMoviesscroller />} />
                     <Route path="/allmovies/:genre" element={<AllMovies />} />
                     <Route path="/freemovies/:imdbID" element={<FreeMovies />} />
+                    <Route path="/SpecificCategory/:detailImdbIdSecond" element={<SpecificCategory />} />
                 </Routes>
             </BrowserRouter>
         </div>
