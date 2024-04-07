@@ -229,11 +229,25 @@ const SearchScroller = () => {
 
     //popup box
     const [popup, setpopup] = useState(false);
-    const openPopup = (detailImdbId) => {
+    const [popupdata, setPopupData] = useState([]);
+
+    const openPopup = async (detailImdbId) => {
         setpopup(true)
+        try {
+            const response = await fetch(`https://omdbapi.com/?i=${detailImdbId}&apikey=eae86d55`);
+            const data = await response.json();
 
+            if (data.Response === 'True') {
+                setPopupData([data]);
+            } else {
 
+            }
+        } catch (error) {
+            console.log(error);
+        }
     }
+
+
     const closePopup = () => {
         setpopup(false)
     }
@@ -471,8 +485,10 @@ const SearchScroller = () => {
                     {/* mobile popup */}
                     {popup && (<div className=' popupbox_search_result_page fixed w-full top-0 h-full left-0 z-10 '>
                         <div className='popupbox_search_result_page_container absolute z-20 bottom-0 rounded-lg p-4 pl-4 pb-6 bg-secondary left-0 w-full flex flex-col gap-[7px]'>
-                            <div className='flex justify-between items-center p-[2px] mb-2    gap-[210px]'>
-                                <h2 className='font-bold tracking-wider text-[18px] mt-[1px]'>Durga</h2>
+                            <div className='header_popup flex justify-between items-center p-[2px] mb-2'>
+                                <h2 className='font-bold tracking-wider text-[18px] mt-[1px]'>{popupdata && popupdata.map((data, index) => (
+                                    <p key={index}>{data.Title}</p>
+                                ))}</h2>
                                 <svg onClick={() => closePopup()} class="fbl-icon _30dE3d _1a_Ljt" viewBox="0 0 24 24" className='mt-1' height="24" width="24" role="img" aria-hidden="true"><title>Close</title><svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.758 4.054 C 4.416 4.147,4.160 4.395,4.061 4.729 C 3.985 4.987,3.985 5.053,4.063 5.323 C 4.125 5.534,4.219 5.632,7.353 8.770 L 10.579 12.000 7.371 15.210 C 4.893 17.690,4.145 18.461,4.083 18.600 C 3.984 18.819,3.975 19.182,4.062 19.391 C 4.144 19.587,4.381 19.831,4.580 19.924 C 4.798 20.025,5.166 20.022,5.400 19.917 C 5.539 19.855,6.310 19.107,8.790 16.629 L 12.000 13.421 15.230 16.647 C 18.368 19.781,18.466 19.875,18.677 19.937 C 18.949 20.016,19.013 20.016,19.283 19.936 C 19.581 19.847,19.847 19.581,19.936 19.283 C 20.016 19.013,20.016 18.949,19.937 18.677 C 19.875 18.466,19.781 18.368,16.647 15.230 L 13.421 12.000 16.647 8.770 C 19.781 5.632,19.875 5.534,19.937 5.323 C 20.015 5.053,20.016 4.987,19.938 4.725 C 19.768 4.154,19.088 3.855,18.558 4.119 C 18.431 4.182,17.462 5.124,15.190 7.393 L 12.000 10.580 8.810 7.394 C 6.729 5.315,5.564 4.180,5.460 4.129 C 5.243 4.023,4.977 3.994,4.758 4.054 " fill="currentColor" stroke="none" fill-rule="evenodd"></path></svg></svg>
                             </div>
                             <div className='rating pb-1 px-1 ml-0 bg-inputbgcolor rounded-sm max-w-12 text-[12px] font-bold h-6 w-max '>
@@ -487,7 +503,8 @@ const SearchScroller = () => {
                                     <svg class="fbl-icon _30dE3d _1a_Ljt" viewBox="0 0 24 24" height="24" width="24" role="img" aria-hidden="true"><title>Watchlist</title><svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11.664 2.063 C 11.436 2.146,11.257 2.297,11.131 2.511 L 11.020 2.700 11.009 6.850 L 10.999 11.000 6.924 11.000 C 2.491 11.000,2.677 10.991,2.374 11.222 C 2.301 11.277,2.192 11.408,2.131 11.511 C 2.036 11.672,2.020 11.744,2.020 12.000 C 2.020 12.256,2.036 12.328,2.131 12.489 C 2.192 12.592,2.301 12.723,2.374 12.778 C 2.677 13.009,2.491 13.000,6.925 13.000 L 11.000 13.000 11.000 17.070 C 11.000 19.750,11.015 21.191,11.042 21.289 C 11.103 21.509,11.315 21.762,11.531 21.874 C 11.932 22.080,12.390 22.012,12.700 21.702 C 13.018 21.385,13.000 21.656,13.000 17.073 L 13.000 13.000 17.073 13.000 C 21.654 13.000,21.385 13.017,21.701 12.701 C 22.092 12.310,22.092 11.690,21.701 11.299 C 21.385 10.983,21.654 11.000,17.073 11.000 L 13.000 11.000 13.000 6.927 C 13.000 2.346,13.017 2.615,12.701 2.299 C 12.429 2.027,12.018 1.933,11.664 2.063 " fill="currentColor" stroke="none" fill-rule="evenodd"></path></svg></svg>
                                     Watchlist
                                 </li>
-                                <li className='flex items-center gap-2 py-3'>
+                                <li className='flex items-center gap-2 py-3' >
+                                    {popupdata && popupdata.map((data, index) => (<p onClick={() => handleclick(data.imdbID)} className=' absolute  w-44 h-10'></p>))}
                                     <svg class="fbl-icon _30dE3d _1a_Ljt" viewBox="0 0 24 24" height="24" width="24" role="img" aria-hidden="true"><title>Info</title><svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11.120 2.039 C 8.641 2.287,6.414 3.362,4.761 5.107 C 1.806 8.228,1.158 12.819,3.137 16.623 C 3.620 17.552,4.164 18.288,4.938 19.061 C 5.930 20.051,7.038 20.789,8.272 21.278 C 11.634 22.610,15.313 22.080,18.200 19.845 C 18.637 19.507,19.507 18.637,19.845 18.200 C 21.256 16.378,22.000 14.236,22.000 12.000 C 22.000 7.432,18.842 3.387,14.430 2.303 C 13.446 2.062,12.028 1.948,11.120 2.039 M12.740 4.041 C 15.525 4.302,17.953 5.983,19.182 8.500 C 20.655 11.514,20.091 15.104,17.765 17.530 C 16.248 19.111,14.175 19.999,12.000 19.999 C 8.235 19.999,4.948 17.331,4.177 13.648 C 3.426 10.057,5.201 6.431,8.501 4.817 C 9.822 4.170,11.277 3.904,12.740 4.041 M11.000 8.000 L 11.000 9.000 12.000 9.000 L 13.000 9.000 13.000 8.000 L 13.000 7.000 12.000 7.000 L 11.000 7.000 11.000 8.000 M11.000 13.570 C 11.000 15.217,11.015 16.194,11.042 16.289 C 11.103 16.509,11.315 16.762,11.531 16.874 C 11.932 17.080,12.390 17.012,12.700 16.702 C 13.008 16.394,13.000 16.478,13.000 13.573 L 13.000 11.000 12.000 11.000 L 11.000 11.000 11.000 13.570 " fill="currentColor" stroke="none" fill-rule="evenodd"></path></svg></svg>
                                     More details
                                 </li>

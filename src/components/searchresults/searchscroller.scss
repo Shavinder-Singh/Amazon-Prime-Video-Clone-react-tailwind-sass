@@ -201,9 +201,13 @@
         .popupbox_search_result_page {
             background-color: rgba(12, 12, 12, 0.5);
 
+            .header_popup {
+                gap: 210px;
+            }
+
             .popupbox_search_result_page_container {
                 top: 100px;
-                left: calc(50% - 140px - 16px);
+                left: calc(50% - 190px - 16px);
                 width: initial;
                 max-height: max-content;
             }
