@@ -3,7 +3,7 @@
         .search_movies_list_mobile {
             .search_movies_list_wrapper_mobile {
                 .search_movie_image {
-                    max-width: 140px;
+                    // max-width: 140px;
 
                     img {
                         width: 100%;
@@ -43,6 +43,21 @@
     .popupbox_search_result_page {
         background-color: rgba(12, 12, 12, 0.5);
     }
+
+    .mobile_search_results {
+        grid-template-columns: 260px 120px;
+        display: grid;
+    }
+}
+
+@media (min-width:768px) {
+
+    .search_page {
+        .mobile_search_results {
+            grid-template-columns: 330px 120px;
+        }
+    }
+
 }
 
 
@@ -57,11 +72,19 @@
 
                 button {
                     max-width: 85px;
+                    height: 53px;
+                    padding: 0px 0px;
+                    font-size: 17px;
                 }
             }
         }
 
         .results_for {
+            font-size: 17px;
+            margin-bottom: 32px;
+        }
+
+        .moreVideos {
             font-size: 18px;
         }
     }
@@ -74,7 +97,7 @@
         .search_filter {
             .filters_options {
                 display: block;
-                padding-top: 12px;
+                padding-top: 5px;
 
                 .buttons {
                     display: flex;
@@ -83,7 +106,7 @@
                     button {
                         max-width: max-content;
                         text-wrap: nowrap;
-                        // padding: 15px 21px;
+
                     }
                 }
 
@@ -102,6 +125,12 @@
             .filter_content {
                 display: none;
             }
+        }
+
+        .results_for {
+            font-size: 17px;
+            margin-bottom: 47px;
+            margin-top: -6px;
         }
     }
 }
@@ -142,9 +171,12 @@
 
 @media (min-width:1280px) {
     .search_page {
-        padding: 10px 64px !important;
+        padding: 10px 72px !important;
 
         .search_filter {
+            margin-top: 9px;
+            margin-bottom: 88px;
+
             .filters_options {
                 display: block;
 
@@ -168,8 +200,14 @@
         }
 
         .more_videos {
-            font-size: 17px;
+            font-size: 19px;
             letter-spacing: 1px;
+
+        }
+        .results_for {
+            font-size: 19px;
+            margin-bottom: 64px;
+            margin-top: -16px;
         }
     }
 }

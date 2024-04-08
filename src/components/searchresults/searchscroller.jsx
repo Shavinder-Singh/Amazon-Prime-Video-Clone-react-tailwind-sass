@@ -258,8 +258,8 @@ const SearchScroller = () => {
                 <div className='search_filter'>
                     <div className='filters_options hidden'>
                         <div className='buttons mb-16 xl:mb-[61px]'>
-                            <button onClick={() => openfreetome()} className='free_to_me relative text-[18px] flex items-center justify-between gap-3 font-semibold w-full rounded-lg bg-inputbgcolor tracking-wider'>
-                                <div className='flex items-center  hover:bg-white hover:text-black gap-2 p-3 rounded-lg'> Free to me
+                            <button onClick={() => openfreetome()} className='free_to_me relative text-[18px] flex items-center justify-between gap-3 font-semibold w-full rounded-lg bg-inputbgcolor tracking-wider p-4'>
+                                <div className='flex items-center  hover:bg-white hover:text-black gap-2 rounded-lg'> Free to me
                                     {freetome ? (
                                         <span className='w-3 h-3'><svg className='w-3 h-3' viewBox="0 0 12 7" fill="white" data-chevron-svg="true"><path d="M11.7071 1.70711C12.0976 1.31658 12.0976 0.683417 11.7071 0.292893C11.3166 -0.0976311 10.6834 -0.0976311 10.2929 0.292893L11.7071 1.70711ZM6 6L5.29289 6.70711C5.68342 7.09763 6.31658 7.09763 6.70711 6.70711L6 6ZM1.70711 0.292893C1.31658 -0.0976311 0.683417 -0.0976311 0.292893 0.292893C-0.0976315 0.683417 -0.0976315 1.31658 0.292893 1.70711L1.70711 0.292893ZM10.2929 0.292893L5.29289 5.29289L6.70711 6.70711L11.7071 1.70711L10.2929 0.292893ZM6.70711 5.29289L1.70711 0.292893L0.292893 1.70711L5.29289 6.70711L6.70711 5.29289Z"></path></svg></span>
                                     ) : (
@@ -271,8 +271,8 @@ const SearchScroller = () => {
                                     {data && (<p onClick={() => freePageRedirect(data.imdbID)}>  Free to me <span className='text-[0px]'>{data.imdbID}</span></p>)}
                                 </div>)}
                             </button>
-                            <button onClick={() => opengenre()} className='genre  relative text-[18px] flex items-center justify-between font-semibold w-full rounded-lg  bg-inputbgcolor tracking-wider'>
-                                <div className='flex items-center  hover:bg-white hover:text-black gap-2 p-3 rounded-lg '> {contentChangebigscreen ? <p>{contentChangebigscreen}</p> : <p>Genre</p>}
+                            <button onClick={() => opengenre()} className='genre  relative text-[18px] flex items-center  justify-between font-semibold w-full rounded-lg  bg-inputbgcolor tracking-wider'>
+                                <div className='flex items-center  hover:bg-white hover:text-black gap-4 p-4 rounded-lg '> {contentChangebigscreen ? <p>{contentChangebigscreen}</p> : <p>Genre</p>}
                                     {genre ? (
                                         <span className='w-3 h-3'><svg className='w-3 h-3' viewBox="0 0 12 7" fill="white" data-chevron-svg="true"><path d="M11.7071 1.70711C12.0976 1.31658 12.0976 0.683417 11.7071 0.292893C11.3166 -0.0976311 10.6834 -0.0976311 10.2929 0.292893L11.7071 1.70711ZM6 6L5.29289 6.70711C5.68342 7.09763 6.31658 7.09763 6.70711 6.70711L6 6ZM1.70711 0.292893C1.31658 -0.0976311 0.683417 -0.0976311 0.292893 0.292893C-0.0976315 0.683417 -0.0976315 1.31658 0.292893 1.70711L1.70711 0.292893ZM10.2929 0.292893L5.29289 5.29289L6.70711 6.70711L11.7071 1.70711L10.2929 0.292893ZM6.70711 5.29289L1.70711 0.292893L0.292893 1.70711L5.29289 6.70711L6.70711 5.29289Z"></path></svg></span>
                                     ) : (
@@ -299,7 +299,7 @@ const SearchScroller = () => {
                                 )}
                             </button>
                             <button onClick={() => openvideoquality()} className='videoQuality relative text-[18px] hover:fill-black flex items-center justify-between gap-3 lg:gap-9 font-semibold w-full rounded-lg  bg-inputbgcolor tracking-wider'>
-                                <div className='flex items-center  hover:bg-white hover:text-black gap-2 p-3 rounded-lg'> Video Quality
+                                <div className='flex items-center  hover:bg-white hover:text-black gap-10 p-[18px] rounded-lg'> Video Quality
                                     {videoQuality ? (
                                         <span className='w-3 h-3'><svg className='w-3 h-3 hover:fill-black' viewBox="0 0 12 7" fill="white" data-chevron-svg="true"><path d="M11.7071 1.70711C12.0976 1.31658 12.0976 0.683417 11.7071 0.292893C11.3166 -0.0976311 10.6834 -0.0976311 10.2929 0.292893L11.7071 1.70711ZM6 6L5.29289 6.70711C5.68342 7.09763 6.31658 7.09763 6.70711 6.70711L6 6ZM1.70711 0.292893C1.31658 -0.0976311 0.683417 -0.0976311 0.292893 0.292893C-0.0976315 0.683417 -0.0976315 1.31658 0.292893 1.70711L1.70711 0.292893ZM10.2929 0.292893L5.29289 5.29289L6.70711 6.70711L11.7071 1.70711L10.2929 0.292893ZM6.70711 5.29289L1.70711 0.292893L0.292893 1.70711L5.29289 6.70711L6.70711 5.29289Z"></path></svg></span>
                                     ) : (
@@ -314,7 +314,7 @@ const SearchScroller = () => {
                                 </div>)}
                             </button>
                             <button onClick={() => opencontenttype()} className='content_type relative text-[18px] hover:fill-black flex items-center justify-between gap-3 lg:gap-9 font-semibold w-full rounded-lg  bg-inputbgcolor tracking-wider'>
-                                <div className='flex items-center  hover:bg-white hover:text-black gap-2 p-3 rounded-lg' > Content Type {count > 0 && (<span>{count}</span>)}
+                                <div className='flex items-center  hover:bg-white hover:text-black gap-10 p-[18px] rounded-lg' > Content Type {count > 0 && (<span>{count}</span>)}
                                     {contenttype ? (
                                         <span className='w-3 h-3'><svg className='w-3 h-3' viewBox="0 0 12 7" fill="white" data-chevron-svg="true"><path d="M11.7071 1.70711C12.0976 1.31658 12.0976 0.683417 11.7071 0.292893C11.3166 -0.0976311 10.6834 -0.0976311 10.2929 0.292893L11.7071 1.70711ZM6 6L5.29289 6.70711C5.68342 7.09763 6.31658 7.09763 6.70711 6.70711L6 6ZM1.70711 0.292893C1.31658 -0.0976311 0.683417 -0.0976311 0.292893 0.292893C-0.0976315 0.683417 -0.0976315 1.31658 0.292893 1.70711L1.70711 0.292893ZM10.2929 0.292893L5.29289 5.29289L6.70711 6.70711L11.7071 1.70711L10.2929 0.292893ZM6.70711 5.29289L1.70711 0.292893L0.292893 1.70711L5.29289 6.70711L6.70711 5.29289Z"></path></svg></span>
                                     ) : (
@@ -340,8 +340,8 @@ const SearchScroller = () => {
                             </button>
                         </div>
                     </div>
-                    <div className='filter_content w-full pt-5 mb-[15px]'>
-                        <button className='p-4 font-semibold w-full rounded-md bg-inputbgcolor tracking-wider' onClick={() => openFilter()}>
+                    <div className='filter_content w-full pt-[18px] mb-[15px]'>
+                        <button className='p-3 pb-[13px]  text-[15px] font-semibold w-full rounded-lg bg-inputbgcolor tracking-wider' onClick={() => openFilter()}>
                             Filters
                         </button>
                         {filter && (
@@ -438,35 +438,35 @@ const SearchScroller = () => {
                     </div>
                 </div >
                 <div>
-                    {data && (<h1 className='results_for font-bold tracking-wider mb-7 lg:mb-[52px]'>Results for "{data.Title}".</h1>)}
+                    {data && (<h1 className='results_for font-bold tracking-wider mb-7 lg:mb-[52px] leading-5 mt-[20px]'>Results for "{data.Title}".</h1>)}
                 </div>
                 <div className='search_movies_list_mobile  lg:hidden'>
                     <h1 className='mb-2 font-bold tracking-wider moreVideos'>More videos</h1>
-                    <div className='search_movies_list_wrapper_mobile  md:grid md:grid-cols-2 md:gap-[2px]'>
+                    <div className='search_movies_list_wrapper_mobile  md:grid md:grid-cols-2 md:gap-[10px] md:justify-between md:items-center'>
                         {data && (
-                            <div className='flex items-center justify-between mb-3' key={data.imdbID} >
-                                <div className='flex'>
-                                    <div className='mr-3 search_movie_image'><img src={data.Poster} className=' w-[189px] rounded-md ' /></div>
-                                    <div>
-                                        <h1 className='leading-5 mb-1 font-bold'>{data.Title}</h1>
-                                        <p>{data.Year}</p>
+                            <div className='mobile_search_results  ' key={data.imdbID} >
+                                <div className='grid grid-cols-2 mb-10'>
+                                    <div className=' search_movie_image w-[130px] md:w-[100%] h-[70px] md:h-[120px]'><img src={data.Poster} className=' w-full h-full rounded-md ' /></div>
+                                    <div className=' ml-3 flex flex-col gap-1 mt-[-5px] md:mt-[0px]'>
+                                        <h1 className='leading-4 font-bold text-[16px]'>{data.Title}</h1>
+                                        <p className='text-[16px]'>{data.Year}</p>
                                     </div>
                                 </div>
-                                <div onClick={() => openPopup(data.imdbID)}>
-                                    <span><svg class="fbl-icon _30dE3d _1a_Ljt" viewBox="0 0 24 24" height="24" width="24" role="img" aria-hidden="true"><title>More</title><svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11.580 3.047 C 10.859 3.185,10.199 3.848,10.044 4.592 C 9.789 5.816,10.751 7.000,12.000 7.000 C 13.080 7.000,14.000 6.080,14.000 5.000 C 14.000 4.477,13.790 3.983,13.404 3.596 C 12.913 3.106,12.277 2.914,11.580 3.047 M11.580 10.047 C 10.707 10.214,10.000 11.087,10.000 12.000 C 10.000 12.920,10.690 13.768,11.592 13.956 C 12.816 14.211,14.000 13.249,14.000 12.000 C 14.000 11.477,13.790 10.983,13.404 10.596 C 12.913 10.106,12.277 9.914,11.580 10.047 M11.580 17.047 C 10.859 17.185,10.199 17.848,10.044 18.592 C 9.789 19.816,10.751 21.000,12.000 21.000 C 13.080 21.000,14.000 20.080,14.000 19.000 C 14.000 18.477,13.790 17.983,13.404 17.596 C 12.913 17.106,12.277 16.914,11.580 17.047 " fill="currentColor" stroke="none" fill-rule="evenodd"></path></svg></svg></span>
+                                <div onClick={() => openPopup(data.imdbID)}  className='mt-[20px]'>
+                                    <span > <svg class="fbl-icon _30dE3d _1a_Ljt" viewBox="0 0 24 24" height="24" width="24" role="img" aria-hidden="true"><title>More</title><svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11.580 3.047 C 10.859 3.185,10.199 3.848,10.044 4.592 C 9.789 5.816,10.751 7.000,12.000 7.000 C 13.080 7.000,14.000 6.080,14.000 5.000 C 14.000 4.477,13.790 3.983,13.404 3.596 C 12.913 3.106,12.277 2.914,11.580 3.047 M11.580 10.047 C 10.707 10.214,10.000 11.087,10.000 12.000 C 10.000 12.920,10.690 13.768,11.592 13.956 C 12.816 14.211,14.000 13.249,14.000 12.000 C 14.000 11.477,13.790 10.983,13.404 10.596 C 12.913 10.106,12.277 9.914,11.580 10.047 M11.580 17.047 C 10.859 17.185,10.199 17.848,10.044 18.592 C 9.789 19.816,10.751 21.000,12.000 21.000 C 13.080 21.000,14.000 20.080,14.000 19.000 C 14.000 18.477,13.790 17.983,13.404 17.596 C 12.913 17.106,12.277 16.914,11.580 17.047 " fill="currentColor" stroke="none" fill-rule="evenodd"></path></svg></svg></span>
                                 </div>
                             </div>
                         )}
                         {info && info.map((movie) => (
-                            <div className='flex items-center justify-between mb-3' key={info.imdbID} onClick={() => handleclick(movie.imdbID)}>
-                                <div className='flex'>
-                                    <div className='mr-3 search_movie_image'><img src={movie.Poster} className=' w-[189px] rounded-md ' /></div>
-                                    <div>
-                                        <h1 className='leading-5 mb-1 font-bold'>{movie.Title}</h1>
-                                        <p>{movie.Year}</p>
+                            <div className='mobile_search_results' key={info.imdbID} >
+                                <div className='grid grid-cols-2 mb-10'>
+                                    <div className=' search_movie_image w-[130px] md:w-full h-[70px] md:h-[120px]'><img src={movie.Poster} className=' w-full h-full  rounded-md ' /></div>
+                                    <div className='ml-3 flex flex-col gap-1 mt-[-5px] md:mt-[0px]'>
+                                        <h1 className='leading-5 mb-1 font-bold text-[16px]'>{movie.Title}</h1>
+                                        <p className='text-[16px]'>{movie.Year}</p>
                                     </div>
                                 </div>
-                                <div>
+                                <div className=' mt-[20px] '  onClick={() => openPopup(data.imdbID)}>
                                     <span><svg class="fbl-icon _30dE3d _1a_Ljt" viewBox="0 0 24 24" height="24" width="24" role="img" aria-hidden="true"><title>More</title><svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11.580 3.047 C 10.859 3.185,10.199 3.848,10.044 4.592 C 9.789 5.816,10.751 7.000,12.000 7.000 C 13.080 7.000,14.000 6.080,14.000 5.000 C 14.000 4.477,13.790 3.983,13.404 3.596 C 12.913 3.106,12.277 2.914,11.580 3.047 M11.580 10.047 C 10.707 10.214,10.000 11.087,10.000 12.000 C 10.000 12.920,10.690 13.768,11.592 13.956 C 12.816 14.211,14.000 13.249,14.000 12.000 C 14.000 11.477,13.790 10.983,13.404 10.596 C 12.913 10.106,12.277 9.914,11.580 10.047 M11.580 17.047 C 10.859 17.185,10.199 17.848,10.044 18.592 C 9.789 19.816,10.751 21.000,12.000 21.000 C 13.080 21.000,14.000 20.080,14.000 19.000 C 14.000 18.477,13.790 17.983,13.404 17.596 C 12.913 17.106,12.277 16.914,11.580 17.047 " fill="currentColor" stroke="none" fill-rule="evenodd"></path></svg></svg></span>
                                 </div>
                             </div>
@@ -506,11 +506,11 @@ const SearchScroller = () => {
                 </div>
                 {/* Laptops */}
                 <div className='search_movies_list_wrapper hidden lg:block '>
-                    <h1 className='more_videos mb-2 font-bold'>More Videos</h1>
+                    <h1 className='more_videos mb-2 font-bold'>More videos</h1>
                     <div className='search_movies_list_wrapper grid grid-cols-4 xl:grid-cols-5 3xl:grid-cols-5 gap-9'>
                         {data && (
                             <div className='w-56 movie_item  relative'>
-                                <img src={data.Poster} className='rounded-xl w-56 movie_poster' key={data.imdbID} onClick={() => handleclick(data.imdbID)} />
+                                <img src={data.Poster} className='rounded-xl w-56 h-40 movie_poster' key={data.imdbID} onClick={() => handleclick(data.imdbID)} />
                                 <div className='detail_movie_detail_search w-56 overflow-hidden absolute z-30 b-black'>
                                     <div className='flex items-center gap-1 lg:gap-0 pb-2 lg: p-2 '>
                                         <span><svg class="fbl-icon _3UMk3x _1a_Ljt _3H1cN4" className='w-4 lg:w-10 lg:h-5' viewBox="0 0 24 24" height="18" width="18" role="img" aria-hidden="true"><title>Entitled</title><svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11.120 2.039 C 8.641 2.287,6.414 3.362,4.761 5.107 C 1.806 8.228,1.158 12.819,3.137 16.623 C 3.620 17.552,4.164 18.288,4.938 19.061 C 5.930 20.051,7.038 20.789,8.272 21.278 C 11.634 22.610,15.313 22.080,18.200 19.845 C 18.637 19.507,19.507 18.637,19.845 18.200 C 21.256 16.378,22.000 14.236,22.000 12.000 C 22.000 7.432,18.842 3.387,14.430 2.303 C 13.446 2.062,12.028 1.948,11.120 2.039 M17.092 8.191 C 17.410 8.341,17.660 8.592,17.816 8.920 C 17.926 9.151,17.940 9.221,17.940 9.541 C 17.940 9.869,17.928 9.927,17.805 10.181 C 17.679 10.443,17.480 10.651,14.545 13.588 C 11.578 16.558,11.406 16.723,11.140 16.848 C 10.888 16.967,10.824 16.980,10.500 16.980 C 10.176 16.980,10.112 16.967,9.860 16.848 C 9.604 16.726,9.466 16.600,8.193 15.328 C 6.915 14.051,6.794 13.918,6.672 13.660 C 6.554 13.408,6.540 13.344,6.540 13.020 C 6.540 12.700,6.554 12.631,6.664 12.400 C 6.821 12.070,7.070 11.821,7.400 11.664 C 7.631 11.554,7.700 11.540,8.020 11.540 C 8.343 11.540,8.408 11.554,8.654 11.670 C 8.891 11.782,9.036 11.907,9.714 12.578 L 10.500 13.356 13.020 10.843 C 15.629 8.240,15.687 8.188,16.110 8.081 C 16.380 8.013,16.817 8.061,17.092 8.191 " fill="blue" stroke="none" fill-rule="evenodd"></path></svg></svg></span>
@@ -538,7 +538,7 @@ const SearchScroller = () => {
                         )}
                         {info && info.map((movie) => (
                             <div className='w-56 movie_item  relative' key={movie.imdbID} onClick={() => handleclick(movie.imdbID)} >
-                                <img src={movie.Poster} className='rounded-xl w-56 movie_poster' />
+                                <img src={movie.Poster} className='rounded-xl w-56  h-40 movie_poster' />
                                 <div className='detail_movie_detail_search w-56 overflow-hidden  absolute z-30 b-black'>
                                     <div className='flex items-center gap-1 lg:gap-0 pb-2 lg: p-2 '>
                                         <span><svg class="fbl-icon _3UMk3x _1a_Ljt _3H1cN4" className='w-4 lg:w-10 lg:h-5' viewBox="0 0 24 24" height="18" width="18" role="img" aria-hidden="true"><title>Entitled</title><svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11.120 2.039 C 8.641 2.287,6.414 3.362,4.761 5.107 C 1.806 8.228,1.158 12.819,3.137 16.623 C 3.620 17.552,4.164 18.288,4.938 19.061 C 5.930 20.051,7.038 20.789,8.272 21.278 C 11.634 22.610,15.313 22.080,18.200 19.845 C 18.637 19.507,19.507 18.637,19.845 18.200 C 21.256 16.378,22.000 14.236,22.000 12.000 C 22.000 7.432,18.842 3.387,14.430 2.303 C 13.446 2.062,12.028 1.948,11.120 2.039 M17.092 8.191 C 17.410 8.341,17.660 8.592,17.816 8.920 C 17.926 9.151,17.940 9.221,17.940 9.541 C 17.940 9.869,17.928 9.927,17.805 10.181 C 17.679 10.443,17.480 10.651,14.545 13.588 C 11.578 16.558,11.406 16.723,11.140 16.848 C 10.888 16.967,10.824 16.980,10.500 16.980 C 10.176 16.980,10.112 16.967,9.860 16.848 C 9.604 16.726,9.466 16.600,8.193 15.328 C 6.915 14.051,6.794 13.918,6.672 13.660 C 6.554 13.408,6.540 13.344,6.540 13.020 C 6.540 12.700,6.554 12.631,6.664 12.400 C 6.821 12.070,7.070 11.821,7.400 11.664 C 7.631 11.554,7.700 11.540,8.020 11.540 C 8.343 11.540,8.408 11.554,8.654 11.670 C 8.891 11.782,9.036 11.907,9.714 12.578 L 10.500 13.356 13.020 10.843 C 15.629 8.240,15.687 8.188,16.110 8.081 C 16.380 8.013,16.817 8.061,17.092 8.191 " fill="blue" stroke="none" fill-rule="evenodd"></path></svg></svg></span>
