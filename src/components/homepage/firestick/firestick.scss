@@ -44,6 +44,8 @@
 @media (min-width:465px) {
     .firestick_section {
         position: relative;
+        height: 132vh ;
+        background-color: black;
 
         .firestick_media {
             width: 100%;
@@ -85,7 +87,6 @@
                 text-align: left;
                 font-size: 20px;
                 line-height: 0.6cm;
-
             }
 
 
@@ -104,6 +105,8 @@
 // change image
 @media (min-width:547px) {
     .firestick_section {
+        height: 115vh;
+
         .firestick_media {
             width: 100%;
 

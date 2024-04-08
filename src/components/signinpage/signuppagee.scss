@@ -1,6 +1,7 @@
 .signinpage {
     font-family: arial, sans-serif;
 
+
     .new_to_amazon {
         position: relative;
         color: rgb(152, 148, 148);
@@ -30,6 +31,10 @@
     }
 }
 
+header {
+    display: none;
+}
+
 .signup_form_mobile {
     // width: 50%;
     display: flex;
@@ -48,5 +53,95 @@
     .telephonenum_list_wrapper_container {
         top: calc(50% - 185px);
         left: calc(50% - 31.9%);
+    }
+}
+
+
+//footer
+
+
+.signinpage {
+    footer {
+        padding-top: 48px;
+        height: max-content;
+        padding: 3px;
+        background-color: white;
+
+        .footer_logo {
+            display: none;
+        }
+
+        .append_lines {
+
+            .footer_links {
+                padding-bottom: 5px;
+
+                p {
+                    font-size: 15px !important;
+                }
+
+                margin-bottom: 5px;
+            }
+
+            .copyright span {
+                margin-top: 12px;
+                line-height: 16px;
+                font-size: 11px !important;
+            }
+        }
+    }
+}
+
+
+
+
+@media (min-width:669px) {
+    .signinpage {
+
+        footer {
+            background: linear-gradient(to bottom, rgba(0, 0, 0, .14), rgba(0, 0, 0, .03) 3px, transparent);
+            height: 113px;
+            padding-top: 27px;
+
+            .append_lines {
+                margin-top: 4px !important;
+                gap: 5px;
+
+                .footer_links {
+                    margin: 0px 13px 0px 0px;
+                    margin-bottom: initial;
+
+                    p {
+                        font-size: 12px !important;
+                        letter-spacing: 0px;
+
+                    }
+                }
+
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+            }
+
+        }
+    }
+}
+
+@media (min-width:1024px) {
+    .signinpage {
+        footer {
+            height: 110px;
+
+            .append_lines {
+                margin-top: 4px !important;
+
+                .footer_links {
+                    margin-bottom: initial;
+                }
+
+            }
+
+        }
     }
 }

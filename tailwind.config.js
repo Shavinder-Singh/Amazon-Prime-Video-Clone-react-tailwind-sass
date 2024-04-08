@@ -32,6 +32,7 @@ export default {
         "yellowcolor": '#eeda39',//yellowcolor
       },
       screens: {
+        'vs':'370px',
         'sm': '640px',
 
         'md': '768px',

@@ -155,10 +155,8 @@ export default function SpecificCategory() {
     return (
         <>
             <div className='search_page text-white px-6 bg-primary min-h-[120vh]'>
-
                 <div className='text-[30px] font-bold'>
                     <h1>{detailImdbIdSecond}</h1>
-
                 </div>
                 <div className='search_movies_list_mobile  lg:hidden'>
                     <div className='search_movies_list_wrapper_mobile  md:grid md:grid-cols-2 md:gap-[10px] md:justify-between md:items-center'>
