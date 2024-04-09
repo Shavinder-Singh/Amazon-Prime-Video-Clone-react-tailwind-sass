@@ -1,25 +1,36 @@
 .signinpage {
   font-family: arial, sans-serif;
 }
+.signinpage .signinpage_logo {
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.14), rgba(0, 0, 0, 0.03) 1px, transparent);
+  width: 100%;
+}
+.signinpage .createaccount_mobile .createAccount_title {
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.14), rgba(0, 0, 0, 0.03) 1px, transparent);
+  padding-bottom: 8px;
+}
+.signinpage .signin_mobile .already_customer {
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.14), rgba(0, 0, 0, 0.03) 1px, transparent);
+}
 .signinpage .new_to_amazon {
   position: relative;
-  color: rgb(152, 148, 148);
+  color: rgb(116, 114, 114);
 }
 .signinpage .new_to_amazon::after {
   content: url("");
   position: absolute;
-  top: 14px;
+  top: 12px;
   right: -131px;
-  background-color: rgb(202, 199, 199);
+  background-color: rgb(223, 219, 219);
   width: 124px;
   height: 0.1px;
 }
 .signinpage .new_to_amazon::before {
   content: url("");
   position: absolute;
-  top: 13px;
+  top: 12px;
   left: -132px;
-  background-color: rgb(202, 199, 199);
+  background-color: rgb(223, 219, 219);
   width: 124px;
   height: 0.1px;
 }
@@ -34,10 +45,162 @@
   border: 1px solid rgb(206, 205, 205);
 }
 
+.signinbyuser_form .blue_input {
+  border: 1px solid black;
+  border-radius: 3px;
+  filter: drop-shadow(1px 1px 3px rgb(86, 210, 248));
+}
+.signinbyuser_form .blue_input input {
+  border-radius: 2px;
+  filter: drop-shadow(-1px -1px 3px rgb(86, 210, 248));
+  width: 100%;
+}
+
 .telephonenum_list_wrapper {
   background-color: rgba(0, 0, 0, 0.7);
 }
 .telephonenum_list_wrapper .telephonenum_list_wrapper_container {
   top: calc(50% - 185px);
   left: 18.1%;
+}
+
+.create_your_amazon_button {
+  box-shadow: 0 2px 5px 0 rgba(213, 217, 217, 0.5);
+  border: 0.3px solid rgb(216, 215, 215);
+}
+
+.signinpage footer {
+  padding-top: 48px;
+  height: -moz-max-content;
+  height: max-content;
+  padding: 3px;
+  background-color: white;
+}
+.signinpage footer .footer_logo {
+  display: none;
+}
+.signinpage footer .append_lines .footer_links {
+  padding-bottom: 5px;
+  margin-bottom: 5px;
+}
+.signinpage footer .append_lines .footer_links p {
+  font-size: 15px !important;
+}
+.signinpage footer .append_lines .copyright span {
+  margin-top: 12px;
+  line-height: 16px;
+  font-size: 11px !important;
+}
+
+@media (min-width: 669px) {
+  .signinpage footer {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.14), rgba(0, 0, 0, 0.03) 3px, transparent);
+    height: 113px;
+    padding-top: 27px;
+  }
+  .signinpage footer .append_lines {
+    margin-top: 4px !important;
+    gap: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .signinpage footer .append_lines .footer_links {
+    margin: 0px 13px 0px 0px;
+    margin-bottom: initial;
+  }
+  .signinpage footer .append_lines .footer_links p {
+    font-size: 12px !important;
+    letter-spacing: 0px;
+  }
+}
+@media (min-width: 1024px) {
+  .signinpage footer {
+    height: 110px;
+  }
+  .signinpage footer .append_lines {
+    margin-top: 4px !important;
+  }
+  .signinpage footer .append_lines .footer_links {
+    margin-bottom: initial;
+  }
+}
+.signup_form_mobile_big_page .blue_input {
+  border-radius: 3px;
+  filter: drop-shadow(0px 0px 3px rgb(86, 210, 248));
+}
+.signup_form_mobile_big_page .blue_input input {
+  border: 1px solid black;
+  border-radius: 2px;
+  filter: drop-shadow(0px 0px 3px rgb(86, 210, 248));
+  width: 100%;
+}
+.signup_form_mobile_big_page .signin_terms_conditions {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.14), rgba(0, 0, 0, 0.03) 1px, transparent);
+  margin-right: -25px;
+  margin-left: -13px;
+  text-align: left;
+  padding-left: 10px;
+}
+
+.signup_form_mobile_big_page .signup_form_mobile_big {
+  margin-bottom: 24px;
+}
+.signup_form_mobile_big_page .signup_form_mobile_big footer {
+  padding-top: 48px;
+  height: -moz-max-content;
+  height: max-content;
+  padding: 3px;
+  background-color: white;
+}
+.signup_form_mobile_big_page .signup_form_mobile_big footer .footer_logo {
+  display: none;
+}
+.signup_form_mobile_big_page .signup_form_mobile_big footer .append_lines .footer_links {
+  padding-bottom: 5px;
+  margin-bottom: 5px;
+}
+.signup_form_mobile_big_page .signup_form_mobile_big footer .append_lines .footer_links p {
+  font-size: 15px !important;
+}
+.signup_form_mobile_big_page .signup_form_mobile_big footer .append_lines .copyright span {
+  margin-top: 12px;
+  line-height: 16px;
+  font-size: 11px !important;
+}
+
+@media (min-width: 669px) {
+  .signup_form_mobile_big_page footer {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.14), rgba(0, 0, 0, 0.03) 3px, transparent);
+    height: 113px;
+    padding-top: 27px;
+  }
+  .signup_form_mobile_big_page footer .append_lines {
+    margin-top: 4px !important;
+    gap: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .signup_form_mobile_big_page footer .append_lines .footer_links {
+    margin: 0px 13px 0px 0px;
+    margin-bottom: initial;
+  }
+  .signup_form_mobile_big_page footer .append_lines .footer_links p {
+    font-size: 12px !important;
+    letter-spacing: 0px;
+  }
+}
+@media (min-width: 1024px) {
+  .signup_form_mobile_big_page footer {
+    height: 110px;
+  }
+  .signup_form_mobile_big_page footer .append_lines {
+    margin-top: 4px !important;
+  }
+  .signup_form_mobile_big_page footer .append_lines .footer_links {
+    margin-bottom: initial;
+  }
 }/*# sourceMappingURL=signuppagee.css.map */

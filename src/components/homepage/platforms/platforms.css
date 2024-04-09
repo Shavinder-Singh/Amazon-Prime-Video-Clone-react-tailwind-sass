@@ -18,7 +18,7 @@
   }
   .platforms_section .platforms_wrapper .platforms_content div h1 {
     font-family: amazonEmberbold;
-    font-size: 40px;
+    font-size: 43px;
     max-width: 500px;
   }
   .platforms_section .platforms_wrapper .platforms_content div p {
@@ -31,6 +31,15 @@
   }
   .platforms_section .platforms_wrapper .platforms_media_wrapper img:hover {
     box-shadow: -2px -2px 2px 2px rgb(136, 135, 135), 2px 2px 2px 2px rgb(136, 135, 135);
+  }
+}
+@media (min-width: 1270px) {
+  .platforms_section .platforms_wrapper .platforms_content div h1 {
+    font-size: 44px;
+  }
+  .platforms_section .platforms_wrapper .platforms_content div p {
+    font-size: 23px;
+    line-height: 0.7cm;
   }
 }
 @media (min-width: 1440px) {

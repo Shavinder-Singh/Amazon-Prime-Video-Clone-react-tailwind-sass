@@ -169,19 +169,19 @@ const signuppage = () => {
                         <img src={logo} />
                     </div>
                     <div className='flex justify-center items-center border-none'>
-                        <div className='signinmain pt-[10px] px-[0.9rem]'>
-                            <h6 className='text-[21px] font-thin tracking-wide pb-2'>Welcome</h6>
-                            <div className='signin_form_container border rounded-t-md w-[280px]'>
-                                <div className='createaccount_mobile flex flex-col items-start pt-[10px] pb-[6px] px-[18px]  ' >
-                                    <div className='flex items-center gap-4'>
+                        <div className='signinmain pt-[10px] pl-[0px] pr-[px]'>
+                            <h6 className='text-[21px] font-thin tracking-wide pb-[8px]'>Welcome</h6>
+                            <div className='signin_form_container border rounded-t-md w-[293px]'>
+                                <div className='createaccount_mobile flex flex-col items-start pb-[6px]  ' >
+                                    <div className={`flex items-center gap-4 pl-[18px] pr-[28px]  pt-[10px]  ${activeindex === 0 ? " " : 'createAccount_title'}`}>
                                         <input type='radio' className={`w-[22px] h-6  ${activeindex === 0 ? "active" : ''}`} onClick={() => handleClick(0)} checked={activeindex === 0} />
-                                        <span className='font-bold text-[15px] '>Create account
+                                        <span className='font-bold text-[15px] tracking-[0.1px]'>Create account
                                             <span className='text-[13px] font-thin ml-1'>New to Amazon?</span>
                                         </span>
                                     </div>
-                                    <form onSubmit={handleSubmit}>
+                                    <form onSubmit={handleSubmit} className='px-[18px] '>
                                         {activeindex === 0 && (
-                                            <div className='signup_form_mobile mt-[8px] flex flex-col gap-[12px]'>
+                                            <div className='signup_form_mobile mt-[8px] flex flex-col gap-[12px] w-[248px]'>
                                                 <div className='w-full px-2 pt-3 pb-2 rounded-[4px] border'>
                                                     <input type="text" placeholder='First and last name' name="name" onChange={handleChange} value={formData.name} />
                                                 </div>
@@ -220,7 +220,7 @@ const signuppage = () => {
                                                                     </svg>
                                                                 </span>
                                                             </div>
-                                                            <div className='max-w-[179px] px-2 pt-3 pb-[12px] rounded-[4px] border'>
+                                                            <div className='max-w-[131px] px-2 pt-3 pb-[12px] rounded-[4px] border'>
                                                                 <input type='telephone' placeholder='Mobile number' name='mobilenumber' onChange={handleChange} value={formData.mobilenumber} />
                                                             </div>
                                                         </div>
@@ -274,9 +274,9 @@ const signuppage = () => {
                                 </div>
 
                                 <div className='signin_mobile border flex flex-col items-start '>
-                                    <div className='flex items-center gap-3 pt-[10px] pb-[11px] px-4'>
+                                    <div className={`flex items-center gap-3 pt-[12px] pb-[11px] px-4 ${activeindex === 1 ? "" : 'already_customer'}`}>
                                         <input type='radio' className={`w-[22px] h-6 mr-[4px] ${activeindex === 0 ? "active" : ''}`} onClick={() => handleClick(1)} checked={activeindex === 1} />
-                                        <span className='font-bold text-[14px] tracking-wider'>Sign in</span>
+                                        <span className='font-bold text-[14px] tracking-wider '>Sign in</span>
                                         <span className='text-[13px] ml-[-8px] font-thin'>Already a customer?</span>
                                     </div>
 
@@ -310,11 +310,12 @@ const signuppage = () => {
                     </div>
                 </div>
                 {/* bigscreen */}
+                <div className='flex justify-center pt-[14px] mb-[-14px]'>
+                    <img src={logo} />
+                </div>
                 <div className='signin_bigscreen justify-center flex-col items-center hidden lg:flex'>
                     <div className='pt-[14px]'>
-                        <div className='signinpage_logo flex justify-center'>
-                            <img src={logo} />
-                        </div>
+
                         <div className='flex justify-center items-center border-none'>
                             <div className='signinmain pt-[19px]  '>
                                 <div className='signin_form_container border-[1px] rounded-lg pt-[15px] pr-[32.5px] pl-[29.5px] '>
@@ -326,8 +327,8 @@ const signuppage = () => {
                                             <form onSubmit={handleloginsubmit}>
                                                 <div>
                                                     <span className='text-[13px] font-bold pl-[2px] tracking-wide'>Email or mobile phone number</span>
-                                                    <div className='border px-3 pt-1 pb-[2px] mb-[13px]'>
-                                                        <input type='email' placeholder='Email or phone number' className='text-black outline-none' name='loginemail' onChange={handleChangelogin} value={loginformdata.email} />
+                                                    <div className='border  mb-[13px] blue_input'>
+                                                        <input type='email' placeholder='' className='text-black outline-none w-full px-3 pt-1 pb-[2px] border-none border-2  shadow-none filter-none' name='loginemail' onChange={handleChangelogin} value={loginformdata.email} />
                                                     </div>
                                                 </div>
                                                 <div className='signin_continue_btn w-full flex'>
@@ -336,12 +337,12 @@ const signuppage = () => {
                                                     )}
                                                 </div>
                                                 <div className='signin_terms_conditions'>
-                                                    <p className='text-[12px] leading-[18px] block mb-[23px] '> By continuing, you agree to the Amazon <span className=' text-blue-400'>Conditions of <br /> Use and Privacy Notice</span>.</p>
+                                                    <p className='text-[12px] leading-[18px] block mb-[23px] '> By continuing, you agree to the Amazon <span className=' text-[#0066c0] '>Conditions of <br /> Use and Privacy Notice</span>.</p>
                                                     <div className='flex items-center mb-5'>
                                                         <span className='mr-1'>
                                                             <svg xmlns="http://www.w3.org/2000/svg" width="12" height="15" viewBox="0 0 24 24" id="play"><path d="M8 6.82v10.36c0 .79.87 1.27 1.54.84l8.14-5.18c.62-.39.62-1.29 0-1.69L9.54 5.98C8.87 5.55 8 6.03 8 6.82z"></path></svg>
                                                         </span>
-                                                        <span className='text-[13px]'>Need help?</span>
+                                                        <span className='text-[13px] text-[#0066c0] font-extralight'>Need help?</span>
                                                     </div>
                                                 </div>
                                             </form>
@@ -354,8 +355,8 @@ const signuppage = () => {
                     <div className='new_to_amazon mt-[18px] font-medium mb-[6px]'>
                         <span className='text-[12px]'>New to Amazon?</span>
                     </div>
-                    <div className='border ml- w-[350px] pt-[2px] pb-[4px] rounded-lg text-center mb-5'>
-                        <button className='create_your_amazon_button text-[13px] tracking-normal'><Link to="/signup"> Create your Amazon account</Link></button>
+                    <div className='create_your_amazon_button border ml- w-[350px] pt-[2px] pb-[4px] rounded-lg text-center mb-5 '>
+                        <button className='text-[13px] tracking-normal'><Link to="/signup"> Create your Amazon account</Link></button>
                     </div>
                 </div>
                 {/* signupbigscreen */}

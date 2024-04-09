@@ -220,4 +220,56 @@
   .movie_detail_page .movie_details_icons span:hover path {
     fill: black;
   }
+}
+.movie_detail_page footer {
+  padding-top: 50px;
+  background-color: #00050D;
+}
+.movie_detail_page footer .append_lines .footer_links {
+  margin-bottom: 10px;
+}
+.movie_detail_page footer .append_lines .copyright {
+  line-height: 16px;
+}
+
+@media (min-width: 669px) {
+  .movies_page_wrapper footer {
+    background-color: #00050D;
+    height: 113px;
+    padding-top: 47px;
+  }
+  .movies_page_wrapper footer .append_lines {
+    margin-top: 4px !important;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .movies_page_wrapper footer .append_lines .footer_links {
+    margin: 0px 13px 0px 0px;
+    margin-bottom: initial;
+    font-size: 13px;
+    color: #79B8F3;
+  }
+}
+@media (min-width: 1024px) {
+  .movies_page_wrapper footer {
+    background-color: #00050D;
+    height: 117px;
+    padding-top: 47px;
+  }
+  .movies_page_wrapper footer .append_lines {
+    margin-top: 4px !important;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .movies_page_wrapper footer .append_lines .footer_links {
+    margin: 0px 13px 0px 0px;
+    margin-bottom: initial;
+    color: #79B8F3;
+  }
 }/*# sourceMappingURL=detailmain.css.map */

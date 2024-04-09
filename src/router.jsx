@@ -1,6 +1,5 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Header from './components/header/header';
 import Movies from './pages/Movies';
 import Homepage from './pages/Homepage';
 import Detailpage from './pages/detailpage';
@@ -20,7 +19,6 @@ const RouterComponent = () => {
     return (
         <div>
             <BrowserRouter>
-                <Header />
                 <Routes>
                     <Route path="/" element={<Homepage />} />
                     <Route path="/movies" element={<Movies />} />

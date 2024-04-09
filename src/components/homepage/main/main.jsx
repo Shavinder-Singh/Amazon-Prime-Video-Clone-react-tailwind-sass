@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import './Main.scss'
 
 const main = () => {
@@ -11,7 +12,7 @@ const main = () => {
                 <div className='home_main_content bg-black text-azonwhite h-[90vh] px-[14px] md:px-[30px] lg:px-[30px] xl:px-[20px] pb-20'>
                     <h1 className='text-[44px] leading-[3.1rem] '>Welcome to Prime Video</h1>
                     <p className='text-[21px] mb-3 mt-6 lg:mt-5 leading-6 md:text-[22px] lg:-tracking-tighter'>Watch the latest movies, TV shows, and award-winning Amazon Originals</p>
-                    <a href="#" className='text-[16px] font-bold lg:text-[16px] py-[12.5px] px-[20px] lg:pt-3 rounded-[4px] bg-azonblue w-full block  tracking-tighter'>Sign in to join Prime</a>
+                    <Link to="/signinpage" className='text-[16px] font-bold lg:text-[16px] py-[12.5px] px-[20px] lg:pt-3 rounded-[4px] bg-azonblue w-full block  tracking-tighter join_prime_button'>Sign in to join Prime</Link>
                 </div>
             </section>
         </div>

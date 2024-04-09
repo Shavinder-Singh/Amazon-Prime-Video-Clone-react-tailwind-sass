@@ -36,6 +36,8 @@
 @media (min-width: 465px) {
   .firestick_section {
     position: relative;
+    height: 132vh;
+    background-color: black;
   }
   .firestick_section .firestick_media {
     width: 100%;
@@ -83,6 +85,9 @@
   }
 }
 @media (min-width: 547px) {
+  .firestick_section {
+    height: 115vh;
+  }
   .firestick_section .firestick_media {
     width: 100%;
   }
@@ -97,10 +102,14 @@
   }
 }
 @media (min-width: 1280px) {
+  .firestick_section {
+    height: 100vh;
+  }
   .firestick_section .firestick_content {
     top: 53px;
-    right: 17px;
+    right: 11px;
     padding: 10px;
+    padding-top: 20px;
   }
   .firestick_section h1 {
     font-weight: 900;

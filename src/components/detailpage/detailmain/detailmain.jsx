@@ -6,6 +6,7 @@ import 'swiper/css/navigation';
 import primeContent from '../../../assets/image/PrimecontentImage.png'
 import './detailmain.scss';
 import { useParams } from 'react-router-dom';
+import Header from '../../header/header'
 import Footer from '../../footer/footer';
 
 
@@ -32,6 +33,7 @@ export default function Detailmain() {
     }, [detailImdbId]);
     return (
         <>
+        <Header/>
             <div className='movie_detail_page w-full'>
                 <div className=''>
                     {data && (

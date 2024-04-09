@@ -1,7 +1,4 @@
 @media (min-width: 440px) {
-  .search_page .search_movies_list_mobile .search_movies_list_wrapper_mobile .search_movie_image {
-    max-width: 140px;
-  }
   .search_page .search_movies_list_mobile .search_movies_list_wrapper_mobile .search_movie_image img {
     width: 100%;
   }
@@ -23,7 +20,16 @@
 .search_page .popupbox_search_result_page {
   background-color: rgba(12, 12, 12, 0.5);
 }
+.search_page .mobile_search_results {
+  grid-template-columns: 260px 120px;
+  display: grid;
+}
 
+@media (min-width: 768px) {
+  .search_page .mobile_search_results {
+    grid-template-columns: 330px 120px;
+  }
+}
 @media (min-width: 660px) {
   .search_page {
     padding: 0px 32px !important;
@@ -34,8 +40,15 @@
   }
   .search_page .search_filter .filter_content button {
     max-width: 85px;
+    height: 53px;
+    padding: 0px 0px;
+    font-size: 17px;
   }
   .search_page .results_for {
+    font-size: 17px;
+    margin-bottom: 32px;
+  }
+  .search_page .moreVideos {
     font-size: 18px;
   }
 }
@@ -45,7 +58,7 @@
   }
   .search_page .search_filter .filters_options {
     display: block;
-    padding-top: 12px;
+    padding-top: 5px;
   }
   .search_page .search_filter .filters_options .buttons {
     display: flex;
@@ -61,6 +74,11 @@
   }
   .search_page .search_filter .filter_content {
     display: none;
+  }
+  .search_page .results_for {
+    font-size: 17px;
+    margin-bottom: 47px;
+    margin-top: -6px;
   }
 }
 @media (min-width: 1024px) {
@@ -85,7 +103,11 @@
 }
 @media (min-width: 1280px) {
   .search_page {
-    padding: 10px 64px !important;
+    padding: 10px 72px !important;
+  }
+  .search_page .search_filter {
+    margin-top: 9px;
+    margin-bottom: 88px;
   }
   .search_page .search_filter .filters_options {
     display: block;
@@ -103,8 +125,13 @@
     display: none;
   }
   .search_page .more_videos {
-    font-size: 17px;
+    font-size: 19px;
     letter-spacing: 1px;
+  }
+  .search_page .results_for {
+    font-size: 19px;
+    margin-bottom: 64px;
+    margin-top: -16px;
   }
 }
 @media (min-width: 447px) {
@@ -121,9 +148,12 @@
   .search_page .popupbox_search_result_page {
     background-color: rgba(12, 12, 12, 0.5);
   }
+  .search_page .popupbox_search_result_page .header_popup {
+    gap: 210px;
+  }
   .search_page .popupbox_search_result_page .popupbox_search_result_page_container {
     top: 100px;
-    left: calc(50% - 140px - 16px);
+    left: calc(50% - 190px - 16px);
     width: initial;
     max-height: -moz-max-content;
     max-height: max-content;

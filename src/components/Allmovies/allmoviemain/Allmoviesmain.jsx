@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react';
 import { useEffect } from 'react';
 import axios from 'axios';
+import Header from '../../header/header';
 import { Link } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
@@ -25,6 +26,7 @@ export default function Allmoviesmain() {
     return (
         <>
             <div className='movies_section pb-5 bg-primary'>
+                <Header/>
                 <div className='movies_page_nav bg-primary text-white'>
                     <div className='flex items-center gap-6 pl-9 pt-2 pb-[20px] md:pb-[17px]'>
                         <div className='flex items-center gap-4 md:gap-5'>

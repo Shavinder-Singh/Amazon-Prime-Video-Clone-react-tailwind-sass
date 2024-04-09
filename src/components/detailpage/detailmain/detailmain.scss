@@ -33,6 +33,7 @@
         }
 
     }
+
 }
 
 
@@ -290,7 +291,6 @@
 
                     .movie_detail_page_desciption {
                         width: 80%;
-
                     }
 
                     .movie_detail_options {
@@ -304,7 +304,7 @@
 
                 .movie_detail_note {
                     background-color: black;
-                    box-shadow:12px 12px 32px 22px black ;
+                    box-shadow: 12px 12px 32px 22px black;
                     z-index: -100;
                     padding-bottom: 6%;
                     margin-top: 22px;
@@ -328,6 +328,86 @@
     }
 }
 
+
+
+//footer 
+
+
+// footer 2
+.movie_detail_page {
+
+    footer {
+        padding-top: 50px;
+        background-color: $primaryColor;
+
+        .append_lines {
+            .footer_links {
+                margin-bottom: 10px;
+            }
+
+            .copyright {
+                line-height: 16px;
+            }
+        }
+    }
+}
+
+
+@media (min-width:669px) {
+    .movies_page_wrapper {
+
+        footer {
+            background-color: $primaryColor;
+            height: 113px;
+            padding-top: 47px;
+
+            .append_lines {
+                margin-top: 4px !important;
+
+                .footer_links {
+                    margin: 0px 13px 0px 0px;
+                    margin-bottom: initial;
+                    font-size: 13px;
+                    color: $doublefooter;
+                }
+
+                width: 100%;
+                margin: 0 auto;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+        }
+    }
+}
+
+@media (min-width:1024px) {
+    .movies_page_wrapper {
+        footer {
+            background-color: $primaryColor;
+            height: 117px;
+            padding-top: 47px;
+
+            .append_lines {
+                margin-top: 4px !important;
+
+                .footer_links {
+                    margin: 0px 13px 0px 0px;
+                    margin-bottom: initial;
+                    color: $doublefooter;
+                }
+
+                width: 100%;
+                margin: 0 auto;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+        }
+    }
+}
 
 
 

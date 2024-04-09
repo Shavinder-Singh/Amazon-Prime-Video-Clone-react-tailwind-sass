@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Link, useParams } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
+import  Header from '../components/header/header'
 import '../components/searchresults/searchscroller.scss'
 
 import axios from 'axios';
@@ -154,6 +155,7 @@ export default function SpecificCategory() {
 
     return (
         <>
+        <Header/>
             <div className='search_page text-white px-6 bg-primary min-h-[120vh]'>
                 <div className='text-[30px] font-bold'>
                     <h1>{detailImdbIdSecond}</h1>

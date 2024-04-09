@@ -192,7 +192,6 @@ header div .user_options .search_icon .search_bar {
 }
 header div .user_options .search_icon .search_bar .search_bar_wrapper {
   width: 100%;
-  border-radius: 4px;
   background-color: #33373D;
   padding: 10px;
 }

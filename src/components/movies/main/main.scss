@@ -34,6 +34,20 @@
     // 
 
     .movies_section {
+      .header_all {
+        position: sticky;
+        z-index: 10000000;
+        top: 0px;
+      }
+
+      .movies_page_nav {
+        position: sticky;
+        top: 53px;
+        z-index: 9999999;
+        background: linear-gradient(180deg, #00050d, rgba(0, 5, 13, .9) 50%, rgba(0, 5, 13, .5) 80%, rgba(0, 5, 13, 0));
+
+      }
+
       .mySwiper {
         aspect-ratio: 1.9;
         border: 11px solid black;
@@ -88,10 +102,10 @@
         }
 
         .movies_heading {
-          padding: 10px 0px 8px 50px !important;
+          padding: 0px 0px 8px 50px !important;
 
           h1 {
-            font-size: 39px !important;
+            font-size: 30px !important;
             letter-spacing: 1px;
 
           }
@@ -116,6 +130,16 @@
               text-shadow: 4px 3px 2px black;
             }
           }
+        }
+
+        .movies_heading {
+          padding: 8px 0px 8px 50px !important;
+
+          h1 {
+            font-size: 38px !important;
+            letter-spacing: 1px;
+          }
+
         }
       }
 

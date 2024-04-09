@@ -3,6 +3,8 @@ import logo from '../../assets/image/signInPrimeLogoimage.png'
 import { Link } from 'react-router-dom'
 import CountryCode from '../../components/signinpage/CountryCodedata'
 import { useState } from 'react'
+import '../../components/signinpage/signuppagee.scss'
+import Footer from '../../components/footer/footer'
 const SignupPage = () => {
     // phone numbers
     const defualtitem = { name: 'India', code: '+91' };
@@ -24,7 +26,7 @@ const SignupPage = () => {
 
 
     const [currentbutton, setcurrentbutton] = useState(false);
-    const [inputtype, setinputtype] = useState(false);
+    const [inputtype, setinputtype] = useState(true);
 
     // form box
     const [emaileerror, setemailerror] = useState(false);
@@ -100,7 +102,7 @@ const SignupPage = () => {
         console.log(formData);
         alert("form submit successfully")
     }
-    
+
     const handleChange = (e) => {
         const { name, value } = e.target;
         setformData((prevData) => ({
@@ -109,28 +111,28 @@ const SignupPage = () => {
         }));
     };
     return (
-        <div className='border-2 '>
+        <div className=' signup_form_mobile_big_page border-2 '>
             <div className='signup_form_mobile_big px-[17px] mt-[2px] flex flex-col gap-[12px] '>
-                <div className='signinpage_logo flex justify-center mt-3 mb-[6px]'>
+                <div className='signinpage_logo flex justify-center mt-[10px] mb-[6px]'>
                     <img src={logo} />
                 </div>
                 <div className='signup_form_big_screen rounded-md pt-[9px] pr-[26px] pl-[14px] flex flex-col gap-[8px] lg:max-w-[28%] border lg:mx-[auto]'>
                     <h1 className='text-[28px]'>Create Account</h1>
                     <form onSubmit={handleSubmit}>
-                        <div className='mb-[2px]'>
+                        <div className='mb-[3px]'>
                             <span className='text-[13px] font-bold pl-1 tracking-wide'>Your name</span>
-                            <div className=' w-full pl-1 pr-2 pt-[6px] pb-[3px] rounded-[4px] border text-[14px]'>
-                                <input type="text" placeholder='First and last name' name="name" onChange={handleChange} value={formData.name} />
+                            <div className='blue_input w-full rounded-[4px] border text-[14px]'>
+                                <input type="text" placeholder='' name="name" onChange={handleChange} value={formData.name} className='pl-1 pr-2 pt-[6px] pb-[3px]' />
                             </div>
                         </div>
                         <div className='w-full'>
-                            <span className='text-[13px] pl-1 font-bold'>Mobile number</span>
+                            <span className='text-[13px] pl-1  font-bold'>Mobile number</span>
                             {inputtype ? (
                                 <div className='w-full'>
                                     <div className='flex items-center justify-between gap-3'>
-                                        <div className='flex items-center border gap-3 px-3 py-2 rounded-md w-[120px]'>
+                                        <div className='flex items-center border gap-3 px-3 py-1 rounded-md w-[120px]  mt-[-2px]'>
                                             <div>
-                                                <span className='choose_number text-[15px] text-nowrap' onClick={() => openBoxEvent()}><span>{selectedItem.name}{selectedItem.code}</span></span>
+                                                <span className='choose_number text-[14px] text-nowrap' onClick={() => openBoxEvent()}><span>{selectedItem.name}{selectedItem.code}</span></span>
                                                 <div className='telephonenum_list_wrapper fixed border-2 border-emerald-500 w-full h-full top-0 left-0 hidden'>
                                                     <div className='telephonenum_list_wrapper_container absolute w-[63%] h-[380px] rounded-md overflow-scroll bg-white'>
                                                         <div className='border w-full py-3 flex items-center justify-between sticky top-0 bg-gray-100'>
@@ -160,7 +162,7 @@ const SignupPage = () => {
                                                 </svg>
                                             </span>
                                         </div>
-                                        <div className='max-w-[179px] px-2 pt-3 pb-[12px] rounded-[4px] border'>
+                                        <div className='max-w-[142px]  md:max-w-[179px] px-2 pt-1 pb-[4px] rounded-[4px] border'>
                                             <input type='telephone' placeholder='Mobile number' name='mobilenumber' onChange={handleChange} value={formData.mobilenumber} />
                                         </div>
                                     </div>
@@ -168,12 +170,12 @@ const SignupPage = () => {
                             ) : <div className='w-full px-2 pt-3 pb-2 rounded-[4px] border'>
                                 <input type="email" placeholder='Enter your email' name="email" onChange={handleChange} value={formData.email} />
                             </div>}
-                            <span className='font-thin text-[12px]' onClick={() => changeinput()}>{currentbutton ? "Use Your email Instead" : "Use your mobile instead"}</span>
+                            <span className='font-thin text-[12px] text-[#0066c0]' onClick={() => changeinput()}>{currentbutton ? "Use Your mobile instead" : "Use your email Instead"}</span>
                         </div>
                         <div>
                             <span className='text-[12px] font-bold tracking-wide pl-1'>Password</span>
                             <div className='w-full px-2 pt-1 pb-1 rounded-[4px] border'>
-                                <input type="password" placeholder='Create a Password' name='password' onChange={handleChange} value={formData.password} />
+                                <input type="password" placeholder='At least 6 Characters' name='password' onChange={handleChange} value={formData.password} />
                             </div>
                         </div>
                         <div className='mt-[-8px] flex flex-col gap-4'>
@@ -199,13 +201,14 @@ const SignupPage = () => {
                                 <button className='border px-2 pt-[5px] pb-[4px] mb-4 w-full bg-yellowcolor text-center rounded-lg text-[13px]'>Continue</button>
                             </div>
                             <div className='signin_terms_conditions mt-[-12px] pt-8'>
-                                <p className='text-[14px] leading-4 block mb-4 max-w-[365px]'>Already have an account?<span className='pl-1'>Sign in</span></p>
+                                <p className='text-[14px] leading-4 block mb-4 max-w-[365px]'>Already have an account?<span className='pl-1 text-[#0066c0]'>Sign in</span></p>
                             </div>
                         </div>
                     </form>
                 </div>
             </div>
-        </div >
+            <Footer />
+        </div>
     )
 }
 
