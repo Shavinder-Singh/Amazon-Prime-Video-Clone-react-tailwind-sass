@@ -86,14 +86,31 @@ const header = () => {
     }
     // open sidebar
     const [sidebar, setsidebar] = useState();
+    const [menuarrow, setmenuarrow] = useState()
     const opensidebar = () => {
         setsidebar(!sidebar);
+        setmenuarrow(!menuarrow)
     }
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            if (sidebar && !event.target.closest('.mobile_menu')) {
+                setsidebar(false);
+            }
+        };
+
+        document.addEventListener('click', handleClickOutside);
+
+        // return () => {
+        // document.removeEventListener('click', handleClickOutside);
+        // };
+    }, [sidebar]);
     //open account sidebar
     const [accountSidebar, setaccountsidebar] = useState(false);
     const openaccountSidebar = () => {
         setaccountsidebar(!accountSidebar);
     }
+
+    //close account sidebar
     const closeaccountsidebar = () => {
         setaccountsidebar(false);
     }
@@ -101,13 +118,24 @@ const header = () => {
     return (
         <div className='header_all'>
             <header className='header_mobile z-10 '>
-                <div className='mobile_menu hover:bg-secondary relative '>
-                    <h1 className='menu' onClick={() => opensidebar()}>Menu
-                        {sidebar && (
-                            <Sidebar />
-                        )}
+                <div className='mobile_menu hover:bg-secondary relative  ' onClick={() => opensidebar()}    >
+                    <h1 className='menu'>Menu
+
                     </h1>
-                    <div className='menu_bar_arrow'>
+                    {sidebar && (
+                        <Sidebar />
+                    )}
+                    {menuarrow ? (<div className='menu_bar_arrow'>
+                        <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 64.000000 64.000000" className='rotate-[180deg]'
+                            preserveAspectRatio="xMidYMid meet">
+                            <g transform="translate(0.000000,64.000000) scale(0.100000,-0.100000)"
+                                fill="white" stroke="none">
+                                <path d="M160 397 c0 -7 36 -48 80 -92 l80 -80 80 80 c71 71 95 105 73 105 -4
+0 -40 -33 -80 -72 l-73 -72 -73 72 c-73 73 -87 82 -87 59z"/>
+                            </g>
+                        </svg>
+                    </div>) : (<div className='menu_bar_arrow'>
                         <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
                             viewBox="0 0 64.000000 64.000000"
                             preserveAspectRatio="xMidYMid meet">
@@ -117,7 +145,7 @@ const header = () => {
 0 -40 -33 -80 -72 l-73 -72 -73 72 c-73 73 -87 82 -87 59z"/>
                             </g>
                         </svg>
-                    </div>
+                    </div>)}
                 </div>
                 <div className='mobile_logo'>
                     <Link to='/' ><img src={Logo} alt="logo" /></Link>

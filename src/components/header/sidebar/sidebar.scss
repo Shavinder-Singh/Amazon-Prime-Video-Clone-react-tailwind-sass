@@ -15,41 +15,41 @@
 
     .categories_sidebar {
         &:hover .categories_sidebar_arrow {
-            transition: 0.2s;
-            transform: rotate(180deg);
+            // transition: 0.2s;
+            // transform: rotate(180deg);
         }
     }
 
     .featured_dropdown_sidebar {
-        ul {
-            display: none;
-        }
+        // ul {
+        //     display: none;
+        // }
 
-        &:hover ul {
-            display: block;
-        }
+        // &:hover ul {
+        //     display: block;
+        // }
 
 
-        &:hover .featured_sidebar_arrow {
-            transition: 0.2s;
-            transform: rotate(180deg);
-        }
+        // &:hover .featured_sidebar_arrow {
+        //     transition: 0.2s;
+        //     transform: rotate(180deg);
+        // }
     }
 
-    .genre_dropdown_sidebar {
-        ul {
-            display: none;
-        }
+    // .genre_dropdown_sidebar {
+    //     ul {
+    //         display: none;
+    //     }
 
-        &:hover ul {
-            display: block;
-        }
+    //     &:hover ul {
+    //         // display: block;
+    //     }
 
-        &:hover .genre_sidebar_arrow {
-            transition: 0.2s;
-            transform: rotate(180deg);
-        }
-    }
+    //     &:hover .genre_sidebar_arrow {
+    //         transition: 0.2s;
+    //         transform: rotate(180deg);
+    //     }
+    // }    
 }
 
 @media (min-width:660px) {

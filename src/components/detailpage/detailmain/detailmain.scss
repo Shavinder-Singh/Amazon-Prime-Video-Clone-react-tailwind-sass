@@ -339,6 +339,8 @@
     footer {
         padding-top: 50px;
         background-color: $primaryColor;
+        z-index: 190;
+        position: relative;
 
         .append_lines {
             .footer_links {

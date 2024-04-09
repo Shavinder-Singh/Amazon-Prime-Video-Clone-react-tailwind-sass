@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './sidebar.scss'
 import { Link } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom';
@@ -20,7 +20,23 @@ const sidebar = () => {
         } catch (error) {
             console.log(error);
         }
+    }
 
+    //open dobule links in sidebar
+    const [arrow, setcategoryArrow] = useState();
+    const [open, setopenLinks] = useState();
+    const openSidebarDoubleLinks = () => {
+        setopenLinks(!open);
+        setcategoryArrow(!arrow)
+    }
+    //open sidebar link
+    const [genre, setgenre] = useState();
+    const [featuredCollection, setFeaturedCollections] = useState();
+    const genreopen = () => {
+        setgenre(!genre)
+    }
+    const featuredCollectionsOpen = () => {
+        setFeaturedCollections(!featuredCollection);
     }
     return (
         <div>
@@ -45,9 +61,9 @@ const sidebar = () => {
                             <div className='categories_content'>
                                 <span className='mr-2'><svg class="fbl-icon _3UMk3x _1a_Ljt" viewBox="0 0 24 24" height="24" width="24" role="img" aria-hidden="true"><title>Categories</title><svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.664 2.063 C 2.436 2.146,2.257 2.297,2.131 2.511 L 2.020 2.700 2.020 6.500 L 2.020 10.300 2.131 10.489 C 2.192 10.592,2.301 10.723,2.374 10.778 C 2.675 11.008,2.531 11.000,6.498 11.000 C 10.604 11.000,10.387 11.015,10.701 10.701 C 11.015 10.387,11.000 10.604,11.000 6.500 C 11.000 2.396,11.015 2.613,10.701 2.299 C 10.386 1.984,10.606 2.000,6.483 2.003 C 3.408 2.005,2.795 2.015,2.664 2.063 M13.664 2.063 C 13.436 2.146,13.257 2.297,13.131 2.511 L 13.020 2.700 13.020 6.500 L 13.020 10.300 13.131 10.489 C 13.192 10.592,13.301 10.723,13.374 10.778 C 13.675 11.008,13.531 11.000,17.498 11.000 C 21.604 11.000,21.387 11.015,21.701 10.701 C 22.015 10.387,22.000 10.604,22.000 6.500 C 22.000 2.396,22.015 2.613,21.701 2.299 C 21.386 1.984,21.606 2.000,17.483 2.003 C 14.408 2.005,13.795 2.015,13.664 2.063 M9.000 6.500 L 9.000 9.000 6.500 9.000 L 4.000 9.000 4.000 6.500 L 4.000 4.000 6.500 4.000 L 9.000 4.000 9.000 6.500 M20.000 6.500 L 20.000 9.000 17.500 9.000 L 15.000 9.000 15.000 6.500 L 15.000 4.000 17.500 4.000 L 20.000 4.000 20.000 6.500 M2.664 13.063 C 2.436 13.146,2.257 13.297,2.131 13.511 L 2.020 13.700 2.020 17.500 L 2.020 21.300 2.131 21.489 C 2.192 21.592,2.301 21.723,2.374 21.778 C 2.675 22.008,2.531 22.000,6.498 22.000 C 10.604 22.000,10.387 22.015,10.701 21.701 C 11.015 21.387,11.000 21.604,11.000 17.500 C 11.000 13.396,11.015 13.613,10.701 13.299 C 10.386 12.984,10.606 13.000,6.483 13.003 C 3.408 13.005,2.795 13.015,2.664 13.063 M13.664 13.063 C 13.436 13.146,13.257 13.297,13.131 13.511 L 13.020 13.700 13.020 17.500 L 13.020 21.300 13.131 21.489 C 13.192 21.592,13.301 21.723,13.374 21.778 C 13.675 22.008,13.531 22.000,17.498 22.000 C 21.604 22.000,21.387 22.015,21.701 21.701 C 22.015 21.387,22.000 21.604,22.000 17.500 C 22.000 13.396,22.015 13.613,21.701 13.299 C 21.386 12.984,21.606 13.000,17.483 13.003 C 14.408 13.005,13.795 13.015,13.664 13.063 M9.000 17.500 L 9.000 20.000 6.500 20.000 L 4.000 20.000 4.000 17.500 L 4.000 15.000 6.500 15.000 L 9.000 15.000 9.000 17.500 M20.000 17.500 L 20.000 20.000 17.500 20.000 L 15.000 20.000 15.000 17.500 L 15.000 15.000 17.500 15.000 L 20.000 15.000 20.000 17.500 " fill="currentColor" stroke="none" fill-rule="evenodd"></path></svg></svg>
                                 </span>
-                                <Link to="categories">Categories</Link>
+                                <p onClick={() => openSidebarDoubleLinks()}>Categories</p>
                                 <div className='categories_sidebar_arrow'>
-                                    <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+                                    {arrow ?(<svg version="1.0" xmlns="http://www.w3.org/2000/svg" className='rotate-[180deg]'
                                         viewBox="0 0 64.000000 64.000000"
                                         preserveAspectRatio="xMidYMid meet">
 
@@ -56,45 +72,75 @@ const sidebar = () => {
                                             <path d="M160 397 c0 -7 36 -48 80 -92 l80 -80 80 80 c71 71 95 105 73 105 -4
 0 -40 -33 -80 -72 l-73 -72 -73 72 c-73 73 -87 82 -87 59z"/>
                                         </g>
-                                    </svg>
+                                    </svg>):(<svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+                                        viewBox="0 0 64.000000 64.000000"
+                                        preserveAspectRatio="xMidYMid meet">
+
+                                        <g transform="translate(0.000000,64.000000) scale(0.100000,-0.100000)"
+                                            fill="white" stroke="none">
+                                            <path d="M160 397 c0 -7 36 -48 80 -92 l80 -80 80 80 c71 71 95 105 73 105 -4
+0 -40 -33 -80 -72 l-73 -72 -73 72 c-73 73 -87 82 -87 59z"/>
+                                        </g>
+                                    </svg>)}
                                 </div>
                             </div>
-                            <ul className='pl-3 pt-7'>
-                                <li className='genre_dropdown_sidebar'>
-                                    <div className='flex items-center gap-1'>
-                                        <p>Genres</p>
-                                        <div className='genre_sidebar_arrow'>
-                                            <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
-                                                viewBox="0 0 64.000000 64.000000"
-                                                preserveAspectRatio="xMidYMid meet">
+                            {open && (
+                                <ul className='pl-3 pt-7'>
+                                    <li className='genre_dropdown_sidebar'>
+                                        <div className='flex items-center gap-1'>
+                                            <p onClick={() => genreopen()}>Genres</p>
+                                            <div className='genre_sidebar_arrow'>
+                                                {genre ? (<svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+                                                    viewBox="0 0 64.000000 64.000000" className='rotate-[180deg]'
+                                                    preserveAspectRatio="xMidYMid meet">
 
-                                                <g transform="translate(0.000000,64.000000) scale(0.100000,-0.100000)"
-                                                    fill="white" stroke="none">
-                                                    <path d="M160 397 c0 -7 36 -48 80 -92 l80 -80 80 80 c71 71 95 105 73 105 -4
+                                                    <g transform="translate(0.000000,64.000000) scale(0.100000,-0.100000)"
+                                                        fill="white" stroke="none">
+                                                        <path d="M160 397 c0 -7 36 -48 80 -92 l80 -80 80 80 c71 71 95 105 73 105 -4
 0 -40 -33 -80 -72 l-73 -72 -73 72 c-73 73 -87 82 -87 59z"/>
-                                                </g>
-                                            </svg>
+                                                    </g>
+                                                </svg>) : (<svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+                                                    viewBox="0 0 64.000000 64.000000"
+                                                    preserveAspectRatio="xMidYMid meet">
+
+                                                    <g transform="translate(0.000000,64.000000) scale(0.100000,-0.100000)"
+                                                        fill="white" stroke="none">
+                                                        <path d="M160 397 c0 -7 36 -48 80 -92 l80 -80 80 80 c71 71 95 105 73 105 -4
+0 -40 -33 -80 -72 l-73 -72 -73 72 c-73 73 -87 82 -87 59z"/>
+                                                    </g>
+                                                </svg>)}
+                                            </div>
                                         </div>
-                                    </div>
-                                    <ul className='mt-[13px] flex flex-col gap-[3px] bg-inputbgcolor text-azongray  w-[100vw] ml-[-36px] z-10 '>
-                                        <li className='p-3 pt-[13px] pl-[48px]' onClick={() => handleRedirect('adventure')}>Action and adventure</li>
-                                        <li className='p-3 pl-[48px]' onClick={() => handleRedirect('Anime')}>Anime</li>
-                                        <li className='p-3 pl-[48px]' onClick={() => handleRedirect('comedy')}>Comedy</li>
-                                        <li className='p-3 pl-[48px]' onClick={() => handleRedirect('documentary')}>Documentary</li>
-                                        <li className='p-3 pl-[48px]' onClick={() => handleRedirect('drama')}>Drama</li>
-                                        <li className='p-3 pl-[48px]' onClick={() => handleRedirect('kids')}>Kids</li>
-                                        <li className='p-3 pl-[48px]' onClick={() => handleRedirect('mystery')}>Mystery and thrillers</li>
-                                        <li className='p-3 pl-[48px]' onClick={() => handleRedirect('romance')}>Romance</li>
-                                        <li className='p-3 pl-[48px]' onClick={() => handleRedirect('science')}>Science fiction</li>
-                                    </ul>
-                                </li>
-                            </ul>
-                            <ul className='pl-3 pt-7  z-40'>
+
+                                        {genre && (<ul className=' mt-[13px] flex flex-col gap-[3px] bg-inputbgcolor text-azongray  w-[100vw] ml-[-36px] z-10 '>
+                                            <li className='p-3 pt-[13px] pl-[48px]' onClick={() => handleRedirect('adventure')}>Action and adventure</li>
+                                            <li className='p-3 pl-[48px]' onClick={() => handleRedirect('Anime')}>Anime</li>
+                                            <li className='p-3 pl-[48px]' onClick={() => handleRedirect('comedy')}>Comedy</li>
+                                            <li className='p-3 pl-[48px]' onClick={() => handleRedirect('documentary')}>Documentary</li>
+                                            <li className='p-3 pl-[48px]' onClick={() => handleRedirect('drama')}>Drama</li>
+                                            <li className='p-3 pl-[48px]' onClick={() => handleRedirect('kids')}>Kids</li>
+                                            <li className='p-3 pl-[48px]' onClick={() => handleRedirect('mystery')}>Mystery and thrillers</li>
+                                            <li className='p-3 pl-[48px]' onClick={() => handleRedirect('romance')}>Romance</li>
+                                            <li className='p-3 pl-[48px]' onClick={() => handleRedirect('science')}>Science fiction</li>
+                                        </ul>)}
+                                    </li>
+                                </ul>
+                            )}
+                            {open && (<ul className='pl-3 pt-7  z-40'>
                                 <li className='featured_dropdown_sidebar'>
                                     <div className='flex items-center gap-1'>
-                                        <p>Featured Collections</p>
+                                        <p onClick={() => featuredCollectionsOpen()}>Featured Collections</p>
                                         <div className='featured_sidebar_arrow'>
-                                            <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+                                            {featuredCollection ? (<svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+                                                viewBox="0 0 64.000000 64.000000" className=' rotate-[180deg]'
+                                                preserveAspectRatio="xMidYMid meet">
+
+                                                <g transform="translate(0.000000,64.000000) scale(0.100000,-0.100000)"
+                                                    fill="white" stroke="none">
+                                                    <path d="M160 397 c0 -7 36 -48 80 -92 l80 -80 80 80 c71 71 95 105 73 105 -4
+0 -40 -33 -80 -72 l-73 -72 -73 72 c-73 73 -87 82 -87 59z"/>
+                                                </g>
+                                            </svg>) : (<svg version="1.0" xmlns="http://www.w3.org/2000/svg"
                                                 viewBox="0 0 64.000000 64.000000"
                                                 preserveAspectRatio="xMidYMid meet">
 
@@ -103,10 +149,10 @@ const sidebar = () => {
                                                     <path d="M160 397 c0 -7 36 -48 80 -92 l80 -80 80 80 c71 71 95 105 73 105 -4
 0 -40 -33 -80 -72 l-73 -72 -73 72 c-73 73 -87 82 -87 59z"/>
                                                 </g>
-                                            </svg>
+                                            </svg>)}
                                         </div>
                                     </div>
-                                    <ul className='mt-[13px] flex flex-col gap-[3px] bg-inputbgcolor text-azongray  w-[100vw] ml-[-36px] z-10 '>
+                                    {featuredCollection && (<ul className=' mt-[13px] flex flex-col gap-[3px] bg-inputbgcolor text-azongray  w-[100vw] ml-[-36px] z-10 '>
                                         <li className='p-3 pt-[13px] pl-[48px]' onClick={() => handleRedirect('hindi')}>Hindi</li>
                                         <li className='p-3 pl-[48px]' onClick={() => handleRedirect('english')}>English</li>
                                         <li className='p-3 pl-[48px]' onClick={() => handleRedirect('telugu')}>Telugu</li>
@@ -117,9 +163,9 @@ const sidebar = () => {
                                         <li className='p-3 pl-[48px]' onClick={() => handleRedirect('punjabi')}>Punjabi</li>
                                         <li className='p-3 pl-[48px]' onClick={() => handleRedirect('gujarati')}>Gujarati</li>
                                         <li className='p-3 pl-[48px]' onClick={() => handleRedirect('bengali')}>Bengali</li>
-                                    </ul>
+                                    </ul>)}
                                 </li>
-                            </ul>
+                            </ul>)}
                         </li>
                     </ul>
                 </div>

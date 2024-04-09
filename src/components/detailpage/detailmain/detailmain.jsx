@@ -8,7 +8,7 @@ import './detailmain.scss';
 import { useParams } from 'react-router-dom';
 import Header from '../../header/header'
 import Footer from '../../footer/footer';
-
+import { Link } from 'react-router-dom';
 
 export default function Detailmain() {
     const { detailImdbId } = useParams();
@@ -33,7 +33,7 @@ export default function Detailmain() {
     }, [detailImdbId]);
     return (
         <>
-        <Header/>
+            <Header />
             <div className='movie_detail_page w-full'>
                 <div className=''>
                     {data && (
@@ -66,12 +66,12 @@ export default function Detailmain() {
                                                     <span className='text-[13px] font-semibold tracking-wider prime_trial lg:text-[17px] md:text-[15px]  z-[1]'>Watch with a free Prime trial</span></span>
                                                 <div className='flex flex-col flex-wrap gap-2 lg:flex-row lg:items-center lg:gap-8 shadow_last'>
                                                     <div className='movie_details_btns flex flex-col md:flex-row md:justify-left gap-3'>
-                                                        <div className='movie_options_trial_btn py-1 md:p-2 rounded-lg tracking-widest bg-white flex flex-col justify-center items-center font-bold hover:scale-[1.1] hover:text-gray hover:bg-white transition-all text-black '>
+                                                        <Link to="/signinpage"> <div className='movie_options_trial_btn py-1 md:p-2 rounded-lg tracking-widest bg-white flex flex-col justify-center items-center font-bold hover:scale-[1.1] hover:text-gray hover:bg-white transition-all text-black '>
                                                             <button className=' text-[15px] md:text-[18px] tracking-wider mt-[-2px]'>Watch with Prime</button>
                                                             <span className='text-[12px] md:text-[16px] tracking-normal'>Start your 30-day free trial</span>
-                                                        </div>
+                                                        </div></Link>
                                                         <div className='movie_options_rent_btn py-[14.5px] md:p-2 rounded-lg tracking-widest bg-inputbgcolor hover:scale-[1.1] hover:text-black hover:bg-white transition-all text-white flex flex-col justify-center items-center font-bold'>
-                                                            <button className=' text-[15px] md:text-[16px] tracking-wider mt-[-2px]'>Rent <span className='uhd_badge'>UHD ₹119</span></button>
+                                                            <Link to="/signinpage"> <button className=' text-[15px] md:text-[16px] tracking-wider mt-[-2px]'>Rent <span className='uhd_badge'>UHD ₹119</span></button></Link>
                                                         </div>
                                                         <div className='movie_options_purchase_btn py-[14px] md:p-2 rounded-lg tracking-widest bg-inputbgcolor flex flex-col justify-center items-center font-bold hover:scale-[1.1] hover:text-black hover:bg-white transition-all text-white '>
                                                             <button className=' text-[15px] md:text-[16px] tracking-wider mt-[-2px]'>More purchase <span className='options_content'>options</span></button>
