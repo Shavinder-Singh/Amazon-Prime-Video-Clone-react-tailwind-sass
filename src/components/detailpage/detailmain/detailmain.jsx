@@ -289,7 +289,7 @@ export default function Detailmain() {
                         </>
                     )}
                 </div>
-                <div className='additional_detail_section relative bg-black text-white z-[0]'>
+                <div className='additional_detail_section relative bg-black text-white z-[10]'>
                     <div className='flex justify-center font-bold gap-5 md:text-[18px] lg:text-[20px] lg:tracking-wider'>
                         <p onClick={() => relatedMovies(0)} className={`cursor-pointer ${activeindex === 0 ? "border-b-[3px]" : ''}`}>Related</p>
                         <p onClick={() => relatedMovies(1)} className={`cursor-pointer ${activeindex === 1 ? "border-b-[3px]" : ''}`}>Details</p>
