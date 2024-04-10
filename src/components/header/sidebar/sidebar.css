@@ -11,31 +11,6 @@
   background-color: #191E25;
   cursor: pointer;
 }
-.header_sidebar .categories_sidebar:hover .categories_sidebar_arrow {
-  transition: 0.2s;
-  transform: rotate(180deg);
-}
-.header_sidebar .featured_dropdown_sidebar ul {
-  display: none;
-}
-.header_sidebar .featured_dropdown_sidebar:hover ul {
-  display: block;
-}
-.header_sidebar .featured_dropdown_sidebar:hover .featured_sidebar_arrow {
-  transition: 0.2s;
-  transform: rotate(180deg);
-}
-.header_sidebar .genre_dropdown_sidebar ul {
-  display: none;
-}
-.header_sidebar .genre_dropdown_sidebar:hover ul {
-  display: block;
-}
-.header_sidebar .genre_dropdown_sidebar:hover .genre_sidebar_arrow {
-  transition: 0.2s;
-  transform: rotate(180deg);
-}
-
 @media (min-width: 660px) {
   .header_sidebar ul {
     font-size: 16px;

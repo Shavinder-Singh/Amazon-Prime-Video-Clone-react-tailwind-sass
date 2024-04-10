@@ -25,10 +25,6 @@
   font-weight: 900;
   letter-spacing: 1px;
 }
-.header_mobile .mobile_menu:hover .menu_bar_arrow {
-  transition: 0.2s;
-  transform: rotate(180deg);
-}
 .header_mobile .mobile_menu div svg {
   width: 15px;
   font-weight: 900;

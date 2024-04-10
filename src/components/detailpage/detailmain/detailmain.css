@@ -21,6 +21,22 @@
   color: white;
 }
 
+.movie_detail_page .movie_details_icons div span {
+  transition: 0.3s;
+  fill: black;
+}
+.movie_detail_page .movie_details_icons div span:hover path {
+  fill: black;
+}
+.movie_detail_page .movie_details_icons div span:hover p {
+  display: flex;
+  text-wrap: nowrap;
+}
+.movie_detail_page .movie_details_icons div p {
+  transition: 0.3s;
+  display: none;
+}
+
 @media (min-width: 469px) {
   .movie_detail_page .movie_detail_page_main .movie_detail_page_main_image_wrapper_mobile .shadow_mobile {
     width: 30px;
@@ -59,6 +75,43 @@
     background-color: transparent;
     background-image: linear-gradient(to bottom, transparent, black, black, black, rgb(0, 0, 0));
     color: white;
+  }
+}
+.movie_detail_page .popup_detail_page {
+  background-color: rgba(0, 5, 13, 0.5);
+}
+
+@media (min-width: 924px) {
+  .movie_detail_page .popup_detail_page {
+    background-color: rgba(0, 5, 13, 0.5);
+  }
+  .movie_detail_page .popup_detail_page .popup_detail_page_container {
+    top: calc(50% - 80px - 20px);
+    left: calc(50% - 230px - 20px);
+    width: 47%;
+    bottom: unset;
+  }
+  .movie_detail_page .popup_detail_page .popup_detail_page_container .popup_social_links {
+    justify-content: space-around;
+  }
+}
+@media (min-width: 1280px) {
+  .movie_detail_page .popup_detail_page {
+    background-color: rgba(0, 5, 13, 0.5);
+  }
+  .movie_detail_page .popup_detail_page .popup_detail_page_container {
+    top: calc(50% - 80px - 20px);
+    left: calc(50% - 230px - 10px);
+    width: 42%;
+    bottom: unset;
+    font-size: 21px;
+  }
+  .movie_detail_page .popup_detail_page .popup_detail_page_container svg {
+    width: 34px;
+    height: 34px;
+  }
+  .movie_detail_page .popup_detail_page .popup_detail_page_container .popup_social_links {
+    gap: 20px;
   }
 }
 @media (min-width: 768px) {
@@ -224,6 +277,8 @@
 .movie_detail_page footer {
   padding-top: 50px;
   background-color: #00050D;
+  z-index: 1;
+  position: relative;
 }
 .movie_detail_page footer .append_lines .footer_links {
   margin-bottom: 10px;
