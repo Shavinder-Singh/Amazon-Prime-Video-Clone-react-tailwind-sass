@@ -146,7 +146,6 @@ const SearchScroller = () => {
     const handlegenre = (genre) => {
         fetchGenre(genre);
         setcontentbigscreen(genre)
-
     }
 
     const qualityFilter = (imdbID) => {
