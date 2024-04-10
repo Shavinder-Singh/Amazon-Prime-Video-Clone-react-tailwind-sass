@@ -20,6 +20,9 @@
   box-shadow: 2px 2px 221px 122px black;
   color: white;
 }
+.movie_detail_page .purchase_Popup {
+  background-color: rgba(0, 5, 13, 0.5);
+}
 
 .movie_detail_page .movie_details_icons div span {
   transition: 0.3s;
@@ -287,6 +290,54 @@
   line-height: 16px;
 }
 
+@media (min-width: 600px) {
+  .movie_detail_page .purchase_Popup {
+    background-color: rgba(0, 5, 13, 0.5);
+  }
+  .movie_detail_page .purchase_Popup .purchase_Popup_container {
+    top: 12px;
+    bottom: unset;
+    width: 60%;
+    top: calc(50% - 180px);
+    left: calc(50% - 220px);
+  }
+  .movie_detail_page .purchase_Popup .purchase_Popup_container .movie_options_trial_btn_popup {
+    width: 220px;
+  }
+  .movie_detail_page .purchase_Popup .purchase_Popup_container .purchase_btns {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+  .movie_detail_page .purchase_Popup .purchase_Popup_container .purchase_btns .movie_options_rent_btn {
+    width: 130px;
+    height: 60px;
+  }
+}
+@media (min-width: 820px) {
+  .movie_detail_page .purchase_Popup {
+    background-color: rgba(0, 5, 13, 0.5);
+  }
+  .movie_detail_page .purchase_Popup .purchase_Popup_container {
+    top: 12px;
+    bottom: unset;
+    width: 60%;
+    top: calc(50% - 180px);
+    left: calc(50% - 220px);
+  }
+  .movie_detail_page .purchase_Popup .purchase_Popup_container .movie_options_trial_btn_popup {
+    width: 260px;
+  }
+  .movie_detail_page .purchase_Popup .purchase_Popup_container .purchase_btns {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+  .movie_detail_page .purchase_Popup .purchase_Popup_container .purchase_btns .movie_options_rent_btn {
+    width: 170px;
+    height: 60px;
+  }
+}
 @media (min-width: 669px) {
   .movies_page_wrapper footer {
     background-color: #00050D;

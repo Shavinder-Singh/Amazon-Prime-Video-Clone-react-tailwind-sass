@@ -149,6 +149,16 @@ export default function Detailmain() {
             setactiveindex(index);
         }
     }
+    //open popup
+    const [openPurchasebox, setOpenPurchase] = useState(false);
+    const [closePurchasebox, setClosePurchase] = useState();
+    const openPurchase = () => {
+        setOpenPurchase(true);
+    }
+    const closePurchase = () => {
+        setOpenPurchase(false);
+    }
+
     return (
         <>
             <Header />
@@ -191,7 +201,7 @@ export default function Detailmain() {
                                                         <div className='movie_options_rent_btn py-[14.5px] md:p-2 rounded-lg tracking-widest bg-inputbgcolor hover:scale-[1.1] hover:text-black hover:bg-white transition-all text-white flex flex-col justify-center items-center font-bold'>
                                                             <Link to="/signinpage"> <button className=' text-[15px] md:text-[16px] tracking-wider mt-[-2px]'>Rent <span className='uhd_badge'>UHD ₹119</span></button></Link>
                                                         </div>
-                                                        <div className='movie_options_purchase_btn py-[14px] md:p-2 rounded-lg tracking-widest bg-inputbgcolor flex flex-col justify-center items-center font-bold hover:scale-[1.1] hover:text-black hover:bg-white transition-all text-white '>
+                                                        <div className='movie_options_purchase_btn py-[14px] md:p-2 rounded-lg tracking-widest bg-inputbgcolor flex flex-col justify-center items-center font-bold hover:scale-[1.1] hover:text-black hover:bg-white transition-all text-white ' onClick={() => openPurchase()}>
                                                             <button className=' text-[15px] md:text-[16px] tracking-wider mt-[-2px]'>More purchase <span className='options_content'>options</span></button>
                                                         </div>
                                                     </div>
@@ -279,7 +289,7 @@ export default function Detailmain() {
                         </>
                     )}
                 </div>
-                <div className='additional_detail_section relative bg-black text-white z-[999]'>
+                <div className='additional_detail_section relative bg-black text-white z-[0]'>
                     <div className='flex justify-center font-bold gap-5 md:text-[18px] lg:text-[20px] lg:tracking-wider'>
                         <p onClick={() => relatedMovies(0)} className={`cursor-pointer ${activeindex === 0 ? "border-b-[3px]" : ''}`}>Related</p>
                         <p onClick={() => relatedMovies(1)} className={`cursor-pointer ${activeindex === 1 ? "border-b-[3px]" : ''}`}>Details</p>
@@ -387,9 +397,40 @@ export default function Detailmain() {
                         </div>
                     </div>)}
                 </div>
-
+                {/* popup of purchase option button */}
+                {openPurchasebox && (<div className='purchase_Popup fixed  top-0  h-full z-50 w-full'>
+                    <div className='purchase_Popup_container absolute w-full bg-secondary bottom-0 px-6 py-[12px] flex flex-col gap-3 z-50'>
+                        <div className='purchase_Popup_header flex items-center justify-between z-50 text-white font-bold pt-[4px]' >
+                            <h2 className='md:text-[18px] xl:text-[20px]' >More Purchase options</h2>
+                            <span onClick={()=>closePurchase()}><svg class="fbl-icon _30dE3d _1a_Ljt" viewBox="0 0 24 24" height="24" width="24" role="img" aria-hidden="true"><title>Close</title><svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.758 4.054 C 4.416 4.147,4.160 4.395,4.061 4.729 C 3.985 4.987,3.985 5.053,4.063 5.323 C 4.125 5.534,4.219 5.632,7.353 8.770 L 10.579 12.000 7.371 15.210 C 4.893 17.690,4.145 18.461,4.083 18.600 C 3.984 18.819,3.975 19.182,4.062 19.391 C 4.144 19.587,4.381 19.831,4.580 19.924 C 4.798 20.025,5.166 20.022,5.400 19.917 C 5.539 19.855,6.310 19.107,8.790 16.629 L 12.000 13.421 15.230 16.647 C 18.368 19.781,18.466 19.875,18.677 19.937 C 18.949 20.016,19.013 20.016,19.283 19.936 C 19.581 19.847,19.847 19.581,19.936 19.283 C 20.016 19.013,20.016 18.949,19.937 18.677 C 19.875 18.466,19.781 18.368,16.647 15.230 L 13.421 12.000 16.647 8.770 C 19.781 5.632,19.875 5.534,19.937 5.323 C 20.015 5.053,20.016 4.987,19.938 4.725 C 19.768 4.154,19.088 3.855,18.558 4.119 C 18.431 4.182,17.462 5.124,15.190 7.393 L 12.000 10.580 8.810 7.394 C 6.729 5.315,5.564 4.180,5.460 4.129 C 5.243 4.023,4.977 3.994,4.758 4.054 " fill="currentColor" stroke="none" fill-rule="evenodd"></path></svg></svg></span>
+                        </div>
+                        <div className='purchase_Popup_main flex flex-col   gap-2 z-50 text-white font-bold'>
+                            <div className='flex items-center gap-1'> <svg class="fbl-icon _3UMk3x _1a_Ljt NbhXwl" viewBox="0 0 24 24" height="18" width="18" role="img" aria-hidden="true"><title>Store Filled</title><svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9.503 2.041 C 8.483 2.217,7.556 2.976,7.202 3.925 C 7.027 4.393,7.001 4.639,7.001 5.849 L 7.000 6.998 4.869 7.009 L 2.738 7.020 2.539 7.122 C 2.312 7.239,2.102 7.491,2.040 7.720 C 2.011 7.828,2.002 9.427,2.011 12.809 C 2.024 17.275,2.031 17.766,2.092 18.013 C 2.358 19.085,2.821 19.909,3.550 20.605 C 4.122 21.152,4.727 21.515,5.465 21.754 C 6.194 21.990,5.896 21.980,12.000 21.980 C 18.104 21.980,17.806 21.990,18.535 21.754 C 20.034 21.268,21.241 20.077,21.737 18.593 C 21.990 17.837,21.974 18.211,21.989 12.804 C 22.004 7.245,22.024 7.622,21.702 7.300 C 21.400 6.998,21.420 7.000,19.073 7.000 L 17.000 7.000 17.000 5.858 C 17.000 4.609,16.970 4.349,16.766 3.849 C 16.499 3.193,15.964 2.633,15.296 2.312 C 14.674 2.013,14.813 2.026,12.120 2.016 C 10.789 2.011,9.611 2.023,9.503 2.041 M14.340 4.066 C 14.593 4.153,14.847 4.407,14.934 4.660 C 14.989 4.822,15.000 5.033,15.000 5.927 L 15.000 7.000 16.000 7.000 L 17.000 7.000 17.000 9.573 C 17.000 12.477,17.008 12.394,16.701 12.701 C 16.521 12.881,16.242 13.000,16.000 13.000 C 15.758 13.000,15.479 12.881,15.299 12.701 C 14.992 12.394,15.000 12.477,15.000 9.573 L 15.000 7.000 12.000 7.000 L 9.000 7.000 9.000 9.573 C 9.000 12.477,9.008 12.394,8.701 12.701 C 8.310 13.092,7.690 13.092,7.299 12.701 C 6.992 12.394,7.000 12.477,7.000 9.573 L 7.000 7.000 8.000 7.000 L 9.000 7.000 9.000 5.927 C 9.000 4.691,9.021 4.577,9.300 4.298 C 9.596 4.002,9.550 4.007,11.983 4.003 C 13.897 4.000,14.168 4.008,14.340 4.066 " fill="yellow" stroke="none" fill-rule="evenodd"></path></svg></svg>
+                                <div className='text-[12px] tracking-wider md:text-[16px] xl:text-[17px]'>Watch for ₹0 with Prime</div>
+                            </div>
+                            <div>
+                                <Link to="/signinpage"> <div className='movie_options_trial_btn_popup py-1 md:p-2 rounded-lg tracking-widest bg-inputbgcolor flex flex-col justify-center items-center font-bold hover:scale-[1.1] hover:text-gray hover:bg-white transition-all text-white hover:text-black     '>
+                                    <button className=' text-[15px] md:text-[18px] tracking-wider mt-[-2px]'>Watch with Prime</button>
+                                    <span className='text-[12px] md:text-[16px] tracking-normal'>Start your 30-day free trial</span>
+                                </div></Link>
+                            </div>
+                            <h2 className='md:text-[18px] xl:text-[19px] lg:tracking-wide'>Rent</h2>
+                            <div className='purchase_btns flex gap-3 flex-col z-50'>
+                                <div className='movie_options_rent_btn py-[14.5px] md:p-2 rounded-lg tracking-widest bg-inputbgcolor hover:scale-[1.1] hover:text-black hover:bg-white transition-all text-white flex flex-col justify-center items-center font-bold'>
+                                    <Link to="/signinpage"> <button className=' text-[15px] md:text-[16px] tracking-wider mt-[-2px]'>Rent <span className='uhd_badge'>UHD ₹119</span></button></Link>
+                                </div><div className='movie_options_rent_btn py-[14.5px] md:p-2 rounded-lg tracking-widest bg-inputbgcolor hover:scale-[1.1] hover:text-black hover:bg-white transition-all text-white flex flex-col justify-center items-center font-bold'>
+                                    <Link to="/signinpage"> <button className=' text-[15px] md:text-[16px] tracking-wider mt-[-2px]'>Rent <span className='uhd_badge'>UHD ₹119</span></button></Link>
+                                </div><div className='movie_options_rent_btn py-[14.5px] md:p-2 rounded-lg tracking-widest bg-inputbgcolor hover:scale-[1.1] hover:text-black hover:bg-white transition-all text-white flex flex-col justify-center items-center font-bold'>
+                                    <Link to="/signinpage"> <button className=' text-[15px] md:text-[16px] tracking-wider mt-[-2px]'>Rent <span className='uhd_badge'>UHD ₹119</span></button></Link>
+                                </div>
+                            </div>
+                        </div>
+                        <div className='text-[14px] font-bold leading-[16px] text-azongray md:text-[18px] xl:text-[18px] md:leading-[18px]    '>
+                            Rentals include 30 days to start watching this video and 48 hours to finish once started.
+                        </div>
+                    </div>
+                </div>)}
                 <Footer />
-
             </div>
         </>
     );

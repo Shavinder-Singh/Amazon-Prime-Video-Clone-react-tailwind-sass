@@ -34,6 +34,11 @@
 
     }
 
+    .purchase_Popup {
+        background-color: rgba(0, 5, 13, .5);
+
+    }
+
 }
 
 .movie_detail_page {
@@ -426,6 +431,74 @@
 
             .copyright {
                 line-height: 16px;
+            }
+        }
+    }
+}
+
+
+@media(min-width:600px) {
+    .movie_detail_page {
+        .purchase_Popup {
+            background-color: rgba(0, 5, 13, .5);
+
+            .purchase_Popup_container {
+                top: 12px;
+                bottom: unset;
+                width: 60%;
+                top: calc(50% - 30%);
+                left: calc(50% - 30%);
+                border-radius: 10px;
+
+                .movie_options_trial_btn_popup {
+                    width: 220px;
+                }
+
+                .purchase_btns {
+                    display: flex;
+                    flex-wrap: wrap;
+                    flex-direction: row;
+                    gap: 20px;
+
+                    .movie_options_rent_btn {
+                        width: 130px;
+                        height: 60px;
+                    }
+                }
+
+            }
+        }
+    }
+}
+
+@media(min-width:820px) {
+    .movie_detail_page {
+
+        .purchase_Popup {
+            background-color: rgba(0, 5, 13, .5);
+
+            .purchase_Popup_container {
+                top: 12px;
+                bottom: unset;
+                width: 60%;
+                top: calc(50% - 30%);
+                left: calc(50% - 30%);
+
+                .movie_options_trial_btn_popup {
+                    width: 260px;
+                }
+
+                .purchase_btns {
+                    display: flex;
+                    flex-wrap: wrap;
+                    flex-direction: row;
+
+                    .movie_options_rent_btn {
+                        width: 170px;
+                        height: 60px;
+                    }
+                }
+
             }
         }
     }
