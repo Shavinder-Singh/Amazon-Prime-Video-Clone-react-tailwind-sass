@@ -166,7 +166,7 @@ export default function Detailmain() {
                 <div className=''>
                     {data && (
                         <>
-                            <div className='movie_detail_page_main'>
+                            <div className='movie_detail_page_main z-0 relative'>
                                 <div className='movie_detail_page_main_image_wrapper_mobile'>
                                     <div className='detail_page_image_big_wrapper h-52 relative flex '>
                                         <div className='shadow_mobile'>

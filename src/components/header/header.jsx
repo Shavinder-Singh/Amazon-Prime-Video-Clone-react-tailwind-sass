@@ -88,7 +88,7 @@ const header = () => {
     const [sidebar, setsidebar] = useState();
     const [menuarrow, setmenuarrow] = useState()
     const opensidebar = () => {
-        setsidebar(true);
+        setsidebar(!sidebar);
         setmenuarrow(!menuarrow)
     }
     useEffect(() => {
@@ -118,8 +118,8 @@ const header = () => {
     return (
         <div className='header_all'>
             <header className='header_mobile z-10 '>
-                <div className='mobile_menu hover:bg-secondary relative  ' onClick={() => opensidebar()}    >
-                    <h1 className='menu'>Menu
+                <div className='mobile_menu hover:bg-secondary relative  '    >
+                    <h1 className='menu' onClick={() => opensidebar()} >Menu
 
                     </h1>
                     {sidebar && (
