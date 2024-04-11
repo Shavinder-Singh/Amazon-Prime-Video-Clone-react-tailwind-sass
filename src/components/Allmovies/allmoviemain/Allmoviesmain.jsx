@@ -39,7 +39,7 @@ export default function Allmoviesmain() {
                     </div>
                 </div>
                 <div className='movies_heading pl-6 md:pl-8 pb-3 bg-primary text-azonwhite font-bold'>
-                    <h1 className='text-[24px] md:text-[27px] xl:pl-[22px] xl:pt-[11px] lg:tracking-[2.4px] xl:text-[34px] lg:text-[32px] tracking-wider'>Movies</h1>
+                    <h1 className='text-[24px] md:text-[27px] xl:pl-[22px] xl:pt-[11px] lg:tracking-[2.4px] xl:text-[34px] lg:text-[32px] tracking-wider'>{genre}</h1>
                 </div>
                 <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
                     {punjabi && punjabi.map((details) => (
