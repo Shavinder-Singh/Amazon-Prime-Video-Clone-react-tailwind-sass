@@ -4,6 +4,7 @@ import AllMoviesscroller from '../components/Allmovies/allmoviesscroller/Allmovi
 import Footer from '../components/footer/footer'
 
 
+
 const AllMovies = () => {
     return (
         <div>

@@ -226,10 +226,11 @@ export default function App() {
                 <div className='movies_scroller bg-black text-white  mb-[43px] md:mb-[0px] relative' onMouseEnter={() => onmouseenters()}>
                     <div className='font-bold flex  pr-3 md:pr-0 gap-4 md:gap-4 md:pb-0 text-[15px] md:text-[18px] tracking-wide'>
                         <div className=' flex-wrap flex items-center'><span className='text-azonblue mr-1'>Prime</span> <span>Kids and Family movies </span></div>
-                        <div className='font-thin md:font-bold flex items-center gap-2 text-nowrap'  onClick={() => handleredirect('kids')} ><span>See more</span><span>
+                        <div className='font-thin md:font-bold flex items-center gap-2 text-nowrap' onClick={() => handleredirect('kids')} ><span>See more</span><span>
                             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" id="right-arrow"><path fill="white" d="M13.8 24.196a1 1 0 0 0 1.414 0L21.7 17.71a.992.992 0 0 0 .292-.71.997.997 0 0 0-.292-.71l-6.486-6.486a1 1 0 0 0-1.414 1.414L19.582 17 13.8 22.782a1 1 0 0 0 0 1.414z"></path></svg>
                         </span></div>
                     </div>
+
                     <Swiper
                         onSwiper={setSwiperRef}
                         slidesPerView={4}
@@ -247,6 +248,7 @@ export default function App() {
                             <>
                                 <SwiperSlide className='swiper_slide relative flex flex-col mt-5 md:mt-0' key={data.imdbID} onMouseEnter={() => handleclick(data.imdbID)} ><img src={data.Poster} onClick={() => handledetail(data.imdbID)} />
                                     <div className='movies_data absolute hidden md:block bg-black text-white w-[111%] flex-col py-1 rounded-md '>
+
                                         <div>
                                             {datas && ((
                                                 <>
@@ -273,8 +275,11 @@ export default function App() {
                                                     </div>
                                                 </>
                                             ))}
+
                                         </div>
+
                                     </div>
+
                                     <p className=' absolute top-[173px] left-0 -z-10 font-bold'>Rent</p>
                                 </SwiperSlide>
                             </>
@@ -285,7 +290,7 @@ export default function App() {
                 <div className='movie_scroller bg-black text-white mb-[43px]  md:mb-[0px] relative ' onMouseEnter={() => zIndexchange()}>
                     <div className='font-bold pr-3 md:pr-0 flex gap-4 md:gap-4 pb-2 md:pb-0 text-[16px] md:text-[18px] tracking-wide'>
                         <div className='flex items-center flex-wrap'><h1><span className='text-azonblue'>Prime</span> Romance Movies</h1></div>
-                        <div className='font-thin md:font-bold flex items-center gap-2 text-nowrap'  onClick={() => handleredirect('romance')} ><span>See more</span><span>
+                        <div className='font-thin md:font-bold flex items-center gap-2 text-nowrap' onClick={() => handleredirect('romance')} ><span>See more</span><span>
                             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" id="right-arrow"><path fill="white" d="M13.8 24.196a1 1 0 0 0 1.414 0L21.7 17.71a.992.992 0 0 0 .292-.71.997.997 0 0 0-.292-.71l-6.486-6.486a1 1 0 0 0-1.414 1.414L19.582 17 13.8 22.782a1 1 0 0 0 0 1.414z"></path></svg>
                         </span></div>
                     </div>
@@ -342,7 +347,7 @@ export default function App() {
                 <div className='movies_scroller bg-black text-white mb-[43px] md:mb-[0px] relative' onMouseEnter={() => onmouseenters()}>
                     <div className='font-bold flex  pr-3 md:pr-0 gap-4 md:gap-4 md:pb-0 text-[15px] md:text-[18px] tracking-wide'>
                         <div className=' flex-wrap flex items-center'><span className='text-azonblue mr-1'>Prime</span> <span>   Horror Movies</span></div>
-                        <div className='font-thin md:font-bold flex items-center gap-2 text-nowrap'  onClick={() => handleredirect('horror')} ><span>See more</span><span>
+                        <div className='font-thin md:font-bold flex items-center gap-2 text-nowrap' onClick={() => handleredirect('horror')} ><span>See more</span><span>
                             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" id="right-arrow"><path fill="white" d="M13.8 24.196a1 1 0 0 0 1.414 0L21.7 17.71a.992.992 0 0 0 .292-.71.997.997 0 0 0-.292-.71l-6.486-6.486a1 1 0 0 0-1.414 1.414L19.582 17 13.8 22.782a1 1 0 0 0 0 1.414z"></path></svg>
                         </span></div>
                     </div>
@@ -398,7 +403,7 @@ export default function App() {
                 <div className='movie_scroller bg-black text-white mb-[43px]  md:mb-[0px] relative ' onMouseEnter={() => zIndexchange()}>
                     <div className='font-bold pr-3 md:pr-0 flex gap-4 md:gap-4 pb-2 md:pb-0 text-[16px] md:text-[18px] tracking-wide'>
                         <div className='flex items-center flex-wrap'><h1><span className='text-azonblue'>Prime</span> Historical Movies</h1></div>
-                        <div className='font-thin md:font-bold flex items-center gap-2 text-nowrap'  onClick={() => handleredirect('historical')} ><span>See more</span><span>
+                        <div className='font-thin md:font-bold flex items-center gap-2 text-nowrap' onClick={() => handleredirect('historical')} ><span>See more</span><span>
                             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" id="right-arrow"><path fill="white" d="M13.8 24.196a1 1 0 0 0 1.414 0L21.7 17.71a.992.992 0 0 0 .292-.71.997.997 0 0 0-.292-.71l-6.486-6.486a1 1 0 0 0-1.414 1.414L19.582 17 13.8 22.782a1 1 0 0 0 0 1.414z"></path></svg>
                         </span></div>
                     </div>
@@ -455,7 +460,7 @@ export default function App() {
                 <div className='movies_scroller bg-black text-white   mb-[43px] md:mb-[0px] relative' onMouseEnter={() => onmouseenters()}>
                     <div className='font-bold flex  pr-3 md:pr-0 gap-4 md:gap-4 md:pb-0 text-[15px] md:text-[18px] tracking-wide'>
                         <div className=' flex-wrap flex items-center'><span className='text-azonblue mr-1'>Prime</span> <span>Action and adventure Movies</span></div>
-                        <div className='font-thin md:font-bold flex items-center gap-2 text-nowrap'  onClick={() => handleredirect('action')} ><span>See more</span><span>
+                        <div className='font-thin md:font-bold flex items-center gap-2 text-nowrap' onClick={() => handleredirect('action')} ><span>See more</span><span>
                             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" id="right-arrow"><path fill="white" d="M13.8 24.196a1 1 0 0 0 1.414 0L21.7 17.71a.992.992 0 0 0 .292-.71.997.997 0 0 0-.292-.71l-6.486-6.486a1 1 0 0 0-1.414 1.414L19.582 17 13.8 22.782a1 1 0 0 0 0 1.414z"></path></svg>
                         </span></div>
                     </div>
@@ -511,7 +516,7 @@ export default function App() {
                 <div className='movie_scroller bg-black text-white mb-[43px]  md:mb-[0px] relative ' onMouseEnter={() => zIndexchange()}>
                     <div className='font-bold pr-3 md:pr-0 flex gap-4 md:gap-4 pb-2 md:pb-0 text-[16px] md:text-[18px] tracking-wide'>
                         <div className='flex items-center flex-wrap'><h1><span className='text-azonblue'>Prime</span> Hindi Movies</h1></div>
-                        <div className='font-thin md:font-bold flex items-center gap-2 text-nowrap'  onClick={() => handleredirect('hindi')} ><span>See more</span><span>
+                        <div className='font-thin md:font-bold flex items-center gap-2 text-nowrap' onClick={() => handleredirect('hindi')} ><span>See more</span><span>
                             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" id="right-arrow"><path fill="white" d="M13.8 24.196a1 1 0 0 0 1.414 0L21.7 17.71a.992.992 0 0 0 .292-.71.997.997 0 0 0-.292-.71l-6.486-6.486a1 1 0 0 0-1.414 1.414L19.582 17 13.8 22.782a1 1 0 0 0 0 1.414z"></path></svg>
                         </span></div>
                     </div>
@@ -568,7 +573,7 @@ export default function App() {
                 <div className='movies_scroller bg-black text-white   mb-[43px] md:mb-[0px] relative' onMouseEnter={() => onmouseenters()}>
                     <div className='font-bold flex  pr-3 md:pr-0 gap-4 md:gap-4 md:pb-0 text-[15px] md:text-[18px] tracking-wide'>
                         <div className=' flex-wrap flex items-center'><span className='text-azonblue mr-1'>Prime</span> <span>Punjabi Movies</span></div>
-                        <div className='font-thin md:font-bold flex items-center gap-2 text-nowrap'  onClick={() => handleredirect('punjabi')} ><span>See more</span><span>
+                        <div className='font-thin md:font-bold flex items-center gap-2 text-nowrap' onClick={() => handleredirect('punjabi')} ><span>See more</span><span>
                             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" id="right-arrow"><path fill="white" d="M13.8 24.196a1 1 0 0 0 1.414 0L21.7 17.71a.992.992 0 0 0 .292-.71.997.997 0 0 0-.292-.71l-6.486-6.486a1 1 0 0 0-1.414 1.414L19.582 17 13.8 22.782a1 1 0 0 0 0 1.414z"></path></svg>
                         </span></div>
                     </div>
@@ -624,7 +629,7 @@ export default function App() {
                 <div className='movie_scroller bg-black text-white mb-[43px]  md:mb-[0px] relative ' onMouseEnter={() => zIndexchange()}>
                     <div className='font-bold pr-3 md:pr-0 flex gap-4 md:gap-4 pb-2 md:pb-0 text-[16px] md:text-[18px] tracking-wide'>
                         <div className='flex items-center flex-wrap'><h1><span className='text-azonblue'>Prime</span> Drama Movies</h1></div>
-                        <div className='font-thin md:font-bold flex items-center gap-2 text-nowrap'  onClick={() => handleredirect('drama')} ><span>See more</span><span>
+                        <div className='font-thin md:font-bold flex items-center gap-2 text-nowrap' onClick={() => handleredirect('drama')} ><span>See more</span><span>
                             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" id="right-arrow"><path fill="white" d="M13.8 24.196a1 1 0 0 0 1.414 0L21.7 17.71a.992.992 0 0 0 .292-.71.997.997 0 0 0-.292-.71l-6.486-6.486a1 1 0 0 0-1.414 1.414L19.582 17 13.8 22.782a1 1 0 0 0 0 1.414z"></path></svg>
                         </span></div>
                     </div>

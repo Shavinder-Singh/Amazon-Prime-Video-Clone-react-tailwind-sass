@@ -63,6 +63,38 @@
       }
     }
 
+
+
+    .movies_section {
+      .main_section_setup {
+        box-shadow: 2px 2px 432px 170px black;
+        z-index: 12;
+
+        .main_buttons {
+          span {
+            background-color: rgba(122, 122, 122, 0.5);
+            transition: 0.4s;
+
+            &:hover {
+              background-color: white;
+
+            }
+
+            &:hover svg path {
+              fill: black !important;
+            }
+          }
+        }
+      }
+
+    }
+
+    .swiper-slide img {
+      display: block;
+      width: 90%;
+      height: 100%;
+    }
+
     @media (min-width:768px) {
       .movies_section {
         .mySwiper {

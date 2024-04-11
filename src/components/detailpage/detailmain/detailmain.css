@@ -298,8 +298,9 @@
     top: 12px;
     bottom: unset;
     width: 60%;
-    top: calc(50% - 180px);
-    left: calc(50% - 220px);
+    top: 20%;
+    left: 20%;
+    border-radius: 10px;
   }
   .movie_detail_page .purchase_Popup .purchase_Popup_container .movie_options_trial_btn_popup {
     width: 220px;
@@ -308,6 +309,7 @@
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
+    gap: 20px;
   }
   .movie_detail_page .purchase_Popup .purchase_Popup_container .purchase_btns .movie_options_rent_btn {
     width: 130px;
@@ -322,8 +324,8 @@
     top: 12px;
     bottom: unset;
     width: 60%;
-    top: calc(50% - 180px);
-    left: calc(50% - 220px);
+    top: 20%;
+    left: 20%;
   }
   .movie_detail_page .purchase_Popup .purchase_Popup_container .movie_options_trial_btn_popup {
     width: 260px;
