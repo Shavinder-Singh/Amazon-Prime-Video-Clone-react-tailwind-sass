@@ -88,7 +88,7 @@ const header = () => {
     const [sidebar, setsidebar] = useState();
     const [menuarrow, setmenuarrow] = useState()
     const opensidebar = () => {
-        setsidebar(true);
+        setsidebar(!sidebar);
         setmenuarrow(!menuarrow)
     }
     useEffect(() => {
