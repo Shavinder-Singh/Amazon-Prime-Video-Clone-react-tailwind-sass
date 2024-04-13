@@ -4,6 +4,7 @@ import axios from 'axios';
 import './searchscroller.scss';
 import { Link, useNavigate } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
+import Header from '../header/header';
 
 
 const SearchScroller = () => {
@@ -253,6 +254,7 @@ const SearchScroller = () => {
     }
     return (
         <>
+        <Header/>
             <div className='search_page text-white px-6 bg-primary min-h-[120vh]'>
                 <div className='search_filter'>
                     <div className='filters_options hidden'>
